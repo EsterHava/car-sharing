@@ -1,0 +1,20 @@
+
+<form class="example-form">
+    <p>בחר שם משתמש וסיסמה</p>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>שם משתמש</mat-label>
+        <input matInput placeholder="israel levi" #userName>
+    </mat-form-field><br/>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>סיסמא</mat-label>
+        <input type="password" matInput placeholder="1234" #password>
+    </mat-form-field>
+    <br/>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>אימות סיסמא </mat-label>
+        <input type="password" matInput placeholder="1234" #password2>
+    </mat-form-field>
+    <p>{{textError}}</p>
+    <button (click)="changePassword(userName.value,password.value,password2.value)"> אישור</button>
+  
+</form>

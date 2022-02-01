@@ -1,0 +1,18 @@
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DTO\bin\Debug\DTO.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DTO\bin\Debug\DTO.pdb
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DTO\obj\Debug\DTO.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DTO\obj\Debug\DTO.pdb
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DTO\bin\Debug\DTO.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DTO\bin\Debug\DTO.pdb
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DTO\obj\Debug\DTO.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DTO\obj\Debug\DTO.pdb
+D:\users\user1\Documents\GitHub\Cars\carsProject\DTO\bin\Debug\DTO.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\DTO\bin\Debug\DTO.pdb
+D:\users\user1\Documents\GitHub\Cars\carsProject\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+D:\users\user1\Documents\GitHub\Cars\carsProject\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\users\user1\Documents\GitHub\Cars\carsProject\DTO\obj\Debug\DTO.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\DTO\obj\Debug\DTO.pdb

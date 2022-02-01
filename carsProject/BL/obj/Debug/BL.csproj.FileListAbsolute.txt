@@ -1,0 +1,42 @@
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\BL\bin\Debug\BL.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\BL\bin\Debug\BL.pdb
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\BL\obj\Debug\BL.csprojAssemblyReference.cache
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\BL\obj\Debug\BL.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\BL\obj\Debug\BL.pdb
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\BL\bin\Debug\DAL.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\BL\bin\Debug\DTO.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\BL\bin\Debug\EntityFramework.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\BL\bin\Debug\DAL.pdb
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\BL\bin\Debug\DAL.dll.config
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\BL\bin\Debug\DTO.pdb
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\BL\bin\Debug\EntityFramework.xml
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\BL\obj\Debug\BL.csproj.CopyComplete
+D:\usres\user1\Documents\GitHub\Cars\carsProject\BL\bin\Debug\BL.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\BL\bin\Debug\BL.pdb
+D:\usres\user1\Documents\GitHub\Cars\carsProject\BL\bin\Debug\DAL.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\BL\bin\Debug\DTO.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\BL\bin\Debug\EntityFramework.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\BL\bin\Debug\DAL.pdb
+D:\usres\user1\Documents\GitHub\Cars\carsProject\BL\bin\Debug\DAL.dll.config
+D:\usres\user1\Documents\GitHub\Cars\carsProject\BL\bin\Debug\DTO.pdb
+D:\usres\user1\Documents\GitHub\Cars\carsProject\BL\bin\Debug\EntityFramework.xml
+D:\usres\user1\Documents\GitHub\Cars\carsProject\BL\obj\Debug\BL.csprojAssemblyReference.cache
+D:\usres\user1\Documents\GitHub\Cars\carsProject\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+D:\usres\user1\Documents\GitHub\Cars\carsProject\BL\obj\Debug\BL.csproj.CopyComplete
+D:\usres\user1\Documents\GitHub\Cars\carsProject\BL\obj\Debug\BL.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\BL\obj\Debug\BL.pdb
+D:\users\user1\Documents\GitHub\Cars\carsProject\BL\bin\Debug\BL.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\BL\bin\Debug\BL.pdb
+D:\users\user1\Documents\GitHub\Cars\carsProject\BL\bin\Debug\DAL.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\BL\bin\Debug\DTO.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\BL\bin\Debug\EntityFramework.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\BL\bin\Debug\DAL.pdb
+D:\users\user1\Documents\GitHub\Cars\carsProject\BL\bin\Debug\DAL.dll.config
+D:\users\user1\Documents\GitHub\Cars\carsProject\BL\bin\Debug\DTO.pdb
+D:\users\user1\Documents\GitHub\Cars\carsProject\BL\bin\Debug\EntityFramework.xml
+D:\users\user1\Documents\GitHub\Cars\carsProject\BL\obj\Debug\BL.csprojAssemblyReference.cache
+D:\users\user1\Documents\GitHub\Cars\carsProject\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+D:\users\user1\Documents\GitHub\Cars\carsProject\BL\obj\Debug\BL.csproj.CopyComplete
+D:\users\user1\Documents\GitHub\Cars\carsProject\BL\obj\Debug\BL.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\BL\obj\Debug\BL.pdb

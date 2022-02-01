@@ -1,0 +1,138 @@
+<!-- הצגת נסיעות קבועות של הנהג בטבלה -->
+ <button class="btnPlus" (click)="openAddTravelDialog()">+</button>
+ <div *ngIf="travelR.length>0" class="travelR" style="direction: rtl; ">
+    <p>נסיעות קבועות</p>
+   
+    <table mat-table [dataSource]="travelR" class="mat-elevation-z8" dir="rtl">
+
+        <ng-container matColumnDef="num">
+            <th mat-header-cell *matHeaderCellDef style="width: 1% !important;"> מס' </th>
+            <td mat-cell *matCellDef="let element" style="width: 1% !important;">
+                <div *ngFor="let item of travelR; let i= index">
+                    <p *ngIf="item==element"> {{i+1}}</p>
+                </div>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="source">
+            <th mat-header-cell *matHeaderCellDef > מקור </th>
+            <td mat-cell *matCellDef="let element"> {{element.source}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="destination">
+            <th mat-header-cell *matHeaderCellDef> יעד </th>
+            <td mat-cell *matCellDef="let element"> {{element.destination}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="exitTime">
+            <th mat-header-cell *matHeaderCellDef> שעת יציאה</th>
+            <td mat-cell *matCellDef="let element"> {{element.exitTime}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="arriveTime">
+            <th mat-header-cell *matHeaderCellDef> שעת הגעה </th>
+            <td mat-cell *matCellDef="let element"> {{element.arriveTime}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="day">
+            <th mat-header-cell *matHeaderCellDef> יום בשבוע </th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngFor="let d of daysList">
+                    <p *ngIf="d.key==element.day">
+                        {{d.value}}
+                    </p>
+                </div>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef> מחיקה </th>
+            <td mat-cell *matCellDef="let element"><button class="btn"  (click)="deleteRegularTravel(element)">מחיקה</button>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="update">
+            <th mat-header-cell *matHeaderCellDef> עדכון </th>
+            <td mat-cell *matCellDef="let element"><button class="btn"  (click)="openUpdateRegularTravel(element)">עדכון </button>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="join">
+            <th mat-header-cell *matHeaderCellDef> הצטרפות לנסיעה</th>
+            <td mat-cell *matCellDef="let element"><button (click)="joinTravel(element)"> הצטרפות לנסיעה </button>
+            </td>
+
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsR"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsR;"></tr>
+    </table>
+</div>
+<!-- הצגת נסיעות חד פעמיות של הנהג בטבלה -->
+<div *ngIf="travelT.length>0">
+    <p>נסיעות חד פעמיות</p>
+    <table mat-table [dataSource]="travelT" class="mat-elevation-z8" dir="rtl">
+
+        <ng-container matColumnDef="num">
+            <th mat-header-cell *matHeaderCellDef> מס' </th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngFor="let item of travelT; let i= index">
+                    <p *ngIf="item==element"> {{i+1}}</p>
+                </div>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="source">
+            <th mat-header-cell *matHeaderCellDef> מקור </th>
+            <td mat-cell *matCellDef="let element"> {{element.source}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="destination">
+            <th mat-header-cell *matHeaderCellDef> יעד </th>
+            <td mat-cell *matCellDef="let element"> {{element.destination}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="exitTime">
+            <th mat-header-cell *matHeaderCellDef> שעת יציאה</th>
+            <td mat-cell *matCellDef="let element"> {{element.exitTime}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="arriveTime">
+            <th mat-header-cell *matHeaderCellDef> שעת הגעה </th>
+            <td mat-cell *matCellDef="let element"> {{element.arriveTime}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> תאריך נסיעה </th>
+            <td mat-cell *matCellDef="let element"> {{element.date|date: 'dd/MM/yyyy'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef> מחיקת נסיעה </th>
+            <td mat-cell *matCellDef="let element"><button (click)="deleteTemporaryTravel(element)">מחיקת נסיעה</button>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="update">
+            <th mat-header-cell *matHeaderCellDef> עדכון נסיעה </th>
+            <td mat-cell *matCellDef="let element"> <button (click)="updateTemporaryTravel(element)">עדכון
+                    נסיעה</button> </td>
+        </ng-container>
+
+        <ng-container matColumnDef="join">
+            <th mat-header-cell *matHeaderCellDef> הצטרפות לנסיעה </th>
+            <td mat-cell *matCellDef="let element"><button (click)="joinTravel(element)">הצטרפות לנסיעה</button>
+            </td>
+
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsT"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsT;"></tr>
+    </table>
+</div>
+<!-- אין נסיעות קיימות -->
+<div *ngIf="travelR.length==0&&travelT.length==0">
+    <p>אין נסיעות קיימות</p>
+</div>
+
+
+

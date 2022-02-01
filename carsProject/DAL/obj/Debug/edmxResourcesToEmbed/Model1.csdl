@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="car_projectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="car">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="numOfSeats" Type="Int32" />
+    <Property Name="carNumber" Type="Int32" Nullable="false" />
+    <Property Name="numOfAvailableSeats" Type="Int32" />
+    <NavigationProperty Name="user" Relationship="Self.FK_car_user" FromRole="car" ToRole="user" />
+  </EntityType>
+  <EntityType Name="gender">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="user" Relationship="Self.FK_user_gender" FromRole="gender" ToRole="user" />
+  </EntityType>
+  <EntityType Name="regularTraveling">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="driverId" Type="Int32" />
+    <Property Name="source" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="destination" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="exitTime" Type="Time" Precision="7" />
+    <Property Name="arriveTime" Type="Time" Precision="7" />
+    <Property Name="day" Type="Int32" />
+    <NavigationProperty Name="user" Relationship="Self.FK_regularTraveling_user" FromRole="regularTraveling" ToRole="user" />
+    <NavigationProperty Name="travellerInRegularTravel" Relationship="Self.FK_travellerInRegularTravel_regularTraveling" FromRole="regularTraveling" ToRole="travellerInRegularTravel" />
+    <NavigationProperty Name="joinRequests" Relationship="car_projectModel.FK_joinRequests_regularTraveling1" FromRole="regularTraveling" ToRole="joinRequests" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="temporaryTraveling">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="driverId" Type="Int32" />
+    <Property Name="source" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="destination" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="exitTime" Type="Time" Precision="7" />
+    <Property Name="arriveTime" Type="Time" Precision="7" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="user" Relationship="Self.FK_temporaryTraveling_user" FromRole="temporaryTraveling" ToRole="user" />
+    <NavigationProperty Name="joinRequests" Relationship="car_projectModel.FK_joinRequests_temporaryTraveling" FromRole="temporaryTraveling" ToRole="joinRequests" />
+    <NavigationProperty Name="temporaryTraveller" Relationship="car_projectModel.FK_temporaryTraveller_temporaryTraveling" FromRole="temporaryTraveling" ToRole="temporaryTraveller" />
+  </EntityType>
+  <EntityType Name="temporaryTraveller">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="travelId" Type="Int32" />
+    <Property Name="travellerId" Type="Int32" />
+    <Property Name="collectionPoint" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="destinationPoint" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isRegular" Type="Boolean" />
+    <NavigationProperty Name="user" Relationship="Self.FK_temporaryTraveller_user" FromRole="temporaryTraveller" ToRole="user" />
+    <NavigationProperty Name="temporaryTraveling" Relationship="car_projectModel.FK_temporaryTraveller_temporaryTraveling" FromRole="temporaryTraveller" ToRole="temporaryTraveling" />
+  </EntityType>
+  <EntityType Name="travellerInRegularTravel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="regularTravelingId" Type="Int32" />
+    <Property Name="travelerId" Type="Int32" />
+    <Property Name="collectingPoint" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="destinationPoint" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="regularTraveling" Relationship="Self.FK_travellerInRegularTravel_regularTraveling" FromRole="travellerInRegularTravel" ToRole="regularTraveling" />
+    <NavigationProperty Name="user" Relationship="Self.FK_travellerInRegularTravel_user" FromRole="travellerInRegularTravel" ToRole="user" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="lastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="userName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="tel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="mail" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="genderId" Type="Int32" />
+    <Property Name="points" Type="Int32" />
+    <Property Name="isHasCar" Type="Boolean" />
+    <NavigationProperty Name="car" Relationship="Self.FK_car_user" FromRole="user" ToRole="car" />
+    <NavigationProperty Name="gender" Relationship="Self.FK_user_gender" FromRole="user" ToRole="gender" />
+    <NavigationProperty Name="regularTraveling" Relationship="Self.FK_regularTraveling_user" FromRole="user" ToRole="regularTraveling" />
+    <NavigationProperty Name="temporaryTraveling" Relationship="Self.FK_temporaryTraveling_user" FromRole="user" ToRole="temporaryTraveling" />
+    <NavigationProperty Name="temporaryTraveller" Relationship="Self.FK_temporaryTraveller_user" FromRole="user" ToRole="temporaryTraveller" />
+    <NavigationProperty Name="travellerInRegularTravel" Relationship="Self.FK_travellerInRegularTravel_user" FromRole="user" ToRole="travellerInRegularTravel" />
+    <NavigationProperty Name="joinRequests" Relationship="car_projectModel.FK_joinRequests_user" FromRole="user" ToRole="joinRequests" />
+    <NavigationProperty Name="messages" Relationship="car_projectModel.FK__messages__userId__160F4887" FromRole="user" ToRole="messages" />
+  </EntityType>
+  <Association Name="FK_car_user">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="car" Type="Self.car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="car">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_gender">
+    <End Role="gender" Type="Self.gender" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gender">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="genderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_regularTraveling_user">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="regularTraveling" Type="Self.regularTraveling" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="regularTraveling">
+        <PropertyRef Name="driverId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_travellerInRegularTravel_regularTraveling">
+    <End Role="regularTraveling" Type="Self.regularTraveling" Multiplicity="0..1" />
+    <End Role="travellerInRegularTravel" Type="Self.travellerInRegularTravel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="regularTraveling">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="travellerInRegularTravel">
+        <PropertyRef Name="regularTravelingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_temporaryTraveling_user">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="temporaryTraveling" Type="Self.temporaryTraveling" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="temporaryTraveling">
+        <PropertyRef Name="driverId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_temporaryTraveller_user">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="temporaryTraveller" Type="Self.temporaryTraveller" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="temporaryTraveller">
+        <PropertyRef Name="travellerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_travellerInRegularTravel_user">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="travellerInRegularTravel" Type="Self.travellerInRegularTravel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="travellerInRegularTravel">
+        <PropertyRef Name="travelerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="car_projectEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="car" EntityType="Self.car" />
+    <EntitySet Name="gender" EntityType="Self.gender" />
+    <EntitySet Name="regularTraveling" EntityType="Self.regularTraveling" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="temporaryTraveling" EntityType="Self.temporaryTraveling" />
+    <EntitySet Name="temporaryTraveller" EntityType="Self.temporaryTraveller" />
+    <EntitySet Name="travellerInRegularTravel" EntityType="Self.travellerInRegularTravel" />
+    <EntitySet Name="user" EntityType="Self.user" />
+    <AssociationSet Name="FK_car_user" Association="Self.FK_car_user">
+      <End Role="user" EntitySet="user" />
+      <End Role="car" EntitySet="car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_gender" Association="Self.FK_user_gender">
+      <End Role="gender" EntitySet="gender" />
+      <End Role="user" EntitySet="user" />
+    </AssociationSet>
+    <AssociationSet Name="FK_regularTraveling_user" Association="Self.FK_regularTraveling_user">
+      <End Role="user" EntitySet="user" />
+      <End Role="regularTraveling" EntitySet="regularTraveling" />
+    </AssociationSet>
+    <AssociationSet Name="FK_travellerInRegularTravel_regularTraveling" Association="Self.FK_travellerInRegularTravel_regularTraveling">
+      <End Role="regularTraveling" EntitySet="regularTraveling" />
+      <End Role="travellerInRegularTravel" EntitySet="travellerInRegularTravel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_temporaryTraveling_user" Association="Self.FK_temporaryTraveling_user">
+      <End Role="user" EntitySet="user" />
+      <End Role="temporaryTraveling" EntitySet="temporaryTraveling" />
+    </AssociationSet>
+    <AssociationSet Name="FK_temporaryTraveller_user" Association="Self.FK_temporaryTraveller_user">
+      <End Role="user" EntitySet="user" />
+      <End Role="temporaryTraveller" EntitySet="temporaryTraveller" />
+    </AssociationSet>
+    <AssociationSet Name="FK_travellerInRegularTravel_user" Association="Self.FK_travellerInRegularTravel_user">
+      <End Role="user" EntitySet="user" />
+      <End Role="travellerInRegularTravel" EntitySet="travellerInRegularTravel" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(car_projectModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(car_projectModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="joinRequests" EntityType="car_projectModel.joinRequests" />
+    <AssociationSet Name="FK_joinRequests_user" Association="car_projectModel.FK_joinRequests_user">
+      <End Role="user" EntitySet="user" />
+      <End Role="joinRequests" EntitySet="joinRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_joinRequests_regularTraveling1" Association="car_projectModel.FK_joinRequests_regularTraveling1">
+      <End Role="regularTraveling" EntitySet="regularTraveling" />
+      <End Role="joinRequests" EntitySet="joinRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_joinRequests_temporaryTraveling" Association="car_projectModel.FK_joinRequests_temporaryTraveling">
+      <End Role="temporaryTraveling" EntitySet="temporaryTraveling" />
+      <End Role="joinRequests" EntitySet="joinRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_temporaryTraveller_temporaryTraveling" Association="car_projectModel.FK_temporaryTraveller_temporaryTraveling">
+      <End Role="temporaryTraveling" EntitySet="temporaryTraveling" />
+      <End Role="temporaryTraveller" EntitySet="temporaryTraveller" />
+    </AssociationSet>
+    <EntitySet Name="messages" EntityType="car_projectModel.messages" />
+    <AssociationSet Name="FK__messages__userId__160F4887" Association="car_projectModel.FK__messages__userId__160F4887">
+      <End Role="user" EntitySet="user" />
+      <End Role="messages" EntitySet="messages" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="joinRequests">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="user" Relationship="car_projectModel.FK_joinRequests_user" FromRole="joinRequests" ToRole="user" />
+    <Property Name="regularTravelId" Type="Int32" />
+    <Property Name="temporaryTravelId" Type="Int32" />
+    <NavigationProperty Name="regularTraveling" Relationship="car_projectModel.FK_joinRequests_regularTraveling1" FromRole="joinRequests" ToRole="regularTraveling" />
+    <NavigationProperty Name="temporaryTraveling" Relationship="car_projectModel.FK_joinRequests_temporaryTraveling" FromRole="joinRequests" ToRole="temporaryTraveling" />
+  </EntityType>
+  <Association Name="FK_joinRequests_user">
+    <End Type="car_projectModel.user" Role="user" Multiplicity="1" />
+    <End Type="car_projectModel.joinRequests" Role="joinRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="joinRequests">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_joinRequests_regularTraveling1">
+    <End Type="car_projectModel.regularTraveling" Role="regularTraveling" Multiplicity="0..1" />
+    <End Type="car_projectModel.joinRequests" Role="joinRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="regularTraveling">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="joinRequests">
+        <PropertyRef Name="regularTravelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_joinRequests_temporaryTraveling">
+    <End Type="car_projectModel.temporaryTraveling" Role="temporaryTraveling" Multiplicity="0..1" />
+    <End Type="car_projectModel.joinRequests" Role="joinRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="temporaryTraveling">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="joinRequests">
+        <PropertyRef Name="temporaryTravelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_temporaryTraveller_temporaryTraveling">
+    <End Type="car_projectModel.temporaryTraveling" Role="temporaryTraveling" Multiplicity="0..1" />
+    <End Type="car_projectModel.temporaryTraveller" Role="temporaryTraveller" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="temporaryTraveling">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="temporaryTraveller">
+        <PropertyRef Name="travelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="messages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="isRead" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="user" Relationship="car_projectModel.FK__messages__userId__160F4887" FromRole="messages" ToRole="user" />
+  </EntityType>
+  <Association Name="FK__messages__userId__160F4887">
+    <End Type="car_projectModel.user" Role="user" Multiplicity="1" />
+    <End Type="car_projectModel.messages" Role="messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="messages">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

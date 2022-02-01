@@ -1,0 +1,294 @@
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\API.dll.config
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\API.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\API.pdb
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\csc.exe
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\csc.exe.config
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\csc.rsp
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\csi.exe
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\csi.exe.config
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\csi.rsp
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\Microsoft.CodeAnalysis.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\Microsoft.CSharp.Core.targets
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\Microsoft.Managed.Core.targets
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\Microsoft.Win32.Primitives.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.AppContext.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Collections.Immutable.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Console.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Diagnostics.StackTrace.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Globalization.Calendars.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.IO.Compression.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.IO.Compression.ZipFile.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.IO.FileSystem.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Net.Http.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Net.Sockets.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Reflection.Metadata.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Security.Cryptography.Encoding.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Security.Cryptography.Primitives.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Text.Encoding.CodePages.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Threading.Tasks.Extensions.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.ValueTuple.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Xml.ReaderWriter.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Xml.XmlDocument.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Xml.XPath.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\System.Xml.XPath.XDocument.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\vbc.exe
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\vbc.exe.config
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\vbc.rsp
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\VBCSCompiler.exe
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\roslyn\VBCSCompiler.exe.config
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\Antlr3.Runtime.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\EntityFramework.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\EntityFramework.SqlServer.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\Microsoft.Web.Infrastructure.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\Newtonsoft.Json.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Net.Http.Formatting.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Web.Helpers.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Web.Http.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Web.Http.WebHost.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Web.Mvc.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Web.Optimization.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Web.Razor.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Web.WebPages.Deployment.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Web.WebPages.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Web.WebPages.Razor.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\WebGrease.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\EntityFramework.xml
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\EntityFramework.SqlServer.xml
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\Newtonsoft.Json.xml
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Net.Http.Formatting.xml
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Web.Helpers.xml
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Web.Http.xml
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Web.Http.WebHost.xml
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Web.Mvc.xml
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Web.Optimization.xml
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Web.Razor.xml
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Web.WebPages.xml
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Web.WebPages.Deployment.xml
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\System.Web.WebPages.Razor.xml
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\Antlr3.Runtime.pdb
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\obj\Debug\API.csprojAssemblyReference.cache
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\obj\Debug\API.csproj.CoreCompileInputs.cache
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\obj\Debug\API.csproj.CopyComplete
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\obj\Debug\API.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\obj\Debug\API.pdb
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\BL.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\DTO.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\DAL.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\BL.pdb
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\DTO.pdb
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\DAL.pdb
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\API\bin\DAL.dll.config
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\API.dll.config
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\API.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\API.pdb
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\csc.exe
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\csc.exe.config
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\csc.rsp
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\csi.exe
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\csi.exe.config
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\csi.rsp
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.Managed.Core.targets
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.AppContext.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Collections.Immutable.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Console.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Globalization.Calendars.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.IO.Compression.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.IO.FileSystem.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Net.Http.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Net.Sockets.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Reflection.Metadata.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.ValueTuple.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Xml.XmlDocument.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Xml.XPath.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\vbc.exe
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\vbc.exe.config
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\vbc.rsp
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\VBCSCompiler.exe
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\VBCSCompiler.exe.config
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\Antlr3.Runtime.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\BL.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\DTO.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\EntityFramework.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\EntityFramework.SqlServer.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\Microsoft.Web.Infrastructure.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\Newtonsoft.Json.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Net.Http.Formatting.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Helpers.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Http.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Http.WebHost.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Mvc.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Optimization.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Razor.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.WebPages.Deployment.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.WebPages.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.WebPages.Razor.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\WebGrease.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\DAL.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\BL.pdb
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\DTO.pdb
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\EntityFramework.xml
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\EntityFramework.SqlServer.xml
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\Newtonsoft.Json.xml
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Net.Http.Formatting.xml
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Helpers.xml
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Http.xml
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Http.WebHost.xml
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Mvc.xml
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Optimization.xml
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Razor.xml
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.WebPages.xml
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.WebPages.Deployment.xml
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.WebPages.Razor.xml
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\Antlr3.Runtime.pdb
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\DAL.pdb
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\DAL.dll.config
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\obj\Debug\API.csprojAssemblyReference.cache
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\obj\Debug\API.csproj.CoreCompileInputs.cache
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\obj\Debug\API.csproj.CopyComplete
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\obj\Debug\API.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\obj\Debug\API.pdb
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\API.dll.config
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\API.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\API.pdb
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\csc.exe
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\csc.exe.config
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\csc.rsp
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\csi.exe
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\csi.exe.config
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\csi.rsp
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.Managed.Core.targets
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.AppContext.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Collections.Immutable.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Console.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Globalization.Calendars.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.IO.Compression.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.IO.FileSystem.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Net.Http.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Net.Sockets.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Reflection.Metadata.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.ValueTuple.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Xml.XmlDocument.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Xml.XPath.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\vbc.exe
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\vbc.exe.config
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\vbc.rsp
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\VBCSCompiler.exe
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\roslyn\VBCSCompiler.exe.config
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\Antlr3.Runtime.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\BL.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\DTO.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\EntityFramework.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\EntityFramework.SqlServer.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\Microsoft.Web.Infrastructure.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\Newtonsoft.Json.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Net.Http.Formatting.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Helpers.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Http.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Http.WebHost.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Mvc.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Optimization.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Razor.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.WebPages.Deployment.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.WebPages.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.WebPages.Razor.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\WebGrease.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\DAL.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\BL.pdb
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\DTO.pdb
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\EntityFramework.xml
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\EntityFramework.SqlServer.xml
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\Newtonsoft.Json.xml
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Net.Http.Formatting.xml
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Helpers.xml
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Http.xml
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Http.WebHost.xml
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Mvc.xml
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Optimization.xml
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Razor.xml
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.WebPages.xml
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.WebPages.Deployment.xml
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.WebPages.Razor.xml
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\Antlr3.Runtime.pdb
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\DAL.pdb
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\DAL.dll.config
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\obj\Debug\API.csprojAssemblyReference.cache
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\obj\Debug\API.csproj.CoreCompileInputs.cache
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\obj\Debug\API.csproj.CopyComplete
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\obj\Debug\API.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\obj\Debug\API.pdb
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Cors.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Http.Cors.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Http.Cors.xml
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Cors.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Http.Cors.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\API\bin\System.Web.Http.Cors.xml

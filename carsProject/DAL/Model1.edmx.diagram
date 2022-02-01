@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="25c3f2c53e4147b29f9fb9cb88bca7f7" Name="Diagram1">
+        <EntityTypeShape EntityType="car_projectModel.car" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="car_projectModel.gender" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="car_projectModel.regularTraveling" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="car_projectModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="car_projectModel.temporaryTraveling" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="car_projectModel.temporaryTraveller" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="car_projectModel.travellerInRegularTravel" Width="1.5" PointX="7.5" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="car_projectModel.user" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="car_projectModel.FK_car_user" ManuallyRouted="false" />
+        <AssociationConnector Association="car_projectModel.FK_user_gender" ManuallyRouted="false" />
+        <AssociationConnector Association="car_projectModel.FK_regularTraveling_user" ManuallyRouted="false" />
+        <AssociationConnector Association="car_projectModel.FK_travellerInRegularTravel_regularTraveling" ManuallyRouted="false" />
+        <AssociationConnector Association="car_projectModel.FK_temporaryTraveling_user" ManuallyRouted="false" />
+        <AssociationConnector Association="car_projectModel.FK_temporaryTraveller_user" ManuallyRouted="false" />
+        <AssociationConnector Association="car_projectModel.FK_travellerInRegularTravel_user" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="car_projectModel.joinRequests" Width="1.5" PointX="7.5" PointY="9" />
+        <AssociationConnector Association="car_projectModel.FK_joinRequests_user" />
+        <AssociationConnector Association="car_projectModel.FK_joinRequests_regularTraveling1" />
+        <AssociationConnector Association="car_projectModel.FK_joinRequests_temporaryTraveling" />
+        <AssociationConnector Association="car_projectModel.FK_temporaryTraveller_temporaryTraveling" />
+        <EntityTypeShape EntityType="car_projectModel.messages" Width="1.5" PointX="7.375" PointY="0.75" />
+        <AssociationConnector Association="car_projectModel.FK__messages__userId__160F4887" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

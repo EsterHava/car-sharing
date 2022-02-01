@@ -1,0 +1,42 @@
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DAL\bin\Debug\DAL.dll.config
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DAL\bin\Debug\DAL.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DAL\bin\Debug\DAL.pdb
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DAL\bin\Debug\EntityFramework.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DAL\bin\Debug\EntityFramework.SqlServer.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DAL\bin\Debug\EntityFramework.xml
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DAL\bin\Debug\EntityFramework.SqlServer.xml
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DAL\obj\Debug\DAL.csproj.CopyComplete
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DAL\obj\Debug\DAL.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DAL\obj\Debug\DAL.pdb
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DAL\bin\Debug\DTO.dll
+Y:\תשפא\3\גרוסנס אסתר\פרויקט סיום\carsProject\DAL\bin\Debug\DTO.pdb
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DAL\bin\Debug\DAL.dll.config
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DAL\bin\Debug\DAL.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DAL\bin\Debug\DAL.pdb
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DAL\bin\Debug\DTO.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DAL\bin\Debug\EntityFramework.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DAL\bin\Debug\DTO.pdb
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DAL\bin\Debug\EntityFramework.xml
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DAL\obj\Debug\DAL.dll
+D:\usres\user1\Documents\GitHub\Cars\carsProject\DAL\obj\Debug\DAL.pdb
+D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\bin\Debug\DAL.dll.config
+D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\bin\Debug\DAL.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\bin\Debug\DAL.pdb
+D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\bin\Debug\DTO.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\bin\Debug\EntityFramework.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\bin\Debug\DTO.pdb
+D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\bin\Debug\EntityFramework.xml
+D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\obj\Debug\DAL.dll
+D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\obj\Debug\DAL.pdb

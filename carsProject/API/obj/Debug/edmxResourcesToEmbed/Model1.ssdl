@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="car_projectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="car">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userId" Type="int" />
+    <Property Name="numOfSeats" Type="int" />
+    <Property Name="carNumber" Type="int" Nullable="false" />
+    <Property Name="numOfAvailableSeats" Type="int" />
+  </EntityType>
+  <EntityType Name="gender">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="regularTraveling">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="driverId" Type="int" />
+    <Property Name="source" Type="nvarchar" MaxLength="50" />
+    <Property Name="destination" Type="nvarchar" MaxLength="50" />
+    <Property Name="exitTime" Type="time" Precision="7" />
+    <Property Name="arriveTime" Type="time" Precision="7" />
+    <Property Name="day" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="temporaryTraveling">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="driverId" Type="int" />
+    <Property Name="source" Type="nvarchar" MaxLength="50" />
+    <Property Name="destination" Type="nvarchar" MaxLength="50" />
+    <Property Name="exitTime" Type="time" Precision="7" />
+    <Property Name="arriveTime" Type="time" Precision="7" />
+    <Property Name="date" Type="date" />
+  </EntityType>
+  <EntityType Name="temporaryTraveller">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date" Type="date" />
+    <Property Name="travelId" Type="int" />
+    <Property Name="travellerId" Type="int" />
+    <Property Name="collectionPoint" Type="nvarchar" MaxLength="50" />
+    <Property Name="destinationPoint" Type="nvarchar" MaxLength="50" />
+    <Property Name="isRegular" Type="bit" />
+  </EntityType>
+  <EntityType Name="travellerInRegularTravel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="regularTravelingId" Type="int" />
+    <Property Name="travelerId" Type="int" />
+    <Property Name="collectingPoint" Type="nvarchar" MaxLength="50" />
+    <Property Name="destinationPoint" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="20" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="20" />
+    <Property Name="userName" Type="nvarchar" MaxLength="20" />
+    <Property Name="password" Type="nvarchar" MaxLength="20" />
+    <Property Name="tel" Type="nvarchar" MaxLength="20" />
+    <Property Name="mail" Type="nvarchar" MaxLength="30" />
+    <Property Name="genderId" Type="int" />
+    <Property Name="points" Type="int" />
+    <Property Name="isHasCar" Type="bit" />
+  </EntityType>
+  <Association Name="FK_car_user">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="car" Type="Self.car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="car">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_regularTraveling_user">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="regularTraveling" Type="Self.regularTraveling" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="regularTraveling">
+        <PropertyRef Name="driverId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_temporaryTraveling_user">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="temporaryTraveling" Type="Self.temporaryTraveling" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="temporaryTraveling">
+        <PropertyRef Name="driverId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_temporaryTraveller_user">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="temporaryTraveller" Type="Self.temporaryTraveller" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="temporaryTraveller">
+        <PropertyRef Name="travellerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_travellerInRegularTravel_regularTraveling">
+    <End Role="regularTraveling" Type="Self.regularTraveling" Multiplicity="0..1" />
+    <End Role="travellerInRegularTravel" Type="Self.travellerInRegularTravel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="regularTraveling">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="travellerInRegularTravel">
+        <PropertyRef Name="regularTravelingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_travellerInRegularTravel_user">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="travellerInRegularTravel" Type="Self.travellerInRegularTravel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="travellerInRegularTravel">
+        <PropertyRef Name="travelerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_gender">
+    <End Role="gender" Type="Self.gender" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gender">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="genderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="car_projectModelStoreContainer">
+    <EntitySet Name="car" EntityType="Self.car" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gender" EntityType="Self.gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="regularTraveling" EntityType="Self.regularTraveling" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="temporaryTraveling" EntityType="Self.temporaryTraveling" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="temporaryTraveller" EntityType="Self.temporaryTraveller" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="travellerInRegularTravel" EntityType="Self.travellerInRegularTravel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_car_user" Association="Self.FK_car_user">
+      <End Role="user" EntitySet="user" />
+      <End Role="car" EntitySet="car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_regularTraveling_user" Association="Self.FK_regularTraveling_user">
+      <End Role="user" EntitySet="user" />
+      <End Role="regularTraveling" EntitySet="regularTraveling" />
+    </AssociationSet>
+    <AssociationSet Name="FK_temporaryTraveling_user" Association="Self.FK_temporaryTraveling_user">
+      <End Role="user" EntitySet="user" />
+      <End Role="temporaryTraveling" EntitySet="temporaryTraveling" />
+    </AssociationSet>
+    <AssociationSet Name="FK_temporaryTraveller_user" Association="Self.FK_temporaryTraveller_user">
+      <End Role="user" EntitySet="user" />
+      <End Role="temporaryTraveller" EntitySet="temporaryTraveller" />
+    </AssociationSet>
+    <AssociationSet Name="FK_travellerInRegularTravel_regularTraveling" Association="Self.FK_travellerInRegularTravel_regularTraveling">
+      <End Role="regularTraveling" EntitySet="regularTraveling" />
+      <End Role="travellerInRegularTravel" EntitySet="travellerInRegularTravel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_travellerInRegularTravel_user" Association="Self.FK_travellerInRegularTravel_user">
+      <End Role="user" EntitySet="user" />
+      <End Role="travellerInRegularTravel" EntitySet="travellerInRegularTravel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_gender" Association="Self.FK_user_gender">
+      <End Role="gender" EntitySet="gender" />
+      <End Role="user" EntitySet="user" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="car_projectModelStoreContainer" CdmEntityContainer="car_projectEntities">
+    <EntitySetMapping Name="car">
+      <EntityTypeMapping TypeName="car_projectModel.car">
+        <MappingFragment StoreEntitySet="car">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="numOfSeats" ColumnName="numOfSeats" />
+          <ScalarProperty Name="carNumber" ColumnName="carNumber" />
+          <ScalarProperty Name="numOfAvailableSeats" ColumnName="numOfAvailableSeats" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gender">
+      <EntityTypeMapping TypeName="car_projectModel.gender">
+        <MappingFragment StoreEntitySet="gender">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="regularTraveling">
+      <EntityTypeMapping TypeName="car_projectModel.regularTraveling">
+        <MappingFragment StoreEntitySet="regularTraveling">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="driverId" ColumnName="driverId" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="destination" ColumnName="destination" />
+          <ScalarProperty Name="exitTime" ColumnName="exitTime" />
+          <ScalarProperty Name="arriveTime" ColumnName="arriveTime" />
+          <ScalarProperty Name="day" ColumnName="day" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="car_projectModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temporaryTraveling">
+      <EntityTypeMapping TypeName="car_projectModel.temporaryTraveling">
+        <MappingFragment StoreEntitySet="temporaryTraveling">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="driverId" ColumnName="driverId" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="destination" ColumnName="destination" />
+          <ScalarProperty Name="exitTime" ColumnName="exitTime" />
+          <ScalarProperty Name="arriveTime" ColumnName="arriveTime" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temporaryTraveller">
+      <EntityTypeMapping TypeName="car_projectModel.temporaryTraveller">
+        <MappingFragment StoreEntitySet="temporaryTraveller">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="travelId" ColumnName="travelId" />
+          <ScalarProperty Name="travellerId" ColumnName="travellerId" />
+          <ScalarProperty Name="collectionPoint" ColumnName="collectionPoint" />
+          <ScalarProperty Name="destinationPoint" ColumnName="destinationPoint" />
+          <ScalarProperty Name="isRegular" ColumnName="isRegular" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="travellerInRegularTravel">
+      <EntityTypeMapping TypeName="car_projectModel.travellerInRegularTravel">
+        <MappingFragment StoreEntitySet="travellerInRegularTravel">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="regularTravelingId" ColumnName="regularTravelingId" />
+          <ScalarProperty Name="travelerId" ColumnName="travelerId" />
+          <ScalarProperty Name="collectingPoint" ColumnName="collectingPoint" />
+          <ScalarProperty Name="destinationPoint" ColumnName="destinationPoint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user">
+      <EntityTypeMapping TypeName="car_projectModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="genderId" ColumnName="genderId" />
+          <ScalarProperty Name="points" ColumnName="points" />
+          <ScalarProperty Name="isHasCar" ColumnName="isHasCar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="car_projectModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="car_projectModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="car_projectModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="car_projectModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="car_projectModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="car_projectModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="car_projectModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="car_projectModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="car_projectModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="joinRequests">
+      <EntityTypeMapping TypeName="car_projectModel.joinRequests">
+        <MappingFragment StoreEntitySet="joinRequests">
+          <ScalarProperty Name="temporaryTravelId" ColumnName="temporaryTravelId" />
+          <ScalarProperty Name="regularTravelId" ColumnName="regularTravelId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="messages">
+      <EntityTypeMapping TypeName="car_projectModel.messages">
+        <MappingFragment StoreEntitySet="messages">
+          <ScalarProperty Name="isRead" ColumnName="isRead" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
