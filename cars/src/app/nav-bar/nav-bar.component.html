@@ -1,12 +1,23 @@
-<nav class="navbar navbar-dark navbar-expand-md" id="app-navbar">
-        <div class="container-fluid"><a class="navbar-brand" href="#"><i class="fa fa-life-ring" id="brand-logo"></i></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Contact</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Services</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Book now</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+
+    <mat-toolbar id="app-navbar">
+        <mat-grid-list cols="13" style="width: 100%;">
+          <mat-grid-tile colspan="2" id="logo" style="background-color: white;"> <a [routerLink]="'about'"><img src="./../../assets/img/logo.png"
+              style="width:33%;height:44%;z-index: 100;" /></a>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="3" > 
+            </mat-grid-tile>         
+   
+          <mat-grid-tile colspan="2">    
+            <a  class="txtNavbar" [routerLink]="'messages'">הודעות </a>
+          </mat-grid-tile>      
+          <mat-grid-tile colspan="2">    
+            <a  class="txtNavbar" [routerLink]="'tableForDriver'">נסיעות שלי(נוסע) </a>
+          </mat-grid-tile>      
+          <mat-grid-tile colspan="2">    
+            <a  class="txtNavbar" [routerLink]="'tableForDriver'">נסיעות שלי(נהג) </a>
+          </mat-grid-tile> 
+          <mat-grid-tile colspan="2">    
+            <a  class="txtNavbar" [routerLink]="'register'">פרופיל שלי </a>
+          </mat-grid-tile>         
+        </mat-grid-list>
+      </mat-toolbar>

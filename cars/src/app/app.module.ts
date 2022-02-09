@@ -23,6 +23,12 @@ import { TableForDriverComponent } from './table-for-driver/table-for-driver.com
 import { MessagesComponent } from './messages/messages.component'
 import {MatDialogModule} from '@angular/material/dialog';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { MainComponent } from './main/main.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import{ MatGridListModule } from '@angular/material/grid-list';
+import { AboutComponent } from './about/about.component';
+
+
 
 @NgModule({
   declarations: [
@@ -37,7 +43,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     PrivateAreaComponent,
     TableForDriverComponent,
     MessagesComponent,
-    NavBarComponent
+    NavBarComponent,
+    MainComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +59,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     ReactiveFormsModule,
     MatTableModule,
     MatDialogModule,
+    MatToolbarModule,
+    MatGridListModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { User } from './models/user.model';
 import { Car } from './models/car';
+import { Message } from './models/message';
 
 
 @Injectable({
@@ -38,10 +39,22 @@ export class UserManagmentServiceService {
   register(user: User) {
     return this.http.post<boolean>(this.url + "/Register", user);
   }
+
   updateUser(user: User) {
     return this.http.post<User>(this.url + "/UpdateUser", user);
   }
+
   addCar(car: Car) {
     return this.http.post<boolean>(this.url + "/AddCar", car);
   }
+
+  getMessages(id:string){
+    const params = new HttpParams({
+      fromObject: {
+        userId: id
+      }
+    });
+    return this.http.get<Message []>(this.url+"/GetMessages", { params: params });
+  }
+
 }

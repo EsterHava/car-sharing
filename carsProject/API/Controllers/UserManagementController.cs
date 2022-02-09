@@ -45,11 +45,18 @@ namespace API.Controllers
         {
             return UserManagement.UpdateUser(user);
         }
+
         [HttpPost]
         [Route("api/UserManagement/AddCar")]
         public bool AddCar([FromBody]CarDTO car)
         {
             return CarManagement.AddCar(car);
+        }
+
+        [HttpGet]
+        [Route("api/UserManagement/GetMessages")]
+        public IEnumerable<MessagesDTO> GetMessages(string userId) {
+            return MessagesManagement.GetMessages(userId);
         }
         // GET: api/UserManagement
         public IEnumerable<string> Get()

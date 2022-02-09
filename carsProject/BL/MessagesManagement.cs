@@ -9,6 +9,9 @@ namespace BL
 {
     public class MessagesManagement
     {
+        public static IEnumerable<MessagesDTO> GetMessages(string userId) {
+           return MessageBL.GetMessagesByUserId(int.Parse(userId));
+        }
 
     }
 }

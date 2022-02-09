@@ -9,20 +9,42 @@ import { UpdateTravelComponent } from './update-travel/update-travel.component';
 import { PrivateAreaComponent } from './private-area/private-area.component';
 import { TableForDriverComponent } from './table-for-driver/table-for-driver.component';
 import { MessagesComponent } from './messages/messages.component';
+import { MainComponent } from './main/main.component';
+import { AuthGuard } from './AuthGuard';
+import { AboutComponent } from './about/about.component';
 
-const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+// const routes: Routes = [
+//   { path: '', redirectTo: '/login', pathMatch: 'full' },
+//   { path: 'register', component: RegisterComponent },
+//   { path: 'login', component: LoginComponent },
+//   { path: 'home', component: HomeComponent },
+//   { path: 'forgotPassword', component: ForgotPasswordComponent },
+//   { path: 'addTravel/:driverId', component: AddTravelComponent },
+//   //{ path: 'travelForDriver/:driverId', component: TravelForDriverComponent },
+//   { path: 'updateTravel', component: UpdateTravelComponent },
+//   { path: 'privateArea/:userId', component: PrivateAreaComponent },
+//   { path: 'tableForDriver', component: TableForDriverComponent },
+//   { path: 'messages/:userId', component: MessagesComponent }
+// ];
+
+const routes: Routes = [{ path: 'login', component: LoginComponent }, 
+ { path: '', component: LoginComponent}, 
+ { path: 'main', component: MainComponent,   
+      children: [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
+  { path: '', component: AboutComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'forgotPassword', component: ForgotPasswordComponent },
   { path: 'addTravel/:driverId', component: AddTravelComponent },
   //{ path: 'travelForDriver/:driverId', component: TravelForDriverComponent },
   { path: 'updateTravel', component: UpdateTravelComponent },
-  { path: 'privateArea/:userId', component: PrivateAreaComponent },
+  { path: 'privateArea', component: PrivateAreaComponent },
   { path: 'tableForDriver', component: TableForDriverComponent },
-  { path: 'messages/:userId', component: MessagesComponent }
-];
+  { path: 'messages', component: MessagesComponent }
+      ], canActivate: [AuthGuard]
+    }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

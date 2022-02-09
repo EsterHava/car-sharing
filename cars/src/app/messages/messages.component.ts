@@ -3,6 +3,7 @@ import { JoinRequest } from '../models/joinRequest.model';
 import { ActivatedRoute } from '@angular/router';
 import { JoinManagmentService } from '../join-managment.service';
 import { UserManagmentServiceService } from '../user-managment-service.service';
+import { Message } from '../models/message';
 
 @Component({
   selector: 'app-messages',
@@ -12,7 +13,7 @@ import { UserManagmentServiceService } from '../user-managment-service.service';
 export class MessagesComponent implements OnInit {
 
   requestsList: JoinRequest[];
-
+  messagesList : Message[] = [];
   driverId: any;
 
   constructor(private route: ActivatedRoute,
@@ -20,9 +21,19 @@ export class MessagesComponent implements OnInit {
     private httpUser: UserManagmentServiceService) { }
 
   ngOnInit(): void {
-    
+    this.getMessages();
     //this.getRequestsByDriverId();
 
+  }
+
+
+  getMessages(){
+    const userId = localStorage.getItem('UserToken');
+    this.httpUser.getMessages(userId ? userId:'').subscribe(messages => {
+      console.log('messages :',messages);
+      this.messagesList = messages;
+  
+  });
   }
  
 //   getRequestsByDriverId() {

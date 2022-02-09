@@ -28,10 +28,15 @@ export class LoginComponent implements OnInit {
     this.http.login(this.user).subscribe(u => { console.log("***"), this.user = u , this.checkNull() });
   }
   checkNull() {
+    debugger
     if (this.user != null) {
       this.textErorr = "";
       console.log(this.textErorr);
-      this.router.navigateByUrl('privateArea/'+this.user.id);
+      this.router.navigateByUrl('main');
+      localStorage.setItem('UserToken',this.user.id.toString());
+      localStorage.setItem('Profil',this.user.isHasCar.toString());
+
+
       //console.log(this.user);
     }
     else {
