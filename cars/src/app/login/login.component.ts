@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
    
 
   ngOnInit(): void {
-   
+    localStorage.clear();
   }
 
   login(userName: string, password: string) {
@@ -36,8 +36,6 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('UserToken',this.user.id.toString());
       localStorage.setItem('Profil',this.user.isHasCar.toString());
 
-
-      //console.log(this.user);
     }
     else {
       this.textErorr = "שם המשתמש או הסיסמא אינם תקינים";

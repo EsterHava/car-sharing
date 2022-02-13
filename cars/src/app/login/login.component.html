@@ -55,17 +55,18 @@
 
 
 <div class="bodyLogin">
-        <div class="loginBox"> <img class="user" src="../../assets/img/logo.png" height="100px" width="100px">
-           
-            <form action="login.php" method="post">
-                <div class="inputBox">
-                  <input id="uname" type="text" name="Username" placeholder="שם משתמש" #userName>
-                  <input id="pass" type="password" name="Password" placeholder="סיסמה" #password>
-                </div>
-                  <input type="submit" name="" value="כניסה" (click)="login(userName.value,password.value)">
-            </form> <a href="#">שכחתי סיסמה<br> </a>
-            <div class="text-center">
-                <p style="color: #59238F;">הרשמה</p>
-            </div>
-        </div>
+  <div class="loginBox"> <img class="user" src="../../assets/img/logo.png" height="100px" width="100px">
+
+    <form action="login.php" method="post">
+      <div class="inputBox">
+        <input id="uname" type="text" name="Username" placeholder="שם משתמש" #userName>
+        <input id="pass" type="password" name="Password" placeholder="סיסמה" #password>
       </div>
+      <input type="submit" name="" value="כניסה" (click)="login(userName.value,password.value)">
+    </form>
+    <div>
+      <a routerLink="/main/forgotPassword">שכחתי סיסמה<br /> </a>
+      <a style="color: #59238F;" routerLink="/register"> הרשמה<br /> </a>
+    </div>
+  </div>
+</div>

@@ -28,10 +28,10 @@ import { AboutComponent } from './about/about.component';
 // ];
 
 const routes: Routes = [{ path: 'login', component: LoginComponent }, 
- { path: '', component: LoginComponent}, 
+ { path: '', component: LoginComponent},   
+ { path: 'register', component: RegisterComponent },
  { path: 'main', component: MainComponent,   
       children: [
-  { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: '', component: AboutComponent },
