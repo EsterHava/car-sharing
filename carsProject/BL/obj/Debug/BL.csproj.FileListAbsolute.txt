@@ -54,3 +54,17 @@ D:\users\user1\Documents\carSharing\carsProject\BL\obj\Debug\BL.csproj.CoreCompi
 D:\users\user1\Documents\carSharing\carsProject\BL\obj\Debug\BL.csproj.CopyComplete
 D:\users\user1\Documents\carSharing\carsProject\BL\obj\Debug\BL.dll
 D:\users\user1\Documents\carSharing\carsProject\BL\obj\Debug\BL.pdb
+D:\usres\user1\3D Objects\car sharing\carsProject\BL\bin\Debug\BL.dll
+D:\usres\user1\3D Objects\car sharing\carsProject\BL\bin\Debug\BL.pdb
+D:\usres\user1\3D Objects\car sharing\carsProject\BL\bin\Debug\DAL.dll
+D:\usres\user1\3D Objects\car sharing\carsProject\BL\bin\Debug\DTO.dll
+D:\usres\user1\3D Objects\car sharing\carsProject\BL\bin\Debug\EntityFramework.dll
+D:\usres\user1\3D Objects\car sharing\carsProject\BL\bin\Debug\DAL.pdb
+D:\usres\user1\3D Objects\car sharing\carsProject\BL\bin\Debug\DAL.dll.config
+D:\usres\user1\3D Objects\car sharing\carsProject\BL\bin\Debug\DTO.pdb
+D:\usres\user1\3D Objects\car sharing\carsProject\BL\bin\Debug\EntityFramework.xml
+D:\usres\user1\3D Objects\car sharing\carsProject\BL\obj\Debug\BL.csprojAssemblyReference.cache
+D:\usres\user1\3D Objects\car sharing\carsProject\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+D:\usres\user1\3D Objects\car sharing\carsProject\BL\obj\Debug\BL.csproj.CopyComplete
+D:\usres\user1\3D Objects\car sharing\carsProject\BL\obj\Debug\BL.dll
+D:\usres\user1\3D Objects\car sharing\carsProject\BL\obj\Debug\BL.pdb

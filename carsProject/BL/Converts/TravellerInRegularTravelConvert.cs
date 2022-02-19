@@ -18,6 +18,7 @@ namespace BL.Converts
             travellerInRegularTravelDTO.travelerId = travellerInRegularTravel.travelerId;
             travellerInRegularTravelDTO.collectingPoint = travellerInRegularTravel.collectingPoint;
             travellerInRegularTravelDTO.destinationPoint = travellerInRegularTravel.destinationPoint;
+            travellerInRegularTravelDTO.regularTraveling = RegularTravelingConvert.ConvertToRegularTravelingDTO(travellerInRegularTravel.regularTraveling);
             return travellerInRegularTravelDTO;
         }
         public static travellerInRegularTravel ConvertToTravellerInRegularTravel(TravellerInRegularTravelDTO travellerInRegularTravelDTO)

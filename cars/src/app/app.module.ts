@@ -27,6 +27,7 @@ import { MainComponent } from './main/main.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import{ MatGridListModule } from '@angular/material/grid-list';
 import { AboutComponent } from './about/about.component';
+import { TableForTravelerComponent } from './table-for-traveler/table-for-traveler.component';
 
 
 
@@ -45,7 +46,8 @@ import { AboutComponent } from './about/about.component';
     MessagesComponent,
     NavBarComponent,
     MainComponent,
-    AboutComponent
+    AboutComponent,
+    TableForTravelerComponent
   ],
   imports: [
     BrowserModule,

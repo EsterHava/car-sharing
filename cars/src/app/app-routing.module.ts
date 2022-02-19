@@ -12,6 +12,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { MainComponent } from './main/main.component';
 import { AuthGuard } from './AuthGuard';
 import { AboutComponent } from './about/about.component';
+import { TableForTravelerComponent } from './table-for-traveler/table-for-traveler.component';
 
 // const routes: Routes = [
 //   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -38,11 +39,13 @@ const routes: Routes = [{ path: 'login', component: LoginComponent },
   { path: 'about', component: AboutComponent },
   { path: 'forgotPassword', component: ForgotPasswordComponent },
   { path: 'addTravel/:driverId', component: AddTravelComponent },
+  {path:'tableForTraveller',component:TableForTravelerComponent},
   //{ path: 'travelForDriver/:driverId', component: TravelForDriverComponent },
   { path: 'updateTravel', component: UpdateTravelComponent },
   { path: 'privateArea', component: PrivateAreaComponent },
   { path: 'tableForDriver', component: TableForDriverComponent },
-  { path: 'messages', component: MessagesComponent }
+  { path: 'messages', component: MessagesComponent },
+  { path: 'register', component: RegisterComponent }
       ], canActivate: [AuthGuard]
     }];
 

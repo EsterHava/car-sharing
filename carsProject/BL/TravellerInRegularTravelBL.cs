@@ -19,5 +19,15 @@ namespace BL
             }
 
         }
+        public static IEnumerable<TravellerInRegularTravelDTO> GetTravellerTravelingsByTraveller(int travellerId)
+        {
+            var list = TravellerInRegularTravelDal.GetTravellerInRegularTravels();
+            foreach (var item in list)
+            {
+                if (item.travelerId == travellerId)
+                    yield return Converts.TravellerInRegularTravelConvert.ConvertToTravellerInRegularTravelDTO(item);
+            }
+            
+        }
     }
 }

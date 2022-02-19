@@ -12,9 +12,15 @@ export class LoginComponent implements OnInit {
   
   user: User;
   textErorr: string;
+  showTab = 1;
+
 
   constructor(private http: UserManagmentServiceService,private router: Router){ }
    
+
+  tabToggle(index:number){
+    this.showTab =index;
+  }
 
   ngOnInit(): void {
     localStorage.clear();

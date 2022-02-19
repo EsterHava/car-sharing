@@ -40,3 +40,17 @@ D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\obj\Debug\DAL.csproj.CoreCo
 D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\obj\Debug\DAL.dll
 D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\obj\Debug\DAL.pdb
+D:\usres\user1\3D Objects\car sharing\carsProject\DAL\bin\Debug\DAL.dll.config
+D:\usres\user1\3D Objects\car sharing\carsProject\DAL\bin\Debug\DAL.dll
+D:\usres\user1\3D Objects\car sharing\carsProject\DAL\bin\Debug\DAL.pdb
+D:\usres\user1\3D Objects\car sharing\carsProject\DAL\bin\Debug\DTO.dll
+D:\usres\user1\3D Objects\car sharing\carsProject\DAL\bin\Debug\EntityFramework.dll
+D:\usres\user1\3D Objects\car sharing\carsProject\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\usres\user1\3D Objects\car sharing\carsProject\DAL\bin\Debug\DTO.pdb
+D:\usres\user1\3D Objects\car sharing\carsProject\DAL\bin\Debug\EntityFramework.xml
+D:\usres\user1\3D Objects\car sharing\carsProject\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\usres\user1\3D Objects\car sharing\carsProject\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\usres\user1\3D Objects\car sharing\carsProject\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\usres\user1\3D Objects\car sharing\carsProject\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\usres\user1\3D Objects\car sharing\carsProject\DAL\obj\Debug\DAL.dll
+D:\usres\user1\3D Objects\car sharing\carsProject\DAL\obj\Debug\DAL.pdb

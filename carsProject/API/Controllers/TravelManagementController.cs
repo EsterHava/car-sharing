@@ -81,7 +81,12 @@ namespace API.Controllers
         {
             return TravelManagement.UpdateTemporaryTravel(travel);
         }
-
+        [HttpGet]
+        [Route("api/TravelManagement/GetTravelerTravelings/{travelerId}")]
+        public IEnumerable<TravellerInRegularTravelDTO> GetTravellerTravelingsByTraveller(string travelerId)
+        {
+            return TravellerInRegularTravelBL.GetTravellerTravelingsByTraveller(int.Parse(travelerId));
+        }
         // GET: api/TravelManagement
         public IEnumerable<string> Get()
         {

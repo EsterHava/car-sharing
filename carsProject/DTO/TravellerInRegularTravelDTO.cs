@@ -13,5 +13,8 @@ namespace DTO
         public Nullable<int> travelerId { get; set; }
         public string collectingPoint { get; set; }
         public string destinationPoint { get; set; }
+
+        public RegularTravelingDTO regularTraveling;
+
     }
 }

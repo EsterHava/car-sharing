@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { RegularTravel } from './models/regularTravel.model';
 import { TemporaryTravel } from './models/temporaryTravel.model';
+import { TravelerTraveling } from './models/travelerTraveling';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,13 @@ export class TravelManagementService {
 
   getTemporaryTravel() {
     return this.http.get<TemporaryTravel[]>(this.url + "/GetTemporaryTravel");
+  }
+
+  getTravelingForTraveller() {
+    debugger
+    const userId=localStorage.getItem('UserToken');
+ 
+    return this.http.get<TravelerTraveling[]>(`${this.url}/GetTravelerTravelings/${localStorage.getItem('UserToken')}`);
   }
 
   getRegularTravelByDriver(id: string) {

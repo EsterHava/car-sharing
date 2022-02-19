@@ -579,6 +579,16 @@ box-shadow: 0 0 1px #c41970, 0 0 3px #c41970, 0 0 1px #c41970, 0 1px 0 black
 .loginBox input[type="password"]:focus {
   border-bottom: 2px solid #f43d45
 }
+.loginBox input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  font-size: 16px;
+  background: #570391;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer
+}
 
 .inputBox {
   position: relative
@@ -590,16 +600,6 @@ box-shadow: 0 0 1px #c41970, 0 0 3px #c41970, 0 0 1px #c41970, 0 1px 0 black
   color: #262626
 }
 
-.loginBox input[type="submit"] {
-  border: none;
-  outline: none;
-  height: 40px;
-  font-size: 16px;
-  background: #570391;
-  color: #fff;
-  border-radius: 20px;
-  cursor: pointer
-}
 
 .loginBox a {
   color: #262626;

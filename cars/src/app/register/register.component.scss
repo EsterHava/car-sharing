@@ -7,6 +7,16 @@
     float: right;
 
   }
+  .loginBox input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    background: #570391;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer
+  }
   
   .example-full-width {
     width: 100%;

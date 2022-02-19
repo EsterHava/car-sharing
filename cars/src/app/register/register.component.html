@@ -1,5 +1,5 @@
 <form class="example-form">
-  <p>register</p>
+ 
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>שם פרטי</mat-label>
     <input matInput placeholder="Israel" [(ngModel)]="user.firstName" name="first" required>
@@ -48,12 +48,25 @@
   </mat-form-field> -->
 
   <!-- <mat-form-field class="example-full-width" appearance="fill"> -->
-  <mat-label>מין</mat-label><br />
+    <div style="text-align: right;">
+  <!-- <mat-label>מין</mat-label><br />
   <select [(ngModel)]="user.genderId" name="genderId">
     <option value="1">זכר</option>
     <option value="2">נקבה</option>
-  </select>
+  </select> -->
   <!-- </mat-form-field> -->
+
+
+  
+  <mat-form-field class="demo-full-width" appearance="fill">
+    <mat-label>מין</mat-label>
+    <select matNativeControl [(ngModel)]="user.genderId">
+      <option value=""></option>
+      <option value="1" selected>זכר</option>
+      <option value="2"> נקבה</option>
+    </select>
+  </mat-form-field>
+  
   <br />
   <mat-label>האם בבעלותך רכב?</mat-label><br />
 
@@ -62,7 +75,7 @@
     <option value="True">כן</option>
     <option value="False">לא</option>
   </select>
-  
+</div>
   <div *ngIf="user.isHasCar">
   <!-- {{this.user.isHasCar}} -->
   <mat-form-field class="example-full-width" appearance="fill">
@@ -85,6 +98,8 @@
   <!-- <p>{{textErorr}}</p> -->
   <p>{{textError}}</p>
   <!-- <input type="submit" /> -->
-  <button (click)="registerDetails(password2.value)">אישור</button>
-  <button routerLink="/login">יש לך כבר חשבון?</button>
+  <div class="loginBox">
+  <input type="submit" name="" value="אישור" (click)="registerDetails(password2.value)">
+</div>
+  <!-- <button (click)="registerDetails(password2.value)">אישור</button> -->
 </form>
