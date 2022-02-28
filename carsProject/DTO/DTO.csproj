@@ -46,6 +46,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="GenderDTO.cs" />
     <Compile Include="JoinRequestDTO.cs" />
+    <Compile Include="Location.cs" />
     <Compile Include="MessagesDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegularTravelingDTO.cs" />

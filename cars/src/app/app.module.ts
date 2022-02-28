@@ -28,6 +28,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import{ MatGridListModule } from '@angular/material/grid-list';
 import { AboutComponent } from './about/about.component';
 import { TableForTravelerComponent } from './table-for-traveler/table-for-traveler.component';
+import { AddRequestComponent } from './add-request/add-request.component';
 
 
 
@@ -47,7 +48,8 @@ import { TableForTravelerComponent } from './table-for-traveler/table-for-travel
     NavBarComponent,
     MainComponent,
     AboutComponent,
-    TableForTravelerComponent
+    TableForTravelerComponent,
+    AddRequestComponent
   ],
   imports: [
     BrowserModule,

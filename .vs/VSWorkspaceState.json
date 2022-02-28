@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\carsProject",
+    "\\carsProject\\API",
+    "\\carsProject\\API\\Controllers",
+    "\\carsProject\\BL",
+    "\\carsProject\\BL\\Converts",
+    "\\carsProject\\DAL",
+    "\\carsProject\\DTO"
+  ],
+  "SelectedNode": "\\carsProject\\DAL\\RegularTravelingDal.cs",
+  "PreviewInSolutionExplorer": false
+}

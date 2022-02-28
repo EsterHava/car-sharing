@@ -16,6 +16,7 @@ import { UpdateTravelComponent } from '../update-travel/update-travel.component'
   templateUrl: './table-for-driver.component.html',
   styleUrls: ['./table-for-driver.component.scss']
 })
+
 export class TableForDriverComponent implements OnInit {
 
   @Input() status: string;

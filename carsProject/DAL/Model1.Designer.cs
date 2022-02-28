@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\users\user1\Documents\GitHub\Cars\carsProject\DAL\Model1.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\usres\user1\3D Objects\car sharing\carsProject\DAL\Model1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

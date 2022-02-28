@@ -45,6 +45,7 @@ namespace BL
             UserDTO u = UserBL.GetUserById(id);
             return u.firstName + " " + u.lastName;
         }
+
         public static bool SendEmail(int userId)
         {
             UserDTO user = UserBL.GetUserById(userId);

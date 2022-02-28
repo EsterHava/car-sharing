@@ -32,7 +32,10 @@ namespace BL
             }
             return true;
         }
-
+        public static List<RegularTravelingDTO> SearchTravels(JoinRequestDTO joinRequest)
+        {
+            return null;
+        }
         public static bool SendEmail(int driverId)
         {
             UserDTO driver = UserBL.GetUserById(driverId);

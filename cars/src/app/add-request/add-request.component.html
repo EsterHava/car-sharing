@@ -1,0 +1,57 @@
+<button class="close" mat-button (click)="onNoClick()">X</button>
+
+<form class="example-form" style="direction: rtl;">
+    <mat-form-field style="direction: rtl;" class="example-full-width" appearance="fill">
+        <mat-label style="direction: rtl;">כתובת יציאה</mat-label>
+        <input style="direction: rtl;" matInput placeholder="רחוב יהושע בני ברק" [formControl]="sourceAddress">
+    </mat-form-field>
+<p></p>
+<mat-form-field style="direction: rtl;" class="example-full-width" appearance="fill">
+    <mat-label style="direction: rtl;"> טווח ק"מ מהמקור</mat-label>
+    <input style="direction: rtl;" matInput placeholder="רחוב יהושע בני ברק" [formControl]="sourceRange">
+</mat-form-field>
+<p></p>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>כתובת יעד</mat-label>
+        <input matInput placeholder="רחוב פרדו בני ברק" [formControl]="destinationAddress">
+    </mat-form-field>
+<p></p>
+<mat-form-field style="direction: rtl;" class="example-full-width" appearance="fill">
+    <mat-label style="direction: rtl;"> טווח ק"מ מהיעד</mat-label>
+    <input style="direction: rtl;" matInput placeholder="רחוב יהושע בני ברק" [formControl]="destinationRange">
+</mat-form-field>
+<p></p>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>שעת יציאה</mat-label>
+        <input matInput placeholder="20:00" type="time" [formControl]="timeExit">
+    </mat-form-field>
+<p></p>
+<mat-form-field style="direction: rtl;" class="example-full-width" appearance="fill">
+    <mat-label style="direction: rtl;"> טווח דקות מהיציאה</mat-label>
+    <input style="direction: rtl;" matInput placeholder="רחוב יהושע בני ברק" [formControl]="exitTimeRange">
+</mat-form-field>
+<p></p>
+   
+  
+    <ng-template >
+        <mat-form-field appearance="fill">
+            <mat-label>בחר יום</mat-label>
+            <mat-select [formControl]="days" multiple>
+                <mat-select-trigger>
+                    {{days.value ? days.value[0] : ''}}
+                    <span *ngIf="days.value?.length > 1" class="example-additional-selection">
+                        (+{{days.value.length - 1}} {{days.value?.length === 2 ? 'other' : 'others'}})
+                    </span>
+                </mat-select-trigger>
+                <mat-option *ngFor="let day of daysList" [value]="day.key">{{day.value}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </ng-template> -->
+
+   
+    <br/>
+    <!-- <button class="btn" (click)="addTravel(source.value,destination.value,exitTime.value,arriveTime.value)">הוסף נסיעה</button> -->
+     <button class="btn" (click)="searchTravels()">חפש</button>
+
+    <button class="btn"  (click)="onNoClick()">ביטול</button>
+</form>

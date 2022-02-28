@@ -33,16 +33,10 @@
     <NavigationProperty Name="user" Relationship="Self.FK_regularTraveling_user" FromRole="regularTraveling" ToRole="user" />
     <NavigationProperty Name="travellerInRegularTravel" Relationship="Self.FK_travellerInRegularTravel_regularTraveling" FromRole="regularTraveling" ToRole="travellerInRegularTravel" />
     <NavigationProperty Name="joinRequests" Relationship="car_projectModel.FK_joinRequests_regularTraveling1" FromRole="regularTraveling" ToRole="joinRequests" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="latSourcr" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="longSource" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="latDestination" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="longDestination" Type="Decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="temporaryTraveling">
     <Key>
@@ -196,7 +190,6 @@
     <EntitySet Name="car" EntityType="Self.car" />
     <EntitySet Name="gender" EntityType="Self.gender" />
     <EntitySet Name="regularTraveling" EntityType="Self.regularTraveling" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="temporaryTraveling" EntityType="Self.temporaryTraveling" />
     <EntitySet Name="temporaryTraveller" EntityType="Self.temporaryTraveller" />
     <EntitySet Name="travellerInRegularTravel" EntityType="Self.travellerInRegularTravel" />

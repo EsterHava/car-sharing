@@ -47,16 +47,10 @@
     <Property Name="exitTime" Type="time" Precision="7" />
     <Property Name="arriveTime" Type="time" Precision="7" />
     <Property Name="day" Type="int" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
+    <Property Name="latSourcr" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="longSource" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="latDestination" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="longDestination" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="temporaryTraveling">
     <Key>
@@ -107,7 +101,7 @@
     <Property Name="points" Type="int" />
     <Property Name="isHasCar" Type="bit" />
   </EntityType>
-  <Association Name="FK__messages__userId__160F4887">
+  <Association Name="FK__messages__userId__440B1D61">
     <End Role="user" Type="Self.user" Multiplicity="1" />
     <End Role="messages" Type="Self.messages" Multiplicity="*" />
     <ReferentialConstraint>
@@ -251,49 +245,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="car_projectModelStoreContainer">
     <EntitySet Name="car" EntityType="Self.car" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="gender" EntityType="Self.gender" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="joinRequests" EntityType="Self.joinRequests" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="messages" EntityType="Self.messages" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="regularTraveling" EntityType="Self.regularTraveling" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="temporaryTraveling" EntityType="Self.temporaryTraveling" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="temporaryTraveller" EntityType="Self.temporaryTraveller" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="travellerInRegularTravel" EntityType="Self.travellerInRegularTravel" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__messages__userId__160F4887" Association="Self.FK__messages__userId__160F4887">
+    <AssociationSet Name="FK__messages__userId__440B1D61" Association="Self.FK__messages__userId__440B1D61">
       <End Role="user" EntitySet="user" />
       <End Role="messages" EntitySet="messages" />
     </AssociationSet>

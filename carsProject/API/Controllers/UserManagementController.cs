@@ -21,7 +21,7 @@ namespace API.Controllers
 
         [HttpGet]
         [Route("api/UserManagement/GetUserNameById")]
-        public static string GetUserNameById(string id) {
+        public  string GetUserNameById(string id) {
             return UserManagement.GetUserNameById(int.Parse(id));
         }
 

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { JoinRequest } from './models/joinRequest.model';
+import { RegularTravel } from './models/regularTravel.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,13 @@ export class JoinManagmentService {
       }
     });
     return this.http.get<any[]>(this.url + "/getRequests", {params:params});
+  }
+
+  search(request: JoinRequest) {
+   debugger
+ 
+ 
+    return this.http.post(`${this.url}/search`,request);
   }
 
 }

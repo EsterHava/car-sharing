@@ -1,4 +1,6 @@
 <!-- הצגת נסיעות קבועות של הנוסע בטבלה -->
+<button style="margin-top: 5%;" class="btnPlus" (click)="openAddTravelDialog()">+</button>
+
 <div *ngIf="travelers.length>0" class="travelers" style="direction: rtl; ">
 
   
@@ -58,6 +60,7 @@
 <!-- אין נסיעות קיימות -->
 <div *ngIf="travelers.length==0">
    <p>אין נסיעות קיימות</p>
+   <p>נוסע</p>
 </div>
 
 

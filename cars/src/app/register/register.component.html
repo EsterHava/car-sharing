@@ -1,4 +1,4 @@
-<form class="example-form">
+<form class="example-form registerForm">
  
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>שם פרטי</mat-label>
@@ -56,15 +56,16 @@
   </select> -->
   <!-- </mat-form-field> -->
 
-
   
   <mat-form-field class="demo-full-width" appearance="fill">
-    <mat-label>מין</mat-label>
-    <select matNativeControl [(ngModel)]="user.genderId">
-      <option value=""></option>
-      <option value="1" selected>זכר</option>
-      <option value="2"> נקבה</option>
-    </select>
+    <mat-label>מין</mat-label>       
+       
+
+          <mat-select matNativeControl [(ngModel)]="user.genderId">
+      <mat-option value=""></mat-option>
+      <mat-option value="1" selected >זכר</mat-option>
+      <mat-option value="2"> נקבה</mat-option>
+    </mat-select>
   </mat-form-field>
   
   <br />

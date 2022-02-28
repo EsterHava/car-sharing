@@ -30,7 +30,6 @@ namespace DAL
         public virtual DbSet<car> car { get; set; }
         public virtual DbSet<gender> gender { get; set; }
         public virtual DbSet<regularTraveling> regularTraveling { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<temporaryTraveling> temporaryTraveling { get; set; }
         public virtual DbSet<temporaryTraveller> temporaryTraveller { get; set; }
         public virtual DbSet<travellerInRegularTravel> travellerInRegularTravel { get; set; }

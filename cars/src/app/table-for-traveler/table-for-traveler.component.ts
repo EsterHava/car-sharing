@@ -11,6 +11,7 @@ import { AddTravelComponent } from '../add-travel/add-travel.component';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateTravelComponent } from '../update-travel/update-travel.component';
 import { TravelerTraveling } from '../models/travelerTraveling';
+import { AddRequestComponent } from '../add-request/add-request.component';
 
 @Component({
   selector: 'app-table-for-traveler',
@@ -95,5 +96,12 @@ export class TableForTravelerComponent implements OnInit {
     }
   }
 
+  openAddTravelDialog() {
+    
+    const dialogRef = this.dialog.open(AddRequestComponent, {
+      width: '550px'
+    });
+   
+  }
 }
 
