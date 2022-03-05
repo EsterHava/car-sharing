@@ -21,10 +21,11 @@ namespace BL.Converts
             temporaryTravelingDTO.exitTime = regularTraveling.exitTime;
             temporaryTravelingDTO.arriveTime = regularTraveling.arriveTime;
             temporaryTravelingDTO.day = regularTraveling.day;
-            temporaryTravelingDTO.latDestination = Decimal.ToDouble(Convert.ToDecimal(regularTraveling.latDestination));
-            temporaryTravelingDTO.latSourcr = Decimal.ToDouble(Convert.ToDecimal(regularTraveling.latSourcr));
-            temporaryTravelingDTO.longDestination = Decimal.ToDouble(Convert.ToDecimal(regularTraveling.longDestination));
-            temporaryTravelingDTO.longSource = Decimal.ToDouble(Convert.ToDecimal(regularTraveling.longSource));
+            temporaryTravelingDTO.latDestination = regularTraveling.latDestination;
+            temporaryTravelingDTO.latSourcr = regularTraveling.latSource;
+            temporaryTravelingDTO.longDestination = regularTraveling.lngDestination;
+            temporaryTravelingDTO.longSource = regularTraveling.lngSource;
+            temporaryTravelingDTO.availableSeats = regularTraveling.availableSeats;
             return temporaryTravelingDTO;
         }
         public static regularTraveling ConvertToRegularTraveling(RegularTravelingDTO temporaryTravelingDTO)
@@ -37,11 +38,21 @@ namespace BL.Converts
             regularTraveling.exitTime = temporaryTravelingDTO.exitTime;
             regularTraveling.arriveTime = temporaryTravelingDTO.arriveTime;
             regularTraveling.day = temporaryTravelingDTO.day;
-            regularTraveling.latDestination = (decimal)temporaryTravelingDTO.latDestination;
-            regularTraveling.latSourcr = (decimal)temporaryTravelingDTO.latSourcr;
-            //regularTraveling.longDestination = (decimal)temporaryTravelingDTO.longDestination;
-            regularTraveling.longSource = (decimal)temporaryTravelingDTO.longSource;
+            regularTraveling.latDestination = temporaryTravelingDTO.latDestination;
+            regularTraveling.latSource = temporaryTravelingDTO.latSourcr;
+            regularTraveling.lngDestination = temporaryTravelingDTO.longDestination;
+            regularTraveling.lngSource = temporaryTravelingDTO.longSource;
+            regularTraveling.availableSeats = temporaryTravelingDTO.availableSeats;
+
             return regularTraveling;
+        }
+
+        //from dal List to DTO list
+        public static List<RegularTravelingDTO> ToDTOList(List<regularTraveling> dalList)
+        {
+            List<RegularTravelingDTO> dtoList = new List<RegularTravelingDTO>();
+            dalList.ForEach(o => dtoList.Add(ConvertToRegularTravelingDTO(o)));
+                return dtoList;
         }
     }
 }

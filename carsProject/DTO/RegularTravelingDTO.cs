@@ -20,5 +20,11 @@ namespace DTO
         public Nullable<System.TimeSpan> arriveTime { get; set; }
         public Nullable<int> day { get; set; }
 
+        public Nullable<double> longDestinationRequest { get; set; }
+        public Nullable<double> latDestinationRequest { get; set; }
+        public Nullable<double> longSourceRequest { get; set; }
+        public Nullable<double> latSourceRequest { get; set; }
+        public Nullable<int> availableSeats { get; set; }
+
     }
 }

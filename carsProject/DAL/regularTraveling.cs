@@ -17,8 +17,8 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public regularTraveling()
         {
-            this.travellerInRegularTravel = new HashSet<travellerInRegularTravel>();
             this.joinRequests = new HashSet<joinRequests>();
+            this.travellerInRegularTravel = new HashSet<travellerInRegularTravel>();
         }
     
         public int id { get; set; }
@@ -28,15 +28,16 @@ namespace DAL
         public Nullable<System.TimeSpan> exitTime { get; set; }
         public Nullable<System.TimeSpan> arriveTime { get; set; }
         public Nullable<int> day { get; set; }
-        public Nullable<decimal> latSourcr { get; set; }
-        public Nullable<decimal> longSource { get; set; }
-        public Nullable<decimal> latDestination { get; set; }
-        public Nullable<decimal> longDestination { get; set; }
+        public Nullable<double> lngSource { get; set; }
+        public Nullable<double> latSource { get; set; }
+        public Nullable<double> lngDestination { get; set; }
+        public Nullable<double> latDestination { get; set; }
+        public Nullable<int> availableSeats { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<joinRequests> joinRequests { get; set; }
         public virtual user user { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<travellerInRegularTravel> travellerInRegularTravel { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<joinRequests> joinRequests { get; set; }
     }
 }

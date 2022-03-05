@@ -27,15 +27,20 @@ export class RegisterComponent implements OnInit {
     this.car={} as Car
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { 
+    
+    if(localStorage.getItem('UserToken'))  {
+      const userId=localStorage.getItem('UserToken');
+      this.http.getUserByUserId(String(userId)).subscribe(res =>this.user=res)
+   }
+      }
 
  registerDetails (password: string) {
     if (this.checkPassword(password)) {
       this.http.register(this.user).subscribe(res =>{console.log(res)
         this.http.addCar(this.car).subscribe()
       if(Boolean(res)){
-        debugger
+        
          this.router.navigateByUrl('privateArea/'+this.user.id);
       }
     else{

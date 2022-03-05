@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { JoinManagmentService } from '../join-managment.service';
+import { MapComponent } from '../map/map.component';
 import { Days } from '../models/days.model';
 import { JoinRequest } from '../models/joinRequest.model';
+import { RegularTravel } from '../models/regularTravel.model';
 
 @Component({
   selector: 'app-add-request',
@@ -42,15 +44,20 @@ export class AddRequestComponent implements OnInit {
     sourceAddress = new FormControl('', [
       Validators.required,
     ]);
+        
+  travelR: RegularTravel[] = [];
+  displayedColumnsR: string[];
+  index: number;
+
     
-    
-    
-    
-  constructor(private http: JoinManagmentService,public dialogRef: MatDialogRef<AddRequestComponent>) { }
+  constructor(private http: JoinManagmentService,public dialogRef: MatDialogRef<AddRequestComponent>, private httpJoin: JoinManagmentService,
+    public dialog: MatDialog) { }
+
+  
 
 
   ngOnInit(): void {
-
+    this.displayedColumnsR = ['num', 'source', 'destination', 'exitTime', 'arriveTime', 'day','join','map'];
   }
 
   onNoClick(): void {
@@ -66,10 +73,37 @@ export class AddRequestComponent implements OnInit {
     this.searchRequest.destinationsRange = this.destinationRange.value;
     this.searchRequest.timeEixt = this.timeExit.value;
     this.searchRequest.timeRange = this.exitTimeRange.value;
-    this.http.search(this.searchRequest).subscribe(u => {
-    
-       });
+    this.searchRequest.dayList=this.days.value.toString();
+    this.http.search(this.searchRequest).subscribe(res => {
+      this.travelR=res;
+    });
 
   }
 
+  joinTravel(travel: any) {
+    var request: JoinRequest = {} as JoinRequest;
+    request.UserId = Number(localStorage.getItem('UserToken'));//יש לקבל את הזהות של הנוסע
+    request.date = new Date();
+    this.index = this.travelR.indexOf(travel);
+    request.regularTravelId = travel.id;
+    
+
+    if (confirm("האם אתה בטוח מעונין להצטרף לנסיעה מס'- " + (this.index + 1))) {
+
+      this.httpJoin.joinRequest(request).subscribe();
+    }
+  }
+
+  showMap(travel: any) {
+    const dialogRef = this.dialog.open(MapComponent, {
+      width: '700px',
+      data:travel 
+    });
+  }
+
+   
 }
+function mapComponent(mapComponent: any, arg1: { width: string; data: any; disableClose: true; }) {
+  throw new Error('Function not implemented.');
+}
+

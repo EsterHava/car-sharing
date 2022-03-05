@@ -23,14 +23,24 @@ export class UserManagmentServiceService {
     return this.http.get<User>(this.url + "/GetUserByUserName", { params: params })
   }
 
-  getUserNameById(id: string) {
-    debugger
+  getUserByUserId(id: string) {
     const params = new HttpParams({
       fromObject: {
         id: id,
       }
     });
-     return this.http.get<string>(this.url + "/GetUserNameById", { params: params });
+    return this.http.get<User>(this.url + "/GetUserByUserId", { params: params })
+  }
+
+  getUserNameById(id: string) {
+    
+    
+    const params = new HttpParams({
+      fromObject: {
+        id: id,
+      }
+    });
+     return this.http.get<User>(this.url + "/GetUserNameById", { params: params });
     //return this.http.get(`${this.url}/GetUserNameById?id=${id}`);
 
   }

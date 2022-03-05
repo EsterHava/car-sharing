@@ -2,7 +2,7 @@
  
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>שם פרטי</mat-label>
-    <input matInput placeholder="Israel" [(ngModel)]="user.firstName" name="first" required>
+    <input matInput placeholder="Israel" [(ngModel)]="user.firstName" name="first" required >
     <mat-error *ngIf="firstName.invalid">{{getErrorMessage()}}</mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width" appearance="fill">

@@ -18,12 +18,10 @@ namespace DAL
         public user()
         {
             this.car = new HashSet<car>();
-            this.regularTraveling = new HashSet<regularTraveling>();
-            this.temporaryTraveling = new HashSet<temporaryTraveling>();
-            this.temporaryTraveller = new HashSet<temporaryTraveller>();
-            this.travellerInRegularTravel = new HashSet<travellerInRegularTravel>();
             this.joinRequests = new HashSet<joinRequests>();
             this.messages = new HashSet<messages>();
+            this.regularTraveling = new HashSet<regularTraveling>();
+            this.travellerInRegularTravel = new HashSet<travellerInRegularTravel>();
         }
     
         public int id { get; set; }
@@ -41,16 +39,12 @@ namespace DAL
         public virtual ICollection<car> car { get; set; }
         public virtual gender gender { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<regularTraveling> regularTraveling { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<temporaryTraveling> temporaryTraveling { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<temporaryTraveller> temporaryTraveller { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<travellerInRegularTravel> travellerInRegularTravel { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<joinRequests> joinRequests { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<messages> messages { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<regularTraveling> regularTraveling { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<travellerInRegularTravel> travellerInRegularTravel { get; set; }
     }
 }

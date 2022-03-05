@@ -28,6 +28,17 @@ namespace BL
             return null;
         }
 
+        public static UserDTO GetUserByUserId(string id)
+        {
+            var list = UserDal.GetUsers();
+            foreach (var item in list)
+            {
+                if (item.id.ToString() == id)
+                    return Converts.UserConvert.ConvertToUserDTO(item);
+            }
+            return null;
+        }
+
         public static UserDTO GetUserById(int id)
         {
             var list = UserDal.GetUsers();

@@ -1,0 +1,39 @@
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map [latitude]="travel.latSourceRequest" [longitude]="travel.longSourceRequest" [zoom]=12 #gm>
+  <agm-marker (mouseOver)="onMouseOver(infoWindow1,gm)"  [iconUrl]="icon"   [latitude]="travel.latSourceRequest" [longitude]="travel.longSourceRequest">
+    <agm-info-window [disableAutoPan]="false" #infoWindow1>
+      <div>        
+          אני נמצא כאן
+      </div>     
+  </agm-info-window>
+  </agm-marker>
+
+  <agm-marker   (mouseOver)="onMouseOver(infoWindow2,gm)"  [iconUrl]="icon"   [latitude]="travel.latDestinationRequest" [longitude]="travel.longDestinationRequest">
+    <agm-info-window [disableAutoPan]="false" #infoWindow2>
+      <div>        
+          אני רוצה להגיע לכאן
+      </div>     
+  </agm-info-window>
+  </agm-marker>
+
+  <agm-marker   (mouseOver)="onMouseOver(infoWindow3,gm)" [latitude]="travel.latSourcr"    [longitude]="travel.longSource">
+    <agm-info-window [disableAutoPan]="false" #infoWindow3>
+      <div>        
+          מכאן הנהג יוצא לדרך
+      </div>     
+  </agm-info-window>
+  </agm-marker>
+
+  <agm-marker  (mouseOver)="onMouseOver(infoWindow4,gm)"  [latitude]="travel.latDestination"    [longitude]="travel.longDestination">
+    <agm-info-window [disableAutoPan]="false" #infoWindow4>
+      <div>        
+          כאן נקודת היעד של הנהג
+      </div>     
+  </agm-info-window>
+  </agm-marker>
+
+ 
+
+</agm-map>

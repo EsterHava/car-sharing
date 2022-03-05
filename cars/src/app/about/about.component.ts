@@ -26,14 +26,18 @@ export class AboutComponent implements OnInit {
   }
 
   getWish() {
-    var today = new Date()
+    
+   
+  var today = new Date()
     var curHr = today.getHours()
-
-    if (curHr < 12 && curHr > 6) {
+debugger
+    if (curHr >1&& curHr<12) {
       this.wishes = 'בוקר טוב';
-    } else if (curHr < 18) {
+    } 
+    else if (curHr >=12&& curHr < 18) {
       this.wishes = 'אחר הצהרים טובים';
-    } else if (curHr < 24) {
+    }
+     else if (curHr >=18&&curHr < 24) {
       this.wishes = 'ערב טוב';
     }
     else {

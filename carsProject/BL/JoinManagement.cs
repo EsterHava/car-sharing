@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using DAL;
+using System.Device.Location;
 
 namespace BL
 {
@@ -20,9 +21,11 @@ namespace BL
             {
                 try
                 {
-                    int driverId = request.regularTravelId == null ? (int)TemporaryTravelingBL.GetTravelById((int)request.temporaryTravelId).driverId
-                    : (int)RegularTravelingBL.GetTravelById((int)request.regularTravelId).driverId;
+                    //int driverId = request.regularTravelId == null ? (int)TemporaryTravelingBL.GetTravelById((int)request.temporaryTravelId).driverId
+                    //: (int)RegularTravelingBL.GetTravelById((int)request.regularTravelId).driverId;
+                    int driverId = (int)RegularTravelingBL.GetTravelById((int)request.regularTravelId).driverId;
                     SendEmail(driverId);
+                    //SendEmail(driverId);
                 }
                 catch (Exception)
                 {
@@ -34,7 +37,48 @@ namespace BL
         }
         public static List<RegularTravelingDTO> SearchTravels(JoinRequestDTO joinRequest)
         {
-            return null;
+            List<RegularTravelingDTO> RegularTravelingList = new List<RegularTravelingDTO>();
+            List<RegularTravelingDTO> RegularTravelingListFiltered = new List<RegularTravelingDTO>();
+
+            RegularTravelingList = Converts.RegularTravelingConvert.ToDTOList(RegularTravelingDal.GetTravel().ToList());
+
+            Location locationSourceRequest = GoogleMapService.getPosition(joinRequest.Source);
+            Location locationDestinationRequest = GoogleMapService.getPosition(joinRequest.Destinations);
+
+            foreach (var item in RegularTravelingList)
+            {
+                //האם לנסיעה הזאת יש מקום פנוי
+                int countTravellerInRegularTravel = TravellerInRegularTravelBL.GetTravellerInRegularTravelsByTravelId(item.id).Count();
+                if (item.availableSeats <= countTravellerInRegularTravel)
+                    continue;
+
+                if (item.latSourcr != null && item.longSource != null && item.latDestination != null && item.longDestination != null)
+                {
+                    var sourceCoordTraveling = new GeoCoordinate((double)item.latSourcr, (double)item.longSource);
+                    var sourceCoordRequest = new GeoCoordinate(locationSourceRequest.lat, locationSourceRequest.lng);
+
+                    var destinationCoordTraveling = new GeoCoordinate((double)item.latDestination, (double)item.longDestination);
+                    var destinationCoordRequest = new GeoCoordinate(locationDestinationRequest.lat, locationDestinationRequest.lng);
+
+                    double distanceSource = sourceCoordTraveling.GetDistanceTo(sourceCoordRequest)/1000;
+                    double distanceDestination = destinationCoordTraveling.GetDistanceTo(destinationCoordRequest)/1000;
+
+                    TimeSpan span = ((TimeSpan)item.exitTime).Subtract(joinRequest.TimeEixt);
+                    string[] days = joinRequest.dayList.Split(',');
+                    if (distanceSource <= joinRequest.SourceRange && distanceDestination <= joinRequest.DestinationsRange && Math.Abs(span.TotalMinutes) <= joinRequest.TimeRange && days.ToList().Contains(item.day.ToString()))
+                    {
+                        RegularTravelingDTO Traveling = new RegularTravelingDTO();
+                        Traveling = item;
+                        Traveling.longDestinationRequest = locationDestinationRequest.lng;
+                        Traveling.latDestinationRequest = locationDestinationRequest.lat;
+                        Traveling.longSourceRequest = locationSourceRequest.lng;
+                        Traveling.latSourceRequest = locationSourceRequest.lat;
+                        RegularTravelingListFiltered.Add(Traveling);
+                    }
+                }
+            }
+
+            return RegularTravelingListFiltered;
         }
         public static bool SendEmail(int driverId)
         {

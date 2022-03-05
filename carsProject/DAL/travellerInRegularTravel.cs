@@ -19,6 +19,10 @@ namespace DAL
         public Nullable<int> travelerId { get; set; }
         public string collectingPoint { get; set; }
         public string destinationPoint { get; set; }
+        public Nullable<double> latCollection { get; set; }
+        public Nullable<double> lngCollection { get; set; }
+        public Nullable<double> latDestination { get; set; }
+        public Nullable<double> lngDestination { get; set; }
     
         public virtual regularTraveling regularTraveling { get; set; }
         public virtual user user { get; set; }

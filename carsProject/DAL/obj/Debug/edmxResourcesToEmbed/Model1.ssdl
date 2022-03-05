@@ -47,34 +47,11 @@
     <Property Name="exitTime" Type="time" Precision="7" />
     <Property Name="arriveTime" Type="time" Precision="7" />
     <Property Name="day" Type="int" />
-    <Property Name="latSourcr" Type="decimal" Precision="18" Scale="0" />
-    <Property Name="longSource" Type="decimal" Precision="18" Scale="0" />
-    <Property Name="latDestination" Type="decimal" Precision="18" Scale="0" />
-    <Property Name="longDestination" Type="decimal" Precision="18" Scale="0" />
-  </EntityType>
-  <EntityType Name="temporaryTraveling">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="driverId" Type="int" />
-    <Property Name="source" Type="nvarchar" MaxLength="50" />
-    <Property Name="destination" Type="nvarchar" MaxLength="50" />
-    <Property Name="exitTime" Type="time" Precision="7" />
-    <Property Name="arriveTime" Type="time" Precision="7" />
-    <Property Name="date" Type="date" />
-  </EntityType>
-  <EntityType Name="temporaryTraveller">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="date" Type="date" />
-    <Property Name="travelId" Type="int" />
-    <Property Name="travellerId" Type="int" />
-    <Property Name="collectionPoint" Type="nvarchar" MaxLength="50" />
-    <Property Name="destinationPoint" Type="nvarchar" MaxLength="50" />
-    <Property Name="isRegular" Type="bit" />
+    <Property Name="lngSource" Type="float" />
+    <Property Name="latSource" Type="float" />
+    <Property Name="lngDestination" Type="float" />
+    <Property Name="latDestination" Type="float" />
+    <Property Name="availableSeats" Type="int" />
   </EntityType>
   <EntityType Name="travellerInRegularTravel">
     <Key>
@@ -85,6 +62,10 @@
     <Property Name="travelerId" Type="int" />
     <Property Name="collectingPoint" Type="nvarchar" MaxLength="50" />
     <Property Name="destinationPoint" Type="nvarchar" MaxLength="50" />
+    <Property Name="latCollection" Type="float" />
+    <Property Name="lngCollection" Type="float" />
+    <Property Name="latDestination" Type="float" />
+    <Property Name="lngDestination" Type="float" />
   </EntityType>
   <EntityType Name="user">
     <Key>
@@ -137,18 +118,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_joinRequests_temporaryTraveling">
-    <End Role="temporaryTraveling" Type="Self.temporaryTraveling" Multiplicity="0..1" />
-    <End Role="joinRequests" Type="Self.joinRequests" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="temporaryTraveling">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="joinRequests">
-        <PropertyRef Name="temporaryTravelId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_joinRequests_user">
     <End Role="user" Type="Self.user" Multiplicity="1" />
     <End Role="joinRequests" Type="Self.joinRequests" Multiplicity="*" />
@@ -170,42 +139,6 @@
       </Principal>
       <Dependent Role="regularTraveling">
         <PropertyRef Name="driverId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_temporaryTraveling_user">
-    <End Role="user" Type="Self.user" Multiplicity="0..1" />
-    <End Role="temporaryTraveling" Type="Self.temporaryTraveling" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="user">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="temporaryTraveling">
-        <PropertyRef Name="driverId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_temporaryTraveller_temporaryTraveling">
-    <End Role="temporaryTraveling" Type="Self.temporaryTraveling" Multiplicity="0..1" />
-    <End Role="temporaryTraveller" Type="Self.temporaryTraveller" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="temporaryTraveling">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="temporaryTraveller">
-        <PropertyRef Name="travelId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_temporaryTraveller_user">
-    <End Role="user" Type="Self.user" Multiplicity="0..1" />
-    <End Role="temporaryTraveller" Type="Self.temporaryTraveller" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="user">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="temporaryTraveller">
-        <PropertyRef Name="travellerId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -251,8 +184,6 @@
     <EntitySet Name="joinRequests" EntityType="Self.joinRequests" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="messages" EntityType="Self.messages" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="regularTraveling" EntityType="Self.regularTraveling" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="temporaryTraveling" EntityType="Self.temporaryTraveling" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="temporaryTraveller" EntityType="Self.temporaryTraveller" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="travellerInRegularTravel" EntityType="Self.travellerInRegularTravel" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__messages__userId__440B1D61" Association="Self.FK__messages__userId__440B1D61">
@@ -267,10 +198,6 @@
       <End Role="regularTraveling" EntitySet="regularTraveling" />
       <End Role="joinRequests" EntitySet="joinRequests" />
     </AssociationSet>
-    <AssociationSet Name="FK_joinRequests_temporaryTraveling" Association="Self.FK_joinRequests_temporaryTraveling">
-      <End Role="temporaryTraveling" EntitySet="temporaryTraveling" />
-      <End Role="joinRequests" EntitySet="joinRequests" />
-    </AssociationSet>
     <AssociationSet Name="FK_joinRequests_user" Association="Self.FK_joinRequests_user">
       <End Role="user" EntitySet="user" />
       <End Role="joinRequests" EntitySet="joinRequests" />
@@ -278,18 +205,6 @@
     <AssociationSet Name="FK_regularTraveling_user" Association="Self.FK_regularTraveling_user">
       <End Role="user" EntitySet="user" />
       <End Role="regularTraveling" EntitySet="regularTraveling" />
-    </AssociationSet>
-    <AssociationSet Name="FK_temporaryTraveling_user" Association="Self.FK_temporaryTraveling_user">
-      <End Role="user" EntitySet="user" />
-      <End Role="temporaryTraveling" EntitySet="temporaryTraveling" />
-    </AssociationSet>
-    <AssociationSet Name="FK_temporaryTraveller_temporaryTraveling" Association="Self.FK_temporaryTraveller_temporaryTraveling">
-      <End Role="temporaryTraveling" EntitySet="temporaryTraveling" />
-      <End Role="temporaryTraveller" EntitySet="temporaryTraveller" />
-    </AssociationSet>
-    <AssociationSet Name="FK_temporaryTraveller_user" Association="Self.FK_temporaryTraveller_user">
-      <End Role="user" EntitySet="user" />
-      <End Role="temporaryTraveller" EntitySet="temporaryTraveller" />
     </AssociationSet>
     <AssociationSet Name="FK_travellerInRegularTravel_regularTraveling" Association="Self.FK_travellerInRegularTravel_regularTraveling">
       <End Role="regularTraveling" EntitySet="regularTraveling" />

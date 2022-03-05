@@ -29,6 +29,9 @@ import{ MatGridListModule } from '@angular/material/grid-list';
 import { AboutComponent } from './about/about.component';
 import { TableForTravelerComponent } from './table-for-traveler/table-for-traveler.component';
 import { AddRequestComponent } from './add-request/add-request.component';
+import { ProfilComponent } from './profil/profil.component';
+import { MapComponent } from './map/map.component';
+import { AgmCoreModule } from '@agm/core';
 
 
 
@@ -49,7 +52,9 @@ import { AddRequestComponent } from './add-request/add-request.component';
     MainComponent,
     AboutComponent,
     TableForTravelerComponent,
-    AddRequestComponent
+    AddRequestComponent,
+    ProfilComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +70,9 @@ import { AddRequestComponent } from './add-request/add-request.component';
     MatDialogModule,
     MatToolbarModule,
     MatGridListModule,
+    AgmCoreModule.forRoot({
+      apiKey: ''
+    })
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

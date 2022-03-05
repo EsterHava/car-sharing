@@ -26,11 +26,8 @@ export class JoinManagmentService {
     return this.http.get<any[]>(this.url + "/getRequests", {params:params});
   }
 
-  search(request: JoinRequest) {
-   debugger
- 
- 
-    return this.http.post(`${this.url}/search`,request);
+  search(request: JoinRequest) {     
+    return this.http.post<any[]>(`${this.url}/search`,request);
   }
 
 }

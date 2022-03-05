@@ -16,11 +16,12 @@ namespace DTO
         public int Day { get; set; }
         public string Destinations { get; set; }
         public string Source { get; set; }
-        public DateTime TimeEixt { get; set; }
+        public TimeSpan TimeEixt { get; set; }
         public double DestinationsRange { get; set; }
         public double SourceRange { get; set; }
         public double TimeRange { get; set; }
 
+        public string dayList { get; set; }
 
     }
 }

@@ -20,8 +20,7 @@ namespace DAL
         public Nullable<int> regularTravelId { get; set; }
         public Nullable<int> temporaryTravelId { get; set; }
     
-        public virtual user user { get; set; }
         public virtual regularTraveling regularTraveling { get; set; }
-        public virtual temporaryTraveling temporaryTraveling { get; set; }
+        public virtual user user { get; set; }
     }
 }

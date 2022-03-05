@@ -20,12 +20,12 @@ namespace API.Controllers
             return RegularTravelingBL.GetTravel();
         }
 
-        [HttpGet]
-        [Route("api/TravelManagement/GetTemporaryTravel")]
-        public IEnumerable<TemporaryTravelingDTO> GetTemporaryTravl()
-        {
-            return TemporaryTravelingBL.GetTravel();
-        }
+        //[HttpGet]
+        //[Route("api/TravelManagement/GetTemporaryTravel")]
+        //public IEnumerable<TemporaryTravelingDTO> GetTemporaryTravl()
+        //{
+        //    return TemporaryTravelingBL.GetTravel();
+        //}
 
         [HttpGet]
         [Route("api/TravelManagement/GetRegularTravelByDriver")]
@@ -33,12 +33,12 @@ namespace API.Controllers
         {
             return RegularTravelingBL.GetTravelByDriver(int.Parse(driverId));
         }
-        [HttpGet]
-        [Route("api/TravelManagement/GetTemporaryTravelByDriver")]
-        public IEnumerable<TemporaryTravelingDTO> GetTemporaryTravelByDriver(string driverId)
-        {
-            return TemporaryTravelingBL.GetTravelByDriver(int.Parse(driverId));
-        }
+        //[HttpGet]
+        //[Route("api/TravelManagement/GetTemporaryTravelByDriver")]
+        //public IEnumerable<TemporaryTravelingDTO> GetTemporaryTravelByDriver(string driverId)
+        //{
+        //    return TemporaryTravelingBL.GetTravelByDriver(int.Parse(driverId));
+        //}
         [HttpPost]
         [Route("api/TravelManagement/AddRegularTravel")]
         public bool AddRegularTravel([FromBody] RegularTravelingDTO travel)

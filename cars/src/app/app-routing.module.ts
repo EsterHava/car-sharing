@@ -13,6 +13,7 @@ import { MainComponent } from './main/main.component';
 import { AuthGuard } from './AuthGuard';
 import { AboutComponent } from './about/about.component';
 import { TableForTravelerComponent } from './table-for-traveler/table-for-traveler.component';
+import { ProfilComponent } from './profil/profil.component';
 
 // const routes: Routes = [
 //   { path: '', redirectTo: '/login', pathMatch: 'full' },

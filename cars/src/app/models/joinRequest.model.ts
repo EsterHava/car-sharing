@@ -13,6 +13,6 @@ export interface JoinRequest {
     timeEixt:Time,
     destinationsRange:number,
     sourceRange:number,
-    timeRange:number
-    
+    timeRange:number,
+    dayList:string    
 }

@@ -20,6 +20,14 @@ namespace API.Controllers
         }
 
         [HttpGet]
+        [Route("api/UserManagement/GetUserByUserId")]
+        public UserDTO GetUserByUserId(string id)
+        {
+            return UserBL.GetUserByUserId(id);
+        }
+
+
+        [HttpGet]
         [Route("api/UserManagement/GetUserNameById")]
         public  string GetUserNameById(string id) {
             return UserManagement.GetUserNameById(int.Parse(id));

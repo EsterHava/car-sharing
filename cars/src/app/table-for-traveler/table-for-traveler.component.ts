@@ -99,7 +99,7 @@ export class TableForTravelerComponent implements OnInit {
   openAddTravelDialog() {
     
     const dialogRef = this.dialog.open(AddRequestComponent, {
-      width: '550px'
+      width: '900px'
     });
    
   }

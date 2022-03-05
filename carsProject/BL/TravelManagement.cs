@@ -15,7 +15,7 @@ namespace BL
         public static bool AddTemporaryTravel(TemporaryTravelingDTO travel)
         {
             //בדיקות ולידציה
-            return TemporaryTravelingBL.AddTravel(travel);
+            return true; //TemporaryTravelingBL.AddTravel(travel);
         }
         public static bool DeleteRegularTravel(RegularTravelingDTO travel)
         {
@@ -23,7 +23,7 @@ namespace BL
         }
         public static bool DeleteTemporaryTravel(TemporaryTravelingDTO travel)
         {
-            return TemporaryTravelingBL.DeleteTravel(travel.id);
+            return true;
         }
         public static bool UpdateRegularTravel(RegularTravelingDTO travel)
         {
@@ -31,7 +31,7 @@ namespace BL
         }
         public static bool UpdateTemporaryTravel(TemporaryTravelingDTO travel)
         {
-            return TemporaryTravelingBL.UpdateTravel(travel);
+            return true;//TemporaryTravelingBL.UpdateTravel(travel);
         }
     }
 }
