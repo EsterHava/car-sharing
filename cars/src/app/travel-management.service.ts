@@ -17,9 +17,9 @@ export class TravelManagementService {
     return this.http.get<RegularTravel[]>(this.url + "/GetRegularTravel");
   }
 
-  getTemporaryTravel() {
-    return this.http.get<TemporaryTravel[]>(this.url + "/GetTemporaryTravel");
-  }
+  // getTemporaryTravel() {
+  //   return this.http.get<TemporaryTravel[]>(this.url + "/GetTemporaryTravel");
+  // }
 
   getTravelingForTraveller() {
     debugger
@@ -36,32 +36,38 @@ export class TravelManagementService {
     });
     return this.http.get<any[]>(this.url + "/GetRegularTravelByDriver", { params: params });
   }
-  getTemporaryTravelByDriver(id: string) {
-    const params = new HttpParams({
-      fromObject: {
-        driverId: id
-      }
-    });
-    return this.http.get<any[]>(this.url + "/GetTemporaryTravelByDriver", { params: params });
-  }
+
+  // getTemporaryTravelByDriver(id: string) {
+  //   const params = new HttpParams({
+  //     fromObject: {
+  //       driverId: id
+  //     }
+  //   });
+  //   return this.http.get<any[]>(this.url + "/GetTemporaryTravelByDriver", { params: params });
+  // }
+
   addRegularTravel(travel: RegularTravel) {
     return this.http.post<boolean>(this.url + "/AddRegularTravel", travel);
   }
-  addTemporaryTravel(travel: TemporaryTravel) {
-    return this.http.post<boolean>(this.url + "/AddTemporaryTravel", travel);
-  }
+  // addTemporaryTravel(travel: TemporaryTravel) {
+  //   return this.http.post<boolean>(this.url + "/AddTemporaryTravel", travel);
+  // }
+
   //?????
   deleteRegularTravel(travel: RegularTravel) {
     return this.http.post<boolean>(this.url + "/DeleteRegularTravel", travel);
   }
+
   //?????
-  deleteTemporaryTravel(travel: TemporaryTravel) {
-    return this.http.post<boolean>(this.url + "/DeleteTemporaryTravel", travel,);
-  }
+  // deleteTemporaryTravel(travel: TemporaryTravel) {
+  //   return this.http.post<boolean>(this.url + "/DeleteTemporaryTravel", travel,);
+  // }
+
   updateRegularTravel(travel: RegularTravel) {
     return this.http.post<boolean>(this.url + "/UpdateRegularTravel", travel);
   }
-  updateTemporaryTravel(travel: TemporaryTravel) {
-    return this.http.post<boolean>(this.url + "/UpdateTemporaryTravel", travel);;
-  }
+  
+  // updateTemporaryTravel(travel: TemporaryTravel) {
+  //   return this.http.post<boolean>(this.url + "/UpdateTemporaryTravel", travel);;
+  // }
 }

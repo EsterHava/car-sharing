@@ -24,7 +24,7 @@ namespace DAL
             }
         }
 
-     
+
         public static bool AddTravel(regularTraveling travel)
         {
             try
@@ -46,13 +46,16 @@ namespace DAL
             {
                 car_projectEntities cp = new car_projectEntities();
                 regularTraveling rt = cp.regularTraveling.FirstOrDefault(t => t.id == travelId);
-                cp.regularTraveling.Remove(rt);
+                if (rt != null)
+                {
+                    regularTraveling rtRemove = cp.regularTraveling.Remove(rt);
+                }
                 cp.SaveChanges();
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                //todo:log
+                throw new Exception(e.Message);
                 return false;
             }
 

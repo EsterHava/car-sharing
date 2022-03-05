@@ -19,6 +19,7 @@ import { UpdateTravelComponent } from '../update-travel/update-travel.component'
 
 export class TableForDriverComponent implements OnInit {
 
+  //@Input() status: string;
   @Input() status: string;
 
   //מערך עבור נסיעות קבועות של הנהג
@@ -27,9 +28,9 @@ export class TableForDriverComponent implements OnInit {
   displayedColumnsR: string[];
 
   //מערך עבור נסיעות חד פעמיות של הנהג
-  travelT: TemporaryTravel[] = [];
+  // travelT: TemporaryTravel[] = [];
 
-  displayedColumnsT: string[];
+  // displayedColumnsT: string[];
 
   //מערך של כל ימות השבוע
   daysList: Days[] = [
@@ -55,36 +56,40 @@ export class TableForDriverComponent implements OnInit {
 
 
   ngOnInit(): void {
-    if (this.status == 'edit') {
-      this.getRegularTravelByDriver();
-      this.getTemporaryTravelByDriver();
-      this.displayedColumnsT = ['num', 'source', 'destination', 'exitTime', 'arriveTime', 'date', 'delete', 'update'];
-      this.displayedColumnsR = ['num', 'source', 'destination', 'exitTime', 'arriveTime', 'day', 'delete', 'update'];
-    }
-    else {
-      this.getTravel();
-      this.displayedColumnsR = ['num', 'source', 'destination', 'exitTime', 'arriveTime', 'day', 'join'];
-      this.displayedColumnsT = ['num', 'source', 'destination', 'exitTime', 'arriveTime', 'date', 'join'];
+    // if (this.status == 'edit') {
+    //   this.getRegularTravelByDriver();
+    //   this.getTemporaryTravelByDriver();
+    //   this.displayedColumnsT = ['num', 'source', 'destination', 'exitTime', 'arriveTime', 'date', 'delete', 'update'];
+    //   this.displayedColumnsR = ['num', 'source', 'destination', 'exitTime', 'arriveTime', 'day', 'delete', 'update'];
+    // }
+    // else {
+    //   this.getTravel();
+    //   this.displayedColumnsR = ['num', 'source', 'destination', 'exitTime', 'arriveTime', 'day', 'join'];
+    //   this.displayedColumnsT = ['num', 'source', 'destination', 'exitTime', 'arriveTime', 'date', 'join'];
 
-    }
+    // }
+    this.getRegularTravelByDriver();
+    this.displayedColumnsR = ['num', 'source', 'destination', 'exitTime', 'arriveTime', 'day', 'delete', 'update'];
+
   }
 
   getRegularTravelByDriver() {
     // const id = this.route.snapshot.paramMap.get('driverId');
+    this.driverId = localStorage.getItem('UserToken');
     return this.http.getRegularTravelByDriver(this.driverId).subscribe(t => { console.log(t), this.travelR = t });
   }
 
   //נסיעות חד פעמיות של הנהג
-  getTemporaryTravelByDriver() {
-    // const id = this.route.snapshot.paramMap.get('driverId');
-    console.log(this.driverId);
-    return this.http.getTemporaryTravelByDriver(this.driverId).subscribe(t => { console.log(t), this.travelT = t });
-  }
+  // getTemporaryTravelByDriver() {
+  //   // const id = this.route.snapshot.paramMap.get('driverId');
+  //   console.log(this.driverId);
+  //   return this.http.getTemporaryTravelByDriver(this.driverId).subscribe(t => { console.log(t), this.travelT = t });
+  // }
 
   getTravel() {
-    this.http.getTemporaryTravel().subscribe(t => this.travelT = t);
+    // this.http.getTemporaryTravel().subscribe(t => this.travelT = t);
     this.http.getRegularTravel().subscribe(t => this.travelR = t);
-    console.log(this.travelT);
+    // console.log(this.travelT);
   }
 
   joinTravel(travel: any) {
@@ -97,7 +102,7 @@ export class TableForDriverComponent implements OnInit {
       request.regularTravelId = travel.id;
     }
     else {
-      this.index = this.travelT.indexOf(travel);
+      // this.index = this.travelT.indexOf(travel);
       request.temporaryTravelId = travel.id;
     }
 
@@ -116,13 +121,13 @@ export class TableForDriverComponent implements OnInit {
     }
   }
 
-  deleteTemporaryTravel(travel: TemporaryTravel) {
+  // deleteTemporaryTravel(travel: TemporaryTravel) {
 
-    if (confirm("האם אתה בטוח מעונין למחוק נסיעה מס'-  " + (this.travelT.indexOf(travel) + 1))) {
+  //   if (confirm("האם אתה בטוח מעונין למחוק נסיעה מס'-  " + (this.travelT.indexOf(travel) + 1))) {
 
-      this.http.deleteTemporaryTravel(travel).subscribe(t => { console.log(t), this.getTemporaryTravelByDriver() });
-    }
-  }
+  //     this.http.deleteTemporaryTravel(travel).subscribe(t => { console.log(t), this.getTemporaryTravelByDriver() });
+  //   }
+  // }
 
   updateRegularTravel(travel: RegularTravel) {
     if (confirm("האם אתה בטוח מעונין לעדכן נסיעה מס'- " + (this.travelR.indexOf(travel) + 1))) {
@@ -131,30 +136,31 @@ export class TableForDriverComponent implements OnInit {
     }
   }
 
-  updateTemporaryTravel(travel: TemporaryTravel) {
-    if (confirm("האם אתה בטוח מעונין לעדכן נסיעה מס'-  " + (this.travelT.indexOf(travel) + 1))) {
+  // updateTemporaryTravel(travel: TemporaryTravel) {
+  //   if (confirm("האם אתה בטוח מעונין לעדכן נסיעה מס'-  " + (this.travelT.indexOf(travel) + 1))) {
 
-      this.router.navigate(['/updateTravel', travel]);
-    }
-  }
+  //     this.router.navigate(['/updateTravel', travel]);
+  //   }
+  // }
 
   openAddTravelDialog() {
     const dialogRef = this.dialog.open(AddTravelComponent, {
       width: '550px',
-      data:this.driverId ,
+      data: this.driverId,
       disableClose: true
     });
-    // dialogRef.afterClosed().subscribe(result => {
-      
-    //         console.log('The dialog was closed');
-    // });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.getRegularTravelByDriver();
+    });
   }
- 
-  openUpdateRegularTravel(travel:RegularTravel){
-    console.log("travel rrr   "+travel)
+
+  openUpdateRegularTravel(travel: RegularTravel) {
+    console.log("travel rrr   " + travel)
     const dialogRef = this.dialog.open(UpdateTravelComponent, {
       width: '550px',
-      data:travel ,
+      data: travel,
       disableClose: true
     });
   }

@@ -1,7 +1,7 @@
 <!-- הצגת נסיעות קבועות של הנהג בטבלה -->
  <button class="btnPlus" (click)="openAddTravelDialog()" style="margin-top: 5%;">+</button>
  <div *ngIf="travelR.length>0" class="travelR" style="direction: rtl; ">
-    <p>נסיעות קבועות</p>
+    <h1 style="text-align: center;">נסיעות שלי</h1>
    
     <table mat-table [dataSource]="travelR" class="mat-elevation-z8" dir="rtl">
 
@@ -130,7 +130,7 @@
     </table>
 </div> -->
 <!-- אין נסיעות קיימות -->
-<div *ngIf="travelR.length==0&&travelT.length==0">
+<div *ngIf="travelR.length==0">
     <p>אין נסיעות קיימות</p>
     <p>נוסע</p>
 </div>

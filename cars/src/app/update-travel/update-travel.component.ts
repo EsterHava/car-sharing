@@ -5,7 +5,7 @@ import { Days } from '../models/days.model';
 import { TemporaryTravel } from '../models/temporaryTravel.model';
 import { TravelManagementService } from '../travel-management.service';
 import { DatePipe } from '@angular/common';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 @Component({
@@ -32,16 +32,15 @@ export class UpdateTravelComponent implements OnInit {
     private http: TravelManagementService,
     private router: Router,
     public dialogRef: MatDialogRef<UpdateTravelComponent>,
-    @Inject(MAT_DIALOG_DATA) public travell:any,
+    @Inject(MAT_DIALOG_DATA) public newTravel: any,
     private datepipe: DatePipe
   ) { }
 
   ngOnInit(): void {
     // this.travel = JSON.parse(JSON.stringify(this.route.snapshot.params));
-    this.travel=this.travell;
-    console.log("this travel   * "+this.travel)
+    this.travel = this.newTravel;
+    console.log("this travel   * " + this.travel)
     // this.travel=[...this.travel];
-    console.log(this.travel);
     if (this.travel.day) {
       this.statusTravel = true;
     }
@@ -58,12 +57,15 @@ export class UpdateTravelComponent implements OnInit {
 
   updateTravel() {
     if (this.statusTravel) {
-      this.http.updateRegularTravel(this.travel).subscribe(t => console.log(t));
+      this.http.updateRegularTravel(this.travel).subscribe(t => {
+        console.log(t);
+        this.onNoClick();
+      });
     }
-    else {
-      this.http.updateTemporaryTravel(this.travel).subscribe(t => console.log(t));
-    }
+    // else {
+    //   this.http.updateTemporaryTravel(this.travel).subscribe(t => console.log(t));
+    // }
     //this.router.navigateByUrl('');
-this.onNoClick();
+
   }
 }

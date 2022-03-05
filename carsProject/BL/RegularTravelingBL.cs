@@ -47,7 +47,7 @@ namespace BL
         }
         public static bool AddTravel(RegularTravelingDTO travel)
         {
-            Location locationSource=new Location();
+            Location locationSource = new Location();
             locationSource = GoogleMapService.getPosition(travel.source);
             travel.latSourcr = locationSource.lat;
             travel.longSource = locationSource.lng;
