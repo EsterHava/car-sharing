@@ -187,3 +187,4 @@ D:\usres\user1\3D Objects\car sharing\carsProject\BL\bin\Debug\System.Numerics.V
 D:\usres\user1\3D Objects\car sharing\carsProject\BL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\usres\user1\3D Objects\car sharing\carsProject\BL\bin\Debug\System.Threading.Channels.xml
 D:\usres\user1\3D Objects\car sharing\carsProject\BL\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\usres\user1\3D Objects\car sharing\carsProject\BL\bin\Debug\System.Device.Portable.dll

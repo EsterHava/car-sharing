@@ -490,3 +490,4 @@ D:\usres\user1\3D Objects\car sharing\carsProject\API\obj\Debug\API.csproj.CoreC
 D:\usres\user1\3D Objects\car sharing\carsProject\API\obj\Debug\API.csproj.CopyComplete
 D:\usres\user1\3D Objects\car sharing\carsProject\API\obj\Debug\API.dll
 D:\usres\user1\3D Objects\car sharing\carsProject\API\obj\Debug\API.pdb
+D:\usres\user1\3D Objects\car sharing\carsProject\API\bin\System.Device.Portable.dll
