@@ -35,6 +35,8 @@ namespace BL
             }
             return true;
         }
+
+        //method that search a travvel for the passenger according the request
         public static List<RegularTravelingDTO> SearchTravels(JoinRequestDTO joinRequest)
         {
             List<RegularTravelingDTO> RegularTravelingList = new List<RegularTravelingDTO>();
@@ -80,6 +82,7 @@ namespace BL
 
             return RegularTravelingListFiltered;
         }
+
         public static bool SendEmail(int driverId)
         {
             UserDTO driver = UserBL.GetUserById(driverId);
@@ -95,6 +98,14 @@ namespace BL
 
 
         }
+
+
+
+
+
+
+
+
 
 
 

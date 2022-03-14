@@ -12,6 +12,7 @@ namespace BL
 {
     public class UserManagement
     {
+        //login to the site
         public static UserDTO Login(string userName, string password)
         {
             foreach (var item in UserBL.GetUsers())
@@ -21,6 +22,8 @@ namespace BL
             }
             return null;
         }
+
+        //sign out to the site
         public static bool Register(UserDTO user)
         {
             int userId = UserDal.AddUser(Converts.UserConvert.ConvertToUser(user));
@@ -35,17 +38,21 @@ namespace BL
             return true;
 
         }
+
+        //update user's details
         public static UserDTO UpdateUser(UserDTO user)
         {
             return UserBL.UpdateUser(user);
         }
 
+        //get userName by id
         public static string GetUserNameById(int id)
         {
             UserDTO u = UserBL.GetUserById(id);
             return u.firstName + " " + u.lastName;
         }
-
+        
+        //method for sending email to user according the userId
         public static bool SendEmail(int userId)
         {
             UserDTO user = UserBL.GetUserById(userId);

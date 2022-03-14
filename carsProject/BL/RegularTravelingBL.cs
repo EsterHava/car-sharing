@@ -23,6 +23,7 @@ namespace BL
             }
 
         }
+
         public static IEnumerable<RegularTravelingDTO> GetTravelByDriver(int driverId)
         {
             var list = RegularTravelingDal.GetTravel();
@@ -33,6 +34,7 @@ namespace BL
             }
 
         }
+
         public static RegularTravelingDTO GetTravelById(int id)
         {
             var list = RegularTravelingDal.GetTravel();
@@ -45,6 +47,7 @@ namespace BL
             return null;
 
         }
+
         public static bool AddTravel(RegularTravelingDTO travel)
         {
             Location locationSource = new Location();
@@ -59,10 +62,12 @@ namespace BL
             return RegularTravelingDal.AddTravel
             (Converts.RegularTravelingConvert.ConvertToRegularTraveling(travel));
         }
+
         public static bool DeleteTravel(int travelId)
         {
             return RegularTravelingDal.DeleteTravel(travelId);
         }
+
         public static bool UpdateTravel(RegularTravelingDTO travel)
         {
             Location locationSource = GoogleMapService.getPosition(travel.source);

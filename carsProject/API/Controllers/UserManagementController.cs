@@ -25,11 +25,11 @@ namespace API.Controllers
         {
             return UserBL.GetUserByUserId(id);
         }
-
-
+ 
         [HttpGet]
         [Route("api/UserManagement/GetUserNameById")]
-        public  string GetUserNameById(string id) {
+        public string GetUserNameById(string id)
+        {
             return UserManagement.GetUserNameById(int.Parse(id));
         }
 
@@ -63,34 +63,9 @@ namespace API.Controllers
 
         [HttpGet]
         [Route("api/UserManagement/GetMessages")]
-        public IEnumerable<MessagesDTO> GetMessages(string userId) {
+        public IEnumerable<MessagesDTO> GetMessages(string userId)
+        {
             return MessagesManagement.GetMessages(userId);
-        }
-        // GET: api/UserManagement
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET: api/UserManagement/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST: api/UserManagement
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT: api/UserManagement/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/UserManagement/5
-        public void Delete(int id)
-        {
         }
     }
 }

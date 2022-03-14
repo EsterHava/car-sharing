@@ -12,23 +12,28 @@ namespace BL
         {//בדיקות ולידציה
             return RegularTravelingBL.AddTravel(travel);
         }
+
         public static bool AddTemporaryTravel(TemporaryTravelingDTO travel)
         {
             //בדיקות ולידציה
             return true; //TemporaryTravelingBL.AddTravel(travel);
         }
+
         public static bool DeleteRegularTravel(RegularTravelingDTO travel)
         {
             return RegularTravelingBL.DeleteTravel(travel.id);
         }
+
         public static bool DeleteTemporaryTravel(TemporaryTravelingDTO travel)
         {
             return true;
         }
+
         public static bool UpdateRegularTravel(RegularTravelingDTO travel)
         {
             return RegularTravelingBL.UpdateTravel(travel);
         }
+
         public static bool UpdateTemporaryTravel(TemporaryTravelingDTO travel)
         {
             return true;//TemporaryTravelingBL.UpdateTravel(travel);

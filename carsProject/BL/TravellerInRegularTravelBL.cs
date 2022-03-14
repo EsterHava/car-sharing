@@ -29,6 +29,7 @@ namespace BL
             }
 
         }
+
         public static IEnumerable<TravellerInRegularTravelDTO> GetTravellerTravelingsByTraveller(int travellerId)
         {
             var list = TravellerInRegularTravelDal.GetTravellerInRegularTravels();

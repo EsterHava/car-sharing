@@ -17,6 +17,7 @@ namespace BL
                 yield return Converts.UserConvert.ConvertToUserDTO(item);
             }
         }
+
         public static UserDTO GetUserByUserName(string userName)
         {
             var list = UserDal.GetUsers();

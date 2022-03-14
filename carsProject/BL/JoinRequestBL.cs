@@ -9,7 +9,7 @@ namespace BL
 {
     public class JoinRequestBL
     {
-
+        //return all the join to travel request of the passenger that not approve yet
         public static IEnumerable<JoinRequestDTO> GetRequestsByDriverId(int driverId) {
 
             var list = JoinRequestDal.GetRequests();
@@ -28,16 +28,19 @@ namespace BL
             }
         }
 
+        //add a join request to DB
         public static bool AddRequest(JoinRequestDTO request)
         {
             return JoinRequestDal.AddRequest
                 (Converts.JoinRequestConvert.ConvertToJoinRequest(request));
         }
+
         public static JoinRequestDTO AddAndReturnRequest(JoinRequestDTO request)
         {
             return Converts.JoinRequestConvert.ConvertToJoinRequestDTO(JoinRequestDal.AddAndReturnRequest
                 (Converts.JoinRequestConvert.ConvertToJoinRequest(request)));
         }
+
         public static bool DeleteRequest(int requestId) {
            return JoinRequestDal.DeleteRequest(requestId);
         }
