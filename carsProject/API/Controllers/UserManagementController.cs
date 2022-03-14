@@ -12,6 +12,7 @@ namespace API.Controllers
     [System.Web.Http.Cors.EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UserManagementController : ApiController
     {
+        MessagesManagement manager = new MessagesManagement();
         [HttpGet]
         [Route("api/UserManagement/GetUserByUserName")]
         public UserDTO GetUserByUserName(string userName)
@@ -65,7 +66,7 @@ namespace API.Controllers
         [Route("api/UserManagement/GetMessages")]
         public IEnumerable<MessagesDTO> GetMessages(string userId)
         {
-            return MessagesManagement.GetMessages(userId);
+            return manager.GetMessages(userId);
         }
     }
 }

@@ -9,9 +9,18 @@ namespace BL
 {
     public class MessagesManagement
     {
-        public static IEnumerable<MessagesDTO> GetMessages(string userId) {
-           return MessageBL.GetMessagesByUserId(int.Parse(userId));
+        MessageBL msgBl = new MessageBL();
+
+        public IEnumerable<MessagesDTO> GetMessages(string userId) {
+           return msgBl.GetMessagesByUserId(int.Parse(userId));
         }
 
+        public bool CreateMessage(JoinRequestDTO requests)
+        {
+            MessagesDTO msg = new MessagesDTO();
+            msg.isRead = false;
+            msg.message = "יש לך בקשת הצטרפות לנסיעה " + requests.userId.ToString();
+            return msgBl.AddMessage(msg);
+        }
     }
 }

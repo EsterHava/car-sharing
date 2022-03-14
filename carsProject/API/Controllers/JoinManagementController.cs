@@ -13,12 +13,12 @@ namespace API.Controllers
     [RoutePrefix("api/JoinManagement")]
     public class JoinManagementController : ApiController
     {
-        //
+        JoinManagement manager = new JoinManagement();
         [HttpPost]
         [Route("join")]
         public bool JoinRequest([FromBody] JoinRequestDTO request)
         {
-            return JoinManagement.joinRequest(request);
+            return manager.joinRequest(request);
         }
 
         [HttpGet]

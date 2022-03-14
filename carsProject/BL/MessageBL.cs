@@ -10,14 +10,19 @@ namespace BL
 {
     public class MessageBL
     {
-        public static IEnumerable<MessagesDTO> GetMessagesByUserId(int userId)
+        MessagesDal msgDal = new MessagesDal();
+        public  IEnumerable<MessagesDTO> GetMessagesByUserId(int userId)
         {
-            var list = MessagesDal.GetMessages();
+            var list = msgDal.GetMessages();
             foreach (var item in list)
             {
                 if (item.userId == userId)
                     yield return Converts.MessagesConvert.ConvertToMessageDTO(item);
             }
+        }
+
+        public bool AddMessage(MessagesDTO msg) {
+            return msgDal.AddMessage(Converts.MessagesConvert.ConvertToMessage(msg));
         }
 
     }

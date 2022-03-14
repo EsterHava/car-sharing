@@ -13,8 +13,10 @@ namespace BL
 {
     public class JoinManagement
     {
+        MessagesManagement manager = new MessagesManagement();
+        // private string message = ' {יש לך בקשת הצטרפות לנסיעה מס {0';
 
-        public static bool joinRequest(JoinRequestDTO request)
+        public bool joinRequest(JoinRequestDTO request)
         {
             JoinRequestDTO rDTO = JoinRequestBL.AddAndReturnRequest(request);
             if (rDTO != null)
@@ -33,7 +35,7 @@ namespace BL
                     return false;
                 }
             }
-            return true;
+            return manager.CreateMessage(rDTO);
         }
 
         //method that search a travvel for the passenger according the request
@@ -62,8 +64,8 @@ namespace BL
                     var destinationCoordTraveling = new GeoCoordinate((double)item.latDestination, (double)item.longDestination);
                     var destinationCoordRequest = new GeoCoordinate(locationDestinationRequest.lat, locationDestinationRequest.lng);
 
-                    double distanceSource = sourceCoordTraveling.GetDistanceTo(sourceCoordRequest)/1000;
-                    double distanceDestination = destinationCoordTraveling.GetDistanceTo(destinationCoordRequest)/1000;
+                    double distanceSource = sourceCoordTraveling.GetDistanceTo(sourceCoordRequest) / 1000;
+                    double distanceDestination = destinationCoordTraveling.GetDistanceTo(destinationCoordRequest) / 1000;
 
                     TimeSpan span = ((TimeSpan)item.exitTime).Subtract(joinRequest.TimeEixt);
                     string[] days = joinRequest.dayList.Split(',');
@@ -83,7 +85,7 @@ namespace BL
             return RegularTravelingListFiltered;
         }
 
-        public static bool SendEmail(int driverId)
+        private static bool SendEmail(int driverId)
         {
             UserDTO driver = UserBL.GetUserById(driverId);
 
@@ -94,22 +96,8 @@ namespace BL
                         "מצורף בזה קישור\n" +
                         "http://localhost:4200/privateArea/" + driverId);
             return ActivityGeneral.SendEmail(driver.mail, Subject, Body);
-
-
-
         }
-
-
-
-
-
-
-
-
-
-
-
-        //public static bool SendEmail()
+                //public static bool SendEmail()
         //{
 
         //    // copied from https://docs.microsoft.com/en-us/dotnet/api/system.net.mail.smtpclient.send?view=net-5.0

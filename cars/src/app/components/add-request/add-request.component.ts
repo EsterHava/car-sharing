@@ -97,13 +97,13 @@ export class AddRequestComponent implements OnInit {
 
     if (confirm("האם אתה בטוח מעונין להצטרף לנסיעה מס'- " + (this.index + 1))) {
 
-      this.httpJoin.joinRequest(request).subscribe();
+      this.httpJoin.joinRequest(request).subscribe(res=>console.log('res: ',res));
     }
   }
 
   showMap(travel: any) {
     const dialogRef = this.dialog.open(MapComponent, {
-      width: '700px',
+      width: '1200px',
       data:travel 
     });
   }
