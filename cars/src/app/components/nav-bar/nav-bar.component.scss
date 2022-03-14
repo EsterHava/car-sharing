@@ -1,0 +1,105 @@
+
+
+#app-navbar {
+    background: linear-gradient(120deg, #f43d45, #570391)
+}
+
+.txtNavbar{
+    color:white;
+    text-decoration: none;
+}
+
+
+
+.txtNavbar:hover {
+    text-decoration: underline;
+  }
+  
+  .txtNavbar:focus {
+    outline: 0;
+  }
+
+
+  
+  #ver-line {
+    border-left: 0.3px solid white;
+    height: 60%;
+    margin-left: 10%;
+  }
+
+  
+  .mat-toolbar-row,
+  .mat-toolbar-single-row {
+    white-space: normal;
+  }
+  
+  .txtNavbar:hover {
+    text-decoration: underline;
+  }
+  
+  .txtNavbar:focus {
+    outline: 0;
+  }
+  
+  .active_route {
+    text-decoration: underline;
+  }
+  
+  
+  $duration: .3s;
+  $distance: 16px;
+  $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  
+  a {
+    font-size: 23px;
+    color: white;
+    position: relative;
+    text-decoration: none !important;
+    padding-bottom: 2px !important;
+  
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: white;
+    }
+  
+    &:before {
+      opacity: 0;
+      transform: translateY(- $distance);
+      transition: transform 0s $easeOutBack, opacity 0s;
+    }
+  
+    &:after {
+      opacity: 0;
+      transform: translateY($distance/2);
+      transition: transform $duration $easeOutBack, opacity $duration;
+    }
+  
+    &:hover,
+    &:focus {
+  
+      &:before,
+      &:after {
+        opacity: 1;
+        transform: translateY(0);
+      }
+  
+      &:before {
+        transition: transform $duration $easeOutBack, opacity $duration;
+      }
+  
+      &:after {
+        transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
+      }
+    }
+  }
+  
+
+
+  
+

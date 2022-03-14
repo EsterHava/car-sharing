@@ -15,5 +15,6 @@ export interface RegularTravel {
     latSourcr:number,
     longSource:number,
     latDestination:number,
-    longDestination:number
+    longDestination:number,
+    availableSeats:number
 }

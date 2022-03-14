@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { AddTravelComponent } from './add-travel/add-travel.component';
-import { UpdateTravelComponent } from './update-travel/update-travel.component';
-import { PrivateAreaComponent } from './private-area/private-area.component';
-import { TableForDriverComponent } from './table-for-driver/table-for-driver.component';
-import { MessagesComponent } from './messages/messages.component';
-import { MainComponent } from './main/main.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { AddTravelComponent } from './components/add-travel/add-travel.component';
+import { UpdateTravelComponent } from './components/update-travel/update-travel.component';
+import { PrivateAreaComponent } from './components/private-area/private-area.component';
+import { TableForDriverComponent } from './components/table-for-driver/table-for-driver.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { MainComponent } from './components/main/main.component';
 import { AuthGuard } from './AuthGuard';
-import { AboutComponent } from './about/about.component';
-import { TableForTravelerComponent } from './table-for-traveler/table-for-traveler.component';
-import { ProfilComponent } from './profil/profil.component';
+import { AboutComponent } from './components/about/about.component';
+import { TableForTravelerComponent } from './components/table-for-traveler/table-for-traveler.component';
+import { ProfilComponent } from './components/profil/profil.component';
 
 // const routes: Routes = [
 //   { path: '', redirectTo: '/login', pathMatch: 'full' },

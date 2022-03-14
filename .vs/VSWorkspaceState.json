@@ -2,13 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\carsProject",
-    "\\carsProject\\API",
-    "\\carsProject\\API\\Controllers",
-    "\\carsProject\\BL",
-    "\\carsProject\\BL\\Converts",
-    "\\carsProject\\DAL",
-    "\\carsProject\\DTO"
+    "\\carsProject\\BL"
   ],
-  "SelectedNode": "\\carsProject\\DAL\\RegularTravelingDal.cs",
+  "SelectedNode": "\\carsProject\\BL\\RegularTravelingBL.cs",
   "PreviewInSolutionExplorer": false
 }
