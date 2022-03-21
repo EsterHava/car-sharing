@@ -30,7 +30,8 @@
           <Property Name="userId" Type="int" Nullable="false" />
           <Property Name="Date" Type="date" Nullable="false" />
           <Property Name="regularTravelId" Type="int" />
-          <Property Name="temporaryTravelId" Type="int" />
+          <Property Name="destination" Type="nvarchar(max)" />
+          <Property Name="source" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="messages">
           <Key>
@@ -87,7 +88,7 @@
           <Property Name="points" Type="int" />
           <Property Name="isHasCar" Type="bit" />
         </EntityType>
-        <Association Name="FK__messages__userId__440B1D61">
+        <Association Name="FK__messages__userId__4AB81AF0">
           <End Role="user" Type="Self.user" Multiplicity="1" />
           <End Role="messages" Type="Self.messages" Multiplicity="*" />
           <ReferentialConstraint>
@@ -107,30 +108,6 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="car">
-              <PropertyRef Name="userId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_joinRequests_regularTraveling">
-          <End Role="regularTraveling" Type="Self.regularTraveling" Multiplicity="0..1" />
-          <End Role="joinRequests" Type="Self.joinRequests" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="regularTraveling">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="joinRequests">
-              <PropertyRef Name="regularTravelId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_joinRequests_user">
-          <End Role="user" Type="Self.user" Multiplicity="1" />
-          <End Role="joinRequests" Type="Self.joinRequests" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="user">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="joinRequests">
               <PropertyRef Name="userId" />
             </Dependent>
           </ReferentialConstraint>
@@ -191,21 +168,13 @@
           <EntitySet Name="regularTraveling" EntityType="Self.regularTraveling" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="travellerInRegularTravel" EntityType="Self.travellerInRegularTravel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__messages__userId__440B1D61" Association="Self.FK__messages__userId__440B1D61">
+          <AssociationSet Name="FK__messages__userId__4AB81AF0" Association="Self.FK__messages__userId__4AB81AF0">
             <End Role="user" EntitySet="user" />
             <End Role="messages" EntitySet="messages" />
           </AssociationSet>
           <AssociationSet Name="FK_car_user" Association="Self.FK_car_user">
             <End Role="user" EntitySet="user" />
             <End Role="car" EntitySet="car" />
-          </AssociationSet>
-          <AssociationSet Name="FK_joinRequests_regularTraveling" Association="Self.FK_joinRequests_regularTraveling">
-            <End Role="regularTraveling" EntitySet="regularTraveling" />
-            <End Role="joinRequests" EntitySet="joinRequests" />
-          </AssociationSet>
-          <AssociationSet Name="FK_joinRequests_user" Association="Self.FK_joinRequests_user">
-            <End Role="user" EntitySet="user" />
-            <End Role="joinRequests" EntitySet="joinRequests" />
           </AssociationSet>
           <AssociationSet Name="FK_regularTraveling_user" Association="Self.FK_regularTraveling_user">
             <End Role="user" EntitySet="user" />
@@ -256,9 +225,8 @@
           <Property Name="userId" Type="Int32" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="regularTravelId" Type="Int32" />
-          <Property Name="temporaryTravelId" Type="Int32" />
-          <NavigationProperty Name="regularTraveling" Relationship="Self.FK_joinRequests_regularTraveling" FromRole="joinRequests" ToRole="regularTraveling" />
-          <NavigationProperty Name="user" Relationship="Self.FK_joinRequests_user" FromRole="joinRequests" ToRole="user" />
+          <Property Name="destination" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="messages">
           <Key>
@@ -268,7 +236,7 @@
           <Property Name="userId" Type="Int32" Nullable="false" />
           <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="isRead" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="user" Relationship="Self.FK__messages__userId__440B1D61" FromRole="messages" ToRole="user" />
+          <NavigationProperty Name="user" Relationship="Self.FK__messages__userId__4AB81AF0" FromRole="messages" ToRole="user" />
         </EntityType>
         <EntityType Name="regularTraveling">
           <Key>
@@ -286,7 +254,6 @@
           <Property Name="lngDestination" Type="Double" />
           <Property Name="latDestination" Type="Double" />
           <Property Name="availableSeats" Type="Int32" />
-          <NavigationProperty Name="joinRequests" Relationship="Self.FK_joinRequests_regularTraveling" FromRole="regularTraveling" ToRole="joinRequests" />
           <NavigationProperty Name="user" Relationship="Self.FK_regularTraveling_user" FromRole="regularTraveling" ToRole="user" />
           <NavigationProperty Name="travellerInRegularTravel" Relationship="Self.FK_travellerInRegularTravel_regularTraveling" FromRole="regularTraveling" ToRole="travellerInRegularTravel" />
         </EntityType>
@@ -322,8 +289,7 @@
           <Property Name="isHasCar" Type="Boolean" />
           <NavigationProperty Name="car" Relationship="Self.FK_car_user" FromRole="user" ToRole="car" />
           <NavigationProperty Name="gender" Relationship="Self.FK_user_gender" FromRole="user" ToRole="gender" />
-          <NavigationProperty Name="joinRequests" Relationship="Self.FK_joinRequests_user" FromRole="user" ToRole="joinRequests" />
-          <NavigationProperty Name="messages" Relationship="Self.FK__messages__userId__440B1D61" FromRole="user" ToRole="messages" />
+          <NavigationProperty Name="messages" Relationship="Self.FK__messages__userId__4AB81AF0" FromRole="user" ToRole="messages" />
           <NavigationProperty Name="regularTraveling" Relationship="Self.FK_regularTraveling_user" FromRole="user" ToRole="regularTraveling" />
           <NavigationProperty Name="travellerInRegularTravel" Relationship="Self.FK_travellerInRegularTravel_user" FromRole="user" ToRole="travellerInRegularTravel" />
         </EntityType>
@@ -351,31 +317,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_joinRequests_regularTraveling">
-          <End Role="regularTraveling" Type="Self.regularTraveling" Multiplicity="0..1" />
-          <End Role="joinRequests" Type="Self.joinRequests" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="regularTraveling">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="joinRequests">
-              <PropertyRef Name="regularTravelId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_joinRequests_user">
-          <End Role="user" Type="Self.user" Multiplicity="1" />
-          <End Role="joinRequests" Type="Self.joinRequests" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="user">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="joinRequests">
-              <PropertyRef Name="userId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__messages__userId__440B1D61">
+        <Association Name="FK__messages__userId__4AB81AF0">
           <End Role="user" Type="Self.user" Multiplicity="1" />
           <End Role="messages" Type="Self.messages" Multiplicity="*" />
           <ReferentialConstraint>
@@ -423,7 +365,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="car_projectEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="car_projectEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="car" EntityType="Self.car" />
           <EntitySet Name="gender" EntityType="Self.gender" />
           <EntitySet Name="joinRequests" EntityType="Self.joinRequests" />
@@ -439,15 +381,7 @@
             <End Role="gender" EntitySet="gender" />
             <End Role="user" EntitySet="user" />
           </AssociationSet>
-          <AssociationSet Name="FK_joinRequests_regularTraveling" Association="Self.FK_joinRequests_regularTraveling">
-            <End Role="regularTraveling" EntitySet="regularTraveling" />
-            <End Role="joinRequests" EntitySet="joinRequests" />
-          </AssociationSet>
-          <AssociationSet Name="FK_joinRequests_user" Association="Self.FK_joinRequests_user">
-            <End Role="user" EntitySet="user" />
-            <End Role="joinRequests" EntitySet="joinRequests" />
-          </AssociationSet>
-          <AssociationSet Name="FK__messages__userId__440B1D61" Association="Self.FK__messages__userId__440B1D61">
+          <AssociationSet Name="FK__messages__userId__4AB81AF0" Association="Self.FK__messages__userId__4AB81AF0">
             <End Role="user" EntitySet="user" />
             <End Role="messages" EntitySet="messages" />
           </AssociationSet>
@@ -469,7 +403,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="car_projectModelStoreContainer" CdmEntityContainer="car_projectEntities2">
+        <EntityContainerMapping StorageEntityContainer="car_projectModelStoreContainer" CdmEntityContainer="car_projectEntities">
           <EntitySetMapping Name="car">
             <EntityTypeMapping TypeName="car_projectModel.car">
               <MappingFragment StoreEntitySet="car">
@@ -496,7 +430,8 @@
                 <ScalarProperty Name="userId" ColumnName="userId" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="regularTravelId" ColumnName="regularTravelId" />
-                <ScalarProperty Name="temporaryTravelId" ColumnName="temporaryTravelId" />
+                <ScalarProperty Name="destination" ColumnName="destination" />
+                <ScalarProperty Name="source" ColumnName="source" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

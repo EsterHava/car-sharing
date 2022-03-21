@@ -5,7 +5,24 @@
     </p>
 </div> -->
 
+<mat-selection-list #msgSelected>
+  <mat-list-option *ngFor="let mess of messagesList" (click)="isReadMsg(mess)">
+    {{mess.message}}
+  </mat-list-option>
+</mat-selection-list>
 
+
+<mat-list role="list" *ngFor="let m of msgReq| keyvalue">
+  <mat-list-item role="listitem"> 
+  <button (click)="approveRequest(m.key,'true')">מאשר</button>
+  <button (click)="approveRequest(m.key,'false')">לא מאשר</button>
+    {{m.value}}
+  </mat-list-item>
+</mat-list>
+<!-- 
 <div *ngFor="let mess of messagesList">
+  <li>
+    
+  </li>
   <h1>{{mess.message}}</h1>
-</div>
+</div> -->

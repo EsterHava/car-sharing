@@ -1,0 +1,24 @@
+.sppiner-margin {
+    margin: 0 10px;
+}
+
+
+li{
+    padding: 10px;
+    border-bottom: 1px solid #e4e3e2;
+}
+
+div{
+    display: flex;
+}
+
+p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+ngl-icon{
+    padding: 5px;
+    margin: auto 0;
+}

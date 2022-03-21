@@ -13,7 +13,8 @@ import { Message } from '../../models/message';
 export class MessagesComponent implements OnInit {
 
   requestsList: JoinRequest[];
-  messagesList : Message[] = [];
+  messagesList: Message[] = [];
+  msgReq = new Map<Number, String>();
   driverId: any;
 
   constructor(private route: ActivatedRoute,
@@ -21,28 +22,60 @@ export class MessagesComponent implements OnInit {
     private httpUser: UserManagmentServiceService) { }
 
   ngOnInit(): void {
+    this.driverId = localStorage.getItem('UserToken');
+    console.log('driverId: ', this.driverId);
     this.getMessages();
+    this.getRequest();
     //this.getRequestsByDriverId();
 
   }
 
 
-  getMessages(){
+  getMessages() {
     const userId = localStorage.getItem('UserToken');
-    this.httpUser.getMessages(userId ? userId:'').subscribe(messages => {
-      console.log('messages :',messages);
+    this.httpUser.getMessages(userId ? userId : '').subscribe(messages => {
+      console.log('messages :', messages);
       this.messagesList = messages;
-  
-  });
+
+    });
   }
- 
-//   getRequestsByDriverId() {
-    
-//      this.http.getRequestsByDriverId(this.driverId).subscribe(r => {this.requestsList = r,console.log(this.requestsList)});
-    
-//   }
-// getUserNameById(id: number) {
-//     return this.httpUser.getUserNameById(id.toString()).subscribe();
-//   }
+
+  isReadMsg(msgSelected: any) {
+    console.log('msg:', msgSelected);
+  }
+
+  getRequest() {
+    this.http.getRequestsByDriverId(this.driverId).subscribe(res => {
+      this.requestsList = res;
+      for (let req of this.requestsList) {
+        console.log('item: ', req);
+        this.http.getTravelByRequestId(req.id.toString())
+          .subscribe(t => {
+            console.log('travel:', t);
+            const msgReq = `? האם הנך מאשר, ${t.destination}-ל ${t.source}-מ ${t.day} נוסע מעונין להצטרף לנסיעה ביום `;
+            this.msgReq.set(req.id, msgReq);
+
+          });
+      }
+    });
+    console.log('msgReq: ', this.msgReq);
+  }
+
+  approveRequest(reqId: Number, isApprove: string) {
+    this.http.approveRequest(reqId.toString(),isApprove).subscribe(res => {
+      console.log('response: ', res);
+    })
+  }
+
+
+
+  //   getRequestsByDriverId() {
+
+  //      this.http.getRequestsByDriverId(this.driverId).subscribe(r => {this.requestsList = r,console.log(this.requestsList)});
+
+  //   }
+  // getUserNameById(id: number) {
+  //     return this.httpUser.getUserNameById(id.toString()).subscribe();
+  //   }
 
 }

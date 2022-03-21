@@ -10,7 +10,7 @@ namespace DAL
 {
     public class RegularTravelingDal
     {
-        public static IEnumerable<regularTraveling> GetTravel()
+        public IEnumerable<regularTraveling> GetTravel()
         {
             try
             {
@@ -18,14 +18,13 @@ namespace DAL
                 return cp.regularTraveling;
             }
             catch (Exception e)
-            {//todo log
+            {
                 throw new Exception(e.Message);
 
             }
         }
-
-
-        public static bool AddTravel(regularTraveling travel)
+        
+        public bool AddTravel(regularTraveling travel)
         {
             try
             {
@@ -36,11 +35,11 @@ namespace DAL
             }
             catch (Exception)
             {
-
                 return false;
             }
         }
-        public static bool DeleteTravel(int travelId)
+
+        public bool DeleteTravel(int travelId)
         {
             try
             {
@@ -56,11 +55,10 @@ namespace DAL
             catch (Exception e)
             {
                 throw new Exception(e.Message);
-                return false;
             }
-
         }
-        public static bool UpdateTravel(regularTraveling travel)
+
+        public bool UpdateTravel(regularTraveling travel)
         {
             try
             {
@@ -71,7 +69,6 @@ namespace DAL
             }
             catch (Exception)
             {
-                //todo:log
                 return false;
             }
         }

@@ -30,7 +30,6 @@ export class AboutComponent implements OnInit {
    
   var today = new Date()
     var curHr = today.getHours()
-debugger
     if (curHr >1&& curHr<12) {
       this.wishes = 'בוקר טוב';
     } 

@@ -16,8 +16,8 @@ namespace BL.Converts
             JoinRequestDTO.userId = JoinRequest.userId;
             JoinRequestDTO.Date = JoinRequest.Date;
             JoinRequestDTO.regularTravelId = JoinRequest.regularTravelId;
-            JoinRequestDTO.temporaryTravelId = JoinRequest.temporaryTravelId;
-
+            JoinRequestDTO.Destination = JoinRequest.destination;
+            JoinRequestDTO.Source = JoinRequest.source;
             return JoinRequestDTO;
         }
         public static joinRequests ConvertToJoinRequest(JoinRequestDTO JoinRequestDTO)
@@ -27,7 +27,8 @@ namespace BL.Converts
             JoinRequest.userId = JoinRequestDTO.userId;
             JoinRequest.Date = JoinRequestDTO.Date;
             JoinRequest.regularTravelId = JoinRequestDTO.regularTravelId;
-            JoinRequest.temporaryTravelId = JoinRequestDTO.temporaryTravelId;
+            JoinRequest.destination = JoinRequestDTO.Destination;
+            JoinRequest.source = JoinRequestDTO.Source;
             return JoinRequest;
         }
 

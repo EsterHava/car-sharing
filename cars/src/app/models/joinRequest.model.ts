@@ -8,7 +8,7 @@ export interface JoinRequest {
     regularTravelId: number,
     temporaryTravelId: number,
     day:number,
-    destinations:string,
+    destination:string,
     source:string,
     timeEixt:Time,
     destinationsRange:number,

@@ -1,5 +1,8 @@
 <button class="close" mat-button (click)="onNoClick()">X</button>
 
+<mat-progress-spinner style="z-index: 1;margin-top: 100px;position: absolute;margin-left: 10%;"
+    *ngIf="toLoaded === true" class="sppiner-margin" [color]="color" [mode]="mode" [value]="100">
+</mat-progress-spinner>
 <form class="example-form" style="direction: rtl;">
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>כתובת מקור</mat-label>

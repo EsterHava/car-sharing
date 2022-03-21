@@ -13,6 +13,7 @@ namespace API.Controllers
     [RoutePrefix("api/JoinManagement")]
     public class JoinManagementController : ApiController
     {
+        JoinRequestBL requestBL = new JoinRequestBL();
         JoinManagement manager = new JoinManagement();
         [HttpPost]
         [Route("join")]
@@ -23,17 +24,31 @@ namespace API.Controllers
 
         [HttpGet]
         [Route("getRequests")]
-        public IEnumerable<JoinRequestDTO> GetRequestsByDriverId(string driverId) {
-            return JoinRequestBL.GetRequestsByDriverId(int.Parse(driverId));
+        public IEnumerable<JoinRequestDTO> GetRequestsByDriverId(string driverId)
+        {
+            return requestBL.GetRequestsByDriverId(int.Parse(driverId));
         }
-        
+
         //search the travel
         [Route("search")]
         public IEnumerable<RegularTravelingDTO> Post(JoinRequestDTO request)
         {
-            return JoinManagement.SearchTravels(request);
+            return manager.SearchTravels(request);
+        }
+
+        [Route("getTravel")]
+        public RegularTravelingDTO GetTravelByRequestId(string reqId)
+        {
+            return requestBL.GetTravelByRequestId(int.Parse(reqId));
         }
 
 
+        [HttpGet]
+        [Route("approveRequest")]
+        //[Route("approveRequest/{reqId}/{isApprove}")]
+        public bool ApproveRequest(string reqId,string isApprove)
+        {
+            return manager.ApproveRequest(int.Parse(reqId),bool.Parse(isApprove));
+        }
     }
 }

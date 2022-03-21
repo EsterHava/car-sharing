@@ -2,10 +2,11 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RegularTravel } from '../../models/regularTravel.model';
 import { Days } from '../../models/days.model';
-import { TemporaryTravel } from '../../models/temporaryTravel.model';
 import { TravelManagementService } from '../../services/travel-management.service';
 import { DatePipe } from '@angular/common';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
+import { ThemePalette } from '@angular/material/core';
 
 
 @Component({
@@ -19,6 +20,10 @@ export class UpdateTravelComponent implements OnInit {
   travel: any;
 
   statusTravel: boolean;
+  //sppiner
+  toLoaded:Boolean;
+  mode: ProgressSpinnerMode;
+  color: ThemePalette = 'accent';
 
   daysList: Days[] = [
     { key: 1, value: ' יום ראשון' },
@@ -31,16 +36,16 @@ export class UpdateTravelComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private http: TravelManagementService,
     private router: Router,
+    public sppinerDialog: MatDialog,
     public dialogRef: MatDialogRef<UpdateTravelComponent>,
     @Inject(MAT_DIALOG_DATA) public newTravel: any,
     private datepipe: DatePipe
   ) { }
 
   ngOnInit(): void {
-    // this.travel = JSON.parse(JSON.stringify(this.route.snapshot.params));
+    this.mode = 'indeterminate';
     this.travel = this.newTravel;
     console.log("this travel   * " + this.travel)
-    // this.travel=[...this.travel];
     if (this.travel.day) {
       this.statusTravel = true;
     }
@@ -57,15 +62,20 @@ export class UpdateTravelComponent implements OnInit {
 
   updateTravel() {
     if (this.statusTravel) {
+      this.toLoaded = true;
       this.http.updateRegularTravel(this.travel).subscribe(t => {
         console.log(t);
+        this.toLoaded = false;
         this.onNoClick();
       });
     }
-    // else {
-    //   this.http.updateTemporaryTravel(this.travel).subscribe(t => console.log(t));
-    // }
-    //this.router.navigateByUrl('');
-
   }
+
+  // openSppiner() {
+  //   const dialogRef = this.sppinerDialog.open(SppinerComponent, {
+  //     width: '550px',
+  //     disableClose: true,
+  //   });
+  //   return dialogRef;
+  // }
 }

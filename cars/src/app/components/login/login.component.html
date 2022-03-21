@@ -55,16 +55,18 @@
 
 
 <div class="bodyLogin">
-  <div class="loginBox"> <img class="user" src="../../assets/img/logo.png" height="100px" width="100px">
+  <div class="loginBox"> 
+    <img class="user" src="../../assets/img/logo.png" height="100px" width="100px">
 
     <div *ngIf="showTab == 1">
     <form action="login.php" method="post">
       <div class="inputBox">
         <input id="uname" type="text" name="Username" placeholder="שם משתמש" #userName>
         <input id="pass" type="password" name="Password" placeholder="סיסמה" #password>
-        <a routerLink="/main/forgotPassword">שכחתי סיסמה<br /> </a>
       </div>
+      <p>{{textErorr}}</p>
       <input type="submit" name="" value="כניסה" (click)="login(userName.value,password.value)">
+      <a routerLink="/forgotPassword">שכחתי סיסמה<br /> </a>
       <a style="color: #59238F;" (click)="tabToggle(2)"> הרשמה<br /> </a>
     </form>
   </div>

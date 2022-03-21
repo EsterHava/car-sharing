@@ -14,45 +14,58 @@ namespace BL
     public class JoinManagement
     {
         MessagesManagement manager = new MessagesManagement();
+        JoinRequestBL requestBL = new JoinRequestBL();
+        RegularTravelingBL travelingBL = new RegularTravelingBL();
         // private string message = ' {יש לך בקשת הצטרפות לנסיעה מס {0';
 
         public bool joinRequest(JoinRequestDTO request)
         {
-            JoinRequestDTO rDTO = JoinRequestBL.AddAndReturnRequest(request);
+            JoinRequestDTO rDTO = requestBL.AddRequestNotExist(request);
+
+            int driverId = 0;
             if (rDTO != null)
             {
                 try
                 {
                     //int driverId = request.regularTravelId == null ? (int)TemporaryTravelingBL.GetTravelById((int)request.temporaryTravelId).driverId
                     //: (int)RegularTravelingBL.GetTravelById((int)request.regularTravelId).driverId;
-                    int driverId = (int)RegularTravelingBL.GetTravelById((int)request.regularTravelId).driverId;
-                    SendEmail(driverId);
-                    //SendEmail(driverId);
+                    driverId = (int)travelingBL.GetTravelById((int)request.regularTravelId).driverId;
+                    string subject = "יש לך בקשת הצטרפות נסיעה חדשה";
+                    string body = string.Format("יש לך בקשת הצטרפות לנסיעה\n " +
+                                " אנא הכנס לאזורך האישי\n " +
+                                " כדי לאשר.\n" +
+                                "מצורף בזה קישור\n" +
+                                "http://localhost:4200/main/messages");
+                    SendEmail(driverId, subject, body);
+                    //SendEmail(driverId);           
+                    return manager.CreateMessageNewReq(rDTO, driverId);
+
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    JoinRequestBL.DeleteRequest(rDTO.id);
+                    requestBL.DeleteRequest(rDTO.id);
                     return false;
                 }
             }
-            return manager.CreateMessage(rDTO);
+            return false;
         }
 
         //method that search a travvel for the passenger according the request
-        public static List<RegularTravelingDTO> SearchTravels(JoinRequestDTO joinRequest)
+        public List<RegularTravelingDTO> SearchTravels(JoinRequestDTO joinRequest)
         {
+            TravellerInRegularTravelBL travellerInBl = new TravellerInRegularTravelBL();
             List<RegularTravelingDTO> RegularTravelingList = new List<RegularTravelingDTO>();
             List<RegularTravelingDTO> RegularTravelingListFiltered = new List<RegularTravelingDTO>();
 
-            RegularTravelingList = Converts.RegularTravelingConvert.ToDTOList(RegularTravelingDal.GetTravel().ToList());
+            RegularTravelingList = travelingBL.GetTravel().ToList();
 
             Location locationSourceRequest = GoogleMapService.getPosition(joinRequest.Source);
-            Location locationDestinationRequest = GoogleMapService.getPosition(joinRequest.Destinations);
+            Location locationDestinationRequest = GoogleMapService.getPosition(joinRequest.Destination);
 
             foreach (var item in RegularTravelingList)
             {
                 //האם לנסיעה הזאת יש מקום פנוי
-                int countTravellerInRegularTravel = TravellerInRegularTravelBL.GetTravellerInRegularTravelsByTravelId(item.id).Count();
+                int countTravellerInRegularTravel = travellerInBl.GetTravellerInRegularTravelsByTravelId(item.id).Count();
                 if (item.availableSeats <= countTravellerInRegularTravel)
                     continue;
 
@@ -85,19 +98,62 @@ namespace BL
             return RegularTravelingListFiltered;
         }
 
-        private static bool SendEmail(int driverId)
+        public bool ApproveRequest(int reqId, bool isApprove)
         {
-            UserDTO driver = UserBL.GetUserById(driverId);
+            TravellerInRegularTravelBL travellerInBl = new TravellerInRegularTravelBL();
+            JoinRequestDTO request = requestBL.GetRequestById(reqId);
+            RegularTravelingDTO travel = requestBL.GetTravelByRequestId(request.id);
+            string subject;
+            string body;
 
-            string Subject = "יש לך בקשת הצטרפות נסיעה חדשה";
-            string Body = string.Format("יש לך בקשת הצטרפות לנסיעה\n " +
-                        " אנא הכנס לאזורך האישי\n " +
-                        " כדי לאשר.\n" +
-                        "מצורף בזה קישור\n" +
-                        "http://localhost:4200/privateArea/" + driverId);
-            return ActivityGeneral.SendEmail(driver.mail, Subject, Body);
+            if (isApprove)
+            {
+                subject = "בקשתך להצטרפות לנסיעה אושרה";
+                body = " ! בקשתך להצטרפות לנסיעה מ-{0} ל-{1} ביום: {2} אושרה" +
+                    " הנך יכול להכנס לצפות בנסיעות שאתה מצורף אליהן" +
+                    "http://localhost:4200/main/tableForTraveller";
+                travellerInBl.AddTraveller(request);
+            }
+            else
+            {
+                subject = "בקשתך להצטרפות לנסיעה לא אושרה";
+                body = " ! בקשתך להצטרפות לנסיעה מ-{0} ל-{1} ביום: {2} לא אושרה" +
+                   " הנך יכול להכנס לאתר ולחפש נסיעות נוספות" +
+                   "http://localhost:4200/main/tableForTraveller";
+            }
+            body = string.Format(body, travel.day, travel.source, travel.destination);
+            SendEmail(request.userId, subject, body);
+            return requestBL.DeleteRequest(request.id);
         }
-                //public static bool SendEmail()
+
+
+        private bool SendEmail(int userId, string subject, string body)
+        {
+            UserDTO recipient = UserBL.GetUserById(userId);
+            return ActivityGeneral.SendEmail(recipient.mail, subject, body);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public static bool SendEmail()
         //{
 
         //    // copied from https://docs.microsoft.com/en-us/dotnet/api/system.net.mail.smtpclient.send?view=net-5.0

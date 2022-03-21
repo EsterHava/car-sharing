@@ -10,50 +10,60 @@ using BL;
 namespace API.Controllers
 {
     [System.Web.Http.Cors.EnableCors(origins: "*", headers: "*", methods: "*")]
+    [RoutePrefix("api/TravelManagement")]
     public class TravelManagementController : ApiController
     {
+        TravellerInRegularTravelBL travellerInBl = new TravellerInRegularTravelBL();
+        TravelManagement manager = new TravelManagement();
+        RegularTravelingBL travelingBL = new RegularTravelingBL();
 
         [HttpGet]
-        [Route("api/TravelManagement/GetRegularTravel")]
+        [Route("GetRegularTravel")]
         public IEnumerable<RegularTravelingDTO> GetRegularTravel()
         {
-            return RegularTravelingBL.GetTravel();
-        }
-
-            [HttpGet]
-        [Route("api/TravelManagement/GetRegularTravelByDriver")]
-        public IEnumerable<RegularTravelingDTO> GetRegularTravelByDriver(string driverId)
-        {
-            return RegularTravelingBL.GetTravelByDriver(int.Parse(driverId));
-        }
-      
-        [HttpPost]
-        [Route("api/TravelManagement/AddRegularTravel")]
-        public bool AddRegularTravel([FromBody] RegularTravelingDTO travel)
-        {
-            return TravelManagement.AddRegularTravel(travel);
-        }
-
-        [HttpPost]
-        [Route("api/TravelManagement/DeleteRegularTravel")]
-        public bool DeleteRegularTravel([FromBody]RegularTravelingDTO travel)
-        {
-            return TravelManagement.DeleteRegularTravel(travel);
-        }
-
-        [HttpPost]
-        [Route("api/TravelManagement/UpdateRegularTravel")]
-        public bool UpdateRegularTravel([FromBody]RegularTravelingDTO travel)
-        {
-            return TravelManagement.UpdateRegularTravel(travel);
+            return travelingBL.GetTravel();
         }
 
         [HttpGet]
-        [Route("api/TravelManagement/GetTravelerTravelings/{travelerId}")]
+        [Route("GetRegularTravelByDriver")]
+        public IEnumerable<RegularTravelingDTO> GetRegularTravelByDriver(string driverId)
+        {
+            return travelingBL.GetTravelByDriver(int.Parse(driverId));
+        }
+
+        [HttpPost]
+        [Route("AddRegularTravel")]
+        public bool AddRegularTravel([FromBody] RegularTravelingDTO travel)
+        {
+            return manager.AddRegularTravel(travel);
+        }
+
+        [HttpPost]
+        [Route("DeleteRegularTravel")]
+        public bool DeleteRegularTravel([FromBody]RegularTravelingDTO travel)
+        {
+            return manager.DeleteRegularTravel(travel);
+        }
+
+        [HttpPost]
+        [Route("UpdateRegularTravel")]
+        public bool UpdateRegularTravel([FromBody] RegularTravelingDTO travel)
+        {
+            return manager.UpdateRegularTravel(travel);
+        }
+
+        [HttpGet]
+        [Route("GetTravelerTravelings/{travelerId}")]
         public IEnumerable<TravellerInRegularTravelDTO> GetTravellerTravelingsByTraveller(string travelerId)
         {
-            return TravellerInRegularTravelBL.GetTravellerTravelingsByTraveller(int.Parse(travelerId));
+            return travellerInBl.GetTravellerTravelingsByTraveller(int.Parse(travelerId));
         }
-     
+
+        [HttpPost]
+        [Route("DeleteTravellerInTravel")]
+        public bool deleteTraveller([FromBody] TravellerInRegularTravelDTO tr)
+        {
+            return manager.deleteTravelerInTravel(tr);
+        }
     }
 }

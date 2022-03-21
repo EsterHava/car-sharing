@@ -8,35 +8,52 @@ namespace BL
 {
     public class TravelManagement
     {
-        public static bool AddRegularTravel(RegularTravelingDTO travel)
-        {//בדיקות ולידציה
-            return RegularTravelingBL.AddTravel(travel);
+        TravellerInRegularTravelBL travelBL = new TravellerInRegularTravelBL();
+        RegularTravelingBL regularTrBl = new RegularTravelingBL();
+        MessagesManagement msgManager = new MessagesManagement();
+        public bool AddRegularTravel(RegularTravelingDTO travel)
+        {
+            return regularTrBl.AddTravel(travel);
         }
 
-        public static bool AddTemporaryTravel(TemporaryTravelingDTO travel)
+        public bool DeleteRegularTravel(RegularTravelingDTO travel)
         {
-            //בדיקות ולידציה
-            return true; //TemporaryTravelingBL.AddTravel(travel);
+            string subject = "נסיעה שהנך מצורף אליה התבטלה";
+            string body = string.Format("נסיעה שאתה מצורף אליה התבטלה\n" +
+                                        "אנא הכנס לאתר כדי לראות פרטים נוספים\n" +
+                                        "http://localhost:4200/main/messages");
+            var list = travelBL.GetTravellerInRegularTravelsByTravelId(travel.id);
+            foreach(TravellerInRegularTravelDTO item in list){
+                msgManager.CreateMessageDeleteTravel((int)item.travelerId);
+            }
+            return regularTrBl.DeleteTravel(travel.id);
         }
 
-        public static bool DeleteRegularTravel(RegularTravelingDTO travel)
+        public bool UpdateRegularTravel(RegularTravelingDTO travel)
         {
-            return RegularTravelingBL.DeleteTravel(travel.id);
+            return regularTrBl.UpdateTravel(travel);
         }
 
-        public static bool DeleteTemporaryTravel(TemporaryTravelingDTO travel)
+        public bool deleteTravelerInTravel(TravellerInRegularTravelDTO tr)
         {
-            return true;
+            RegularTravelingDTO travel = regularTrBl.GetTravelById((int)tr.regularTravelingId);
+            try
+            {
+                string body = "נוסע בטל הצטרפות לנסיעה ביום  מ- ל- ";
+                string subject = "סכגחלךףף,";
+                return SendEmail((int)travel.driverId, subject, body) && travelBL.deleteTraveller(tr);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
-        public static bool UpdateRegularTravel(RegularTravelingDTO travel)
+        private bool SendEmail(int userId, string subject, string body)
         {
-            return RegularTravelingBL.UpdateTravel(travel);
+            UserDTO recipient = UserBL.GetUserById(userId);
+            return ActivityGeneral.SendEmail(recipient.mail, subject, body);
         }
 
-        public static bool UpdateTemporaryTravel(TemporaryTravelingDTO travel)
-        {
-            return true;//TemporaryTravelingBL.UpdateTravel(travel);
-        }
     }
 }

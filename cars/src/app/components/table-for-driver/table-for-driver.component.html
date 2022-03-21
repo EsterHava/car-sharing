@@ -37,7 +37,7 @@
             <th mat-header-cell *matHeaderCellDef> יום בשבוע </th>
             <td mat-cell *matCellDef="let element">
                 <div *ngFor="let d of daysList">
-                    <p *ngIf="d.key==element.day">
+                    <p *ngIf="d.key==element.day" >
                         {{d.value}}
                     </p>
                 </div>

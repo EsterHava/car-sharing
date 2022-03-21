@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { RegularTravel } from '../../models/regularTravel.model';
-import { TemporaryTravel } from '../../models/temporaryTravel.model';
 import { Days } from '../../models/days.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TravelManagementService } from '../../services/travel-management.service';
@@ -27,12 +26,12 @@ export class TableForTravelerComponent implements OnInit {
 
   displayedColumnsR: string[];
 
- 
+
 
 
   //מערך של כל ימות השבוע
   daysList: Days[] = [
-    { key: 1, value: ' יום ראשון' },
+    { key: 1, value: 'יום ראשון' },
     { key: 2, value: 'יום שני' },
     { key: 3, value: 'יום שלישי' },
     { key: 4, value: 'יום רביעי' },
@@ -54,25 +53,24 @@ export class TableForTravelerComponent implements OnInit {
 
 
   ngOnInit(): void {
-    if (this.status == 'edit') {
-      this.getRegularTravelByDriver();
-      this.displayedColumnsR = ['num', 'source', 'destination', 'exitTime', 'arriveTime', 'day'];
-    }
-    else {
-      this.getTravels();
-      this.displayedColumnsR = ['num', 'source', 'destination', 'exitTime', 'arriveTime', 'day'];
-   }
+    // if (this.status == 'edit') {
+    //   this.getRegularTravelByDriver();
+    //   this.displayedColumnsR = ['num', 'source', 'destination', 'exitTime', 'arriveTime', 'day'];
+    // }
+    // else {
+    this.getTravels();
+    this.displayedColumnsR = ['num', 'source', 'destination', 'exitTime', 'arriveTime', 'day', 'delete'];
+    //  }
   }
 
-  getRegularTravelByDriver() {
-    // const id = this.route.snapshot.paramMap.get('driverId');
-    return this.http.getRegularTravelByDriver(this.driverId).subscribe(t => { console.log(t), this.travelers = t });
-  }
+  // getRegularTravelByDriver() {
+  //   // const id = this.route.snapshot.paramMap.get('driverId');
+  //   return this.http.getRegularTravelByDriver(this.driverId).subscribe(t => { console.log(t), this.travelers = t });
+  // }
 
   getTravels() {
-    debugger
     this.http.getTravelingForTraveller().subscribe(t => {
-      debugger
+      console.log('travelers: ', t);
       this.travelers = t;
     });
   }
@@ -87,7 +85,7 @@ export class TableForTravelerComponent implements OnInit {
       request.regularTravelId = travel.id;
     }
     else {
-  request.temporaryTravelId = travel.id;
+      request.temporaryTravelId = travel.id;
     }
 
     if (confirm("האם אתה בטוח מעונין להצטרף לנסיעה מס'- " + (this.index + 1))) {
@@ -96,12 +94,21 @@ export class TableForTravelerComponent implements OnInit {
     }
   }
 
+  deleteTravel(travelerInTravel: TravelerTraveling) {
+    if (confirm("האם אתה בטוח מעונין לבטל את הצטרפותך לנסיעה זו- " + (this.index + 1))) {
+      this.http.deleteTravelerInTravel(travelerInTravel).subscribe(t => {
+        console.log(t);
+        this.getTravels();
+      });
+    }
+  }
+
   openAddTravelDialog() {
-    
+
     const dialogRef = this.dialog.open(AddRequestComponent, {
       width: '900px'
     });
-   
+
   }
 }
 

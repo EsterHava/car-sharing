@@ -8,7 +8,7 @@ namespace DAL
 {
     public class TravellerInRegularTravelDal
     {
-        public static IEnumerable<travellerInRegularTravel> GetTravellerInRegularTravels()
+        public IEnumerable<travellerInRegularTravel> GetTravellerInRegularTravels()
         {
             try
             {
@@ -19,6 +19,39 @@ namespace DAL
             {//todo log
                 throw new Exception(e.Message);
 
+            }
+        }
+
+        public bool AddTraveller(travellerInRegularTravel tr)
+        {
+            try
+            {
+                car_projectEntities cp = new car_projectEntities();
+                cp.travellerInRegularTravel.Add(tr);
+                cp.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+                throw new Exception(e.Message);
+            }
+        }
+
+        public bool deleteTraveller(travellerInRegularTravel tr)
+        {
+            try
+            {
+                car_projectEntities cp = new car_projectEntities();
+                travellerInRegularTravel travel = cp.travellerInRegularTravel.FirstOrDefault(x => x.id == tr.id);
+                cp.travellerInRegularTravel.Remove(travel);
+                cp.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+                throw new Exception(e.Message);
             }
         }
 

@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { RegularTravel } from '../../models/regularTravel.model';
-import { TemporaryTravel } from '../../models/temporaryTravel.model';
 import { Days } from '../../models/days.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TravelManagementService } from '../../services/travel-management.service';

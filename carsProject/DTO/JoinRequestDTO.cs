@@ -14,7 +14,7 @@ namespace DTO
         public Nullable<int> regularTravelId { get; set; }
         public Nullable<int> temporaryTravelId { get; set; }
         public int Day { get; set; }
-        public string Destinations { get; set; }
+        public string Destination { get; set; }
         public string Source { get; set; }
         public TimeSpan TimeEixt { get; set; }
         public double DestinationsRange { get; set; }

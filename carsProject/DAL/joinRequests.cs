@@ -18,9 +18,7 @@ namespace DAL
         public int userId { get; set; }
         public System.DateTime Date { get; set; }
         public Nullable<int> regularTravelId { get; set; }
-        public Nullable<int> temporaryTravelId { get; set; }
-    
-        public virtual regularTraveling regularTraveling { get; set; }
-        public virtual user user { get; set; }
+        public string destination { get; set; }
+        public string source { get; set; }
     }
 }

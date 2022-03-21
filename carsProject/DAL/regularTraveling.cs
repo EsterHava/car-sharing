@@ -17,7 +17,6 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public regularTraveling()
         {
-            this.joinRequests = new HashSet<joinRequests>();
             this.travellerInRegularTravel = new HashSet<travellerInRegularTravel>();
         }
     
@@ -34,8 +33,6 @@ namespace DAL
         public Nullable<double> latDestination { get; set; }
         public Nullable<int> availableSeats { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<joinRequests> joinRequests { get; set; }
         public virtual user user { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<travellerInRegularTravel> travellerInRegularTravel { get; set; }

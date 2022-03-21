@@ -9,10 +9,15 @@ namespace BL
 {
     public class JoinRequestBL
     {
-        //return all the join to travel request of the passenger that not approve yet
-        public static IEnumerable<JoinRequestDTO> GetRequestsByDriverId(int driverId) {
+        JoinRequestDal requestDal = new JoinRequestDal();
+        TravellerInRegularTravelDal travellerDal = new TravellerInRegularTravelDal();
+        RegularTravelingBL travelingBL = new RegularTravelingBL();
 
-            var list = JoinRequestDal.GetRequests();
+        //return all the join to travel request of the passenger that not approve yet
+        public IEnumerable<JoinRequestDTO> GetRequestsByDriverId(int driverId)
+        {
+
+            var list = requestDal.GetRequests();
             foreach (var item in list)
             {
                 //if ((item.regularTravelId != null && RegularTravelingBL.GetTravelById((int)item.regularTravelId).driverId == driverId ||
@@ -20,7 +25,7 @@ namespace BL
                 //    yield return Converts.JoinRequestConvert.ConvertToJoinRequestDTO(item);
 
                 //}
-                if ((item.regularTravelId != null && RegularTravelingBL.GetTravelById((int)item.regularTravelId).driverId == driverId))
+                if ((item.regularTravelId != null && travelingBL.GetTravelById((int)item.regularTravelId).driverId == driverId))
                 {
                     yield return Converts.JoinRequestConvert.ConvertToJoinRequestDTO(item);
 
@@ -28,21 +33,63 @@ namespace BL
             }
         }
 
-        //add a join request to DB
-        public static bool AddRequest(JoinRequestDTO request)
+        public JoinRequestDTO GetRequestById(int reqId)
         {
-            return JoinRequestDal.AddRequest
+            var list = requestDal.GetRequests();
+            foreach (var item in list)
+            {
+                if (item.id == reqId)
+                    return Converts.JoinRequestConvert.ConvertToJoinRequestDTO(item);
+            }
+            return null;
+        }
+
+        //add a join request to DB
+        public bool AddRequest(JoinRequestDTO request)
+        {
+            return requestDal.AddRequest
                 (Converts.JoinRequestConvert.ConvertToJoinRequest(request));
         }
 
-        public static JoinRequestDTO AddAndReturnRequest(JoinRequestDTO request)
+        public JoinRequestDTO AddRequestNotExist(JoinRequestDTO request)
         {
-            return Converts.JoinRequestConvert.ConvertToJoinRequestDTO(JoinRequestDal.AddAndReturnRequest
-                (Converts.JoinRequestConvert.ConvertToJoinRequest(request)));
+            if (IsRequestExist(request.userId, (int)request.regularTravelId))
+            {
+                return null;
+            }
+            return Converts.JoinRequestConvert.ConvertToJoinRequestDTO(requestDal.AddAndReturnRequest
+                    (Converts.JoinRequestConvert.ConvertToJoinRequest(request)));
         }
 
-        public static bool DeleteRequest(int requestId) {
-           return JoinRequestDal.DeleteRequest(requestId);
+        public bool DeleteRequest(int requestId)
+        {
+            return requestDal.DeleteRequest(requestId);
+        }
+
+        public RegularTravelingDTO GetTravelByRequestId(int reqId)
+        {
+            var reqList = requestDal.GetRequests();
+            foreach (var item in reqList)
+            {
+                if (item.id == reqId)
+                {
+                    return travelingBL.GetTravelById((int)item.regularTravelId);
+                }
+            }
+            return null;
+        }
+        private bool IsRequestExist(int userId, int travelId)
+        {
+            var list = requestDal.GetRequests();
+            List<JoinRequestDTO> requestList = new List<JoinRequestDTO>();
+            foreach (var item in list)
+            {
+                if (item.userId == userId && item.regularTravelId == travelId)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
     }

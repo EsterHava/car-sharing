@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
    
 
   tabToggle(index:number){
-    this.showTab =index;
+    this.showTab = index;
   }
 
   ngOnInit(): void {
@@ -27,21 +27,19 @@ export class LoginComponent implements OnInit {
   }
 
   login(userName: string, password: string) {
-    debugger
     this.user = {} as User;
     this.user.userName = userName;
     this.user.password = password;
     this.http.login(this.user).subscribe(u => { console.log("***"), this.user = u , this.checkNull() });
   }
+
   checkNull() {
-    debugger
     if (this.user != null) {
       this.textErorr = "";
       console.log(this.textErorr);
       this.router.navigateByUrl('main');
       localStorage.setItem('UserToken',this.user.id.toString());
       // localStorage.setItem('Profil',this.user.isHasCar.toString());
-
     }
     else {
       this.textErorr = "שם המשתמש או הסיסמא אינם תקינים";

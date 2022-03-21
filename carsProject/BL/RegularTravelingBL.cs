@@ -14,30 +14,29 @@ namespace BL
 {
     public class RegularTravelingBL
     {
-        public static IEnumerable<RegularTravelingDTO> GetTravel()
+        RegularTravelingDal travelingDal = new RegularTravelingDal();
+        public IEnumerable<RegularTravelingDTO> GetTravel()
         {
-            var list = RegularTravelingDal.GetTravel();
+            var list = travelingDal.GetTravel();
             foreach (var item in list)
             {
                 yield return Converts.RegularTravelingConvert.ConvertToRegularTravelingDTO(item);
             }
-
         }
 
-        public static IEnumerable<RegularTravelingDTO> GetTravelByDriver(int driverId)
+        public IEnumerable<RegularTravelingDTO> GetTravelByDriver(int driverId)
         {
-            var list = RegularTravelingDal.GetTravel();
+            var list = travelingDal.GetTravel();
             foreach (var item in list)
             {
                 if (item.driverId == driverId)
                     yield return Converts.RegularTravelingConvert.ConvertToRegularTravelingDTO(item);
             }
-
         }
 
-        public static RegularTravelingDTO GetTravelById(int id)
+        public RegularTravelingDTO GetTravelById(int id)
         {
-            var list = RegularTravelingDal.GetTravel();
+            var list = travelingDal.GetTravel();
             foreach (var item in list)
             {
                 if (item.id == id)
@@ -45,10 +44,9 @@ namespace BL
 
             }
             return null;
-
         }
 
-        public static bool AddTravel(RegularTravelingDTO travel)
+        public bool AddTravel(RegularTravelingDTO travel)
         {
             Location locationSource = new Location();
             locationSource = GoogleMapService.getPosition(travel.source);
@@ -59,16 +57,16 @@ namespace BL
             travel.latDestination = locationDestination.lat;
             travel.longDestination = locationDestination.lng;
 
-            return RegularTravelingDal.AddTravel
+            return travelingDal.AddTravel
             (Converts.RegularTravelingConvert.ConvertToRegularTraveling(travel));
         }
 
-        public static bool DeleteTravel(int travelId)
+        public bool DeleteTravel(int travelId)
         {
-            return RegularTravelingDal.DeleteTravel(travelId);
+            return travelingDal.DeleteTravel(travelId);
         }
 
-        public static bool UpdateTravel(RegularTravelingDTO travel)
+        public bool UpdateTravel(RegularTravelingDTO travel)
         {
             Location locationSource = GoogleMapService.getPosition(travel.source);
             travel.latSourcr = locationSource.lat;
@@ -78,7 +76,7 @@ namespace BL
             travel.latSourcr = locationDestination.lat;
             travel.longSource = locationDestination.lng;
 
-            return RegularTravelingDal.UpdateTravel
+            return travelingDal.UpdateTravel
                 (Converts.RegularTravelingConvert.ConvertToRegularTraveling(travel));
         }
     }

@@ -28,9 +28,7 @@ namespace DAL
                 car_projectEntities cp = new car_projectEntities();
                 cp.user.Add(user);
                 cp.SaveChanges();
-                
-
-                return user.id;
+                             return user.id;
             }
             catch (Exception e)
             {

@@ -20,14 +20,34 @@ export class JoinManagmentService {
   getRequestsByDriverId(driverId: string) {
     const params = new HttpParams({
       fromObject: {
-        driverId:driverId
+        driverId: driverId
       }
     });
-    return this.http.get<any[]>(this.url + "/getRequests", {params:params});
+    return this.http.get<JoinRequest[]>(this.url + "/getRequests", { params: params });
   }
 
-  search(request: JoinRequest) {     
-    return this.http.post<any[]>(`${this.url}/search`,request);
+  search(request: JoinRequest) {
+    return this.http.post<any[]>(`${this.url}/search`, request);
   }
 
+  getTravelByRequestId(reqId: string) {
+    const params = new HttpParams({
+      fromObject: {
+        reqId: reqId
+      }
+    });
+    return this.http.get<any>(this.url + '/getTravel', { params: params });
+  }
+
+  approveRequest(reqId:string, isApprove:string){
+    const params = new HttpParams({
+      fromObject: {
+        reqId: reqId,
+        isApprove:isApprove
+      }
+    });
+
+    return this.http.get<any>(this.url + '/approveRequest',{params:params});
+    // return this.http.get<boolean>(this.url + `/approveRequest/${reqId}/${isApprove}`);
+  }
 }

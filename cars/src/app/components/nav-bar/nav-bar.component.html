@@ -1,24 +1,26 @@
+<mat-toolbar id="app-navbar">
+  <mat-grid-list cols="13" style="width: 100%;">
+    <mat-grid-tile colspan="3" id="logo"> <a [routerLink]="'about'" routerLinkActive="active_route"><img
+          src="./../../assets/img/logo.png" style="width:33%;height:44%;z-index: 100; background-color: white;" /></a>
+    </mat-grid-tile>
+    <!-- <mat-grid-tile colspan="3">
+    </mat-grid-tile> -->
 
-    <mat-toolbar id="app-navbar">
-        <mat-grid-list cols="13" style="width: 100%;">
-          <mat-grid-tile colspan="2" id="logo" > <a [routerLink]="'about'" routerLinkActive="active_route"><img src="./../../assets/img/logo.png"
-              style="width:33%;height:44%;z-index: 100; background-color: white;" /></a>
-          </mat-grid-tile>
-          <mat-grid-tile colspan="3" > 
-            </mat-grid-tile>         
-   
-          <mat-grid-tile colspan="2">    
-            <a  class="txtNavbar" [routerLink]="'messages'" routerLinkActive="active_route">הודעות </a>
-          </mat-grid-tile>      
-          <mat-grid-tile colspan="2">    
-            <a  class="txtNavbar" [routerLink]="'tableForTraveller'" routerLinkActive="active_route">נסיעות שלי(נוסע) </a>
-          </mat-grid-tile>      
-          <mat-grid-tile colspan="2">    
-            <a  class="txtNavbar" [routerLink]="'tableForDriver'" routerLinkActive="active_route">נסיעות שלי(נהג) </a>
-          </mat-grid-tile> 
-          <mat-grid-tile colspan="2">    
-            <a  class="txtNavbar" [routerLink]="'register'" routerLinkActive="active_route">פרופיל שלי</a>
-          </mat-grid-tile>         
-        </mat-grid-list>
-      </mat-toolbar>
+    <mat-grid-tile colspan="2">
+      <a class="txtNavbar" [routerLink]="'/login'" >התנתק </a>
+    </mat-grid-tile>
 
+    <mat-grid-tile colspan="2">
+      <a class="txtNavbar" [routerLink]="'messages'" routerLinkActive="active_route">הודעות </a>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2">
+      <a class="txtNavbar" [routerLink]="'tableForTraveller'" routerLinkActive="active_route">נסיעות שלי(נוסע) </a>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2">
+      <a class="txtNavbar" [routerLink]="'tableForDriver'" routerLinkActive="active_route">נסיעות שלי(נהג) </a>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2">
+      <a class="txtNavbar" [routerLink]="'register'" routerLinkActive="active_route">פרופיל שלי</a>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-toolbar>

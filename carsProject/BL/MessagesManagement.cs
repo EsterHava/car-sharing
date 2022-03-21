@@ -11,15 +11,35 @@ namespace BL
     {
         MessageBL msgBl = new MessageBL();
 
-        public IEnumerable<MessagesDTO> GetMessages(string userId) {
-           return msgBl.GetMessagesByUserId(int.Parse(userId));
+        public IEnumerable<MessagesDTO> GetMessages(string userId)
+        {
+            return msgBl.GetMessagesByUserId(int.Parse(userId));
         }
 
-        public bool CreateMessage(JoinRequestDTO requests)
+        public bool CreateMessageNewReq(JoinRequestDTO request, int driverId)
         {
+            string userName = UserManagement.GetUserNameById(request.userId);
             MessagesDTO msg = new MessagesDTO();
             msg.isRead = false;
-            msg.message = "יש לך בקשת הצטרפות לנסיעה " + requests.userId.ToString();
+            //msg.message = "{1}יש לך בקשת הצטרפות לנסיעה{0} עבור נוסע" + request.regularTravelId + userName;
+            msg.message = string.Format("{1} יש לך בקשת הצטרפות לנסיעה{0} עבור ", request.regularTravelId, userName);
+            msg.userId = driverId;
+            return msgBl.AddMessage(msg);
+        }
+
+        public bool CreateMessageDeleteTravel(int userId) {
+            MessagesDTO msg = new MessagesDTO();
+            msg.isRead = false;
+            msg.userId = userId;
+            msg.message = "נסיעה שהנך מצורף אליה התבטלה";
+            return msgBl.AddMessage(msg);
+        }
+
+        public bool CreateMessageDeleteTravellerInTravel(int driverId) {
+            MessagesDTO msg = new MessagesDTO();
+            msg.isRead = false;
+            msg.userId = driverId;
+            msg.message = "נוסע בטל את הצטרפותו לנסיעה ";
             return msgBl.AddMessage(msg);
         }
     }

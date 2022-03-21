@@ -21,21 +21,25 @@ import { DatePipe } from '@angular/common';
 import { PrivateAreaComponent } from './components/private-area/private-area.component';
 import { TableForDriverComponent } from './components/table-for-driver/table-for-driver.component';
 import { MessagesComponent } from './components/messages/messages.component'
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule} from '@angular/material/dialog';
+import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { MainComponent } from './components/main/main.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import{ MatGridListModule } from '@angular/material/grid-list';
+import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { AboutComponent } from './components/about/about.component';
 import { TableForTravelerComponent } from './components/table-for-traveler/table-for-traveler.component';
 import { AddRequestComponent } from './components/add-request/add-request.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { MapComponent } from './components/map/map.component';
 import { AgmCoreModule } from '@agm/core';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatButtonModule} from '@angular/material/button';
+import { MatTooltipModule} from '@angular/material/tooltip';
+import { MatListModule} from '@angular/material/list';
+import { MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSliderModule} from '@angular/material/slider';
+import { JoinRequestComponent } from './components/join-request/join-request.component';
+
 
 
 
@@ -58,7 +62,8 @@ import {MatSliderModule} from '@angular/material/slider';
     TableForTravelerComponent,
     AddRequestComponent,
     ProfilComponent,
-    MapComponent
+    MapComponent,
+    JoinRequestComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +82,9 @@ import {MatSliderModule} from '@angular/material/slider';
     MatTooltipModule,
     MatButtonModule,
     MatIconModule,
+    MatProgressSpinnerModule,
     MatSliderModule,
+    MatListModule,
     AgmCoreModule.forRoot({
       apiKey: ''
     })

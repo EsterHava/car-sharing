@@ -9,7 +9,7 @@ namespace DAL
    public class JoinRequestDal
     {
 
-        public static IEnumerable<joinRequests> GetRequests()
+        public IEnumerable<joinRequests> GetRequests()
         {
             try
             {
@@ -24,7 +24,7 @@ namespace DAL
         }
 
        
-        public static bool AddRequest(joinRequests Request)
+        public bool AddRequest(joinRequests Request)
         {
             try
             {
@@ -39,12 +39,12 @@ namespace DAL
                 return false;
             }
         }
-        public static joinRequests AddAndReturnRequest(joinRequests Request)
+        public joinRequests AddAndReturnRequest(joinRequests Request)
         {
             try
             {
                 car_projectEntities cp = new car_projectEntities();
-                joinRequests r=cp.joinRequests.Add(Request);
+                joinRequests r = cp.joinRequests.Add(Request);
                 cp.SaveChanges();
                 return r;
             }
@@ -55,7 +55,8 @@ namespace DAL
             }
         }
 
-        public static bool DeleteRequest(int requsetId) {
+
+        public bool DeleteRequest(int requsetId) {
             try
             {
                 car_projectEntities cp = new car_projectEntities();

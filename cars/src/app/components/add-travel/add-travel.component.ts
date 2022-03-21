@@ -1,12 +1,13 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { RegularTravel } from '../../models/regularTravel.model';
-import { TemporaryTravel } from '../../models/temporaryTravel.model';
 import { TravelManagementService } from '../../services/travel-management.service';
 import { Days } from '../../models/days.model';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { User } from '../../models/user.model';
+import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
+import { ThemePalette } from '@angular/material/core';
 
 
 @Component({
@@ -17,21 +18,20 @@ import { User } from '../../models/user.model';
 
 export class AddTravelComponent implements OnInit {
 
-  //הוספת נסיעה חד פעמית
-  //temporaryTravel: TemporaryTravel;
-
   // הוספת נסיעה קבועה
   regularTravel: RegularTravel;
 
   //סוג הנסיעה
   statusTravel: any;
 
-  //תאריך עבור נסיעה חד פעמית
-  //dateForTemporaryTravel: Date;
-
   //ימים עבור נסיעות קבועות
   days = new FormControl();
-  
+
+  //sppiner
+  toLoaded:Boolean;
+  mode: ProgressSpinnerMode;
+  color: ThemePalette = 'accent';
+
   daysList: Days[] = [
     { key: 1, value: ' יום ראשון' },
     { key: 2, value: 'יום שני' },
@@ -42,27 +42,29 @@ export class AddTravelComponent implements OnInit {
   //עבור הנהג id
   driverId: any;
 
-  constructor(private http: TravelManagementService, private route: ActivatedRoute,
+  constructor(
+    private http: TravelManagementService,
+    private route: ActivatedRoute,
+    private sppinerDialog: MatDialog,
     public dialogRef: MatDialogRef<AddTravelComponent>,
     @Inject(MAT_DIALOG_DATA) public data: number) {
     this.statusTravel = true;
   }
 
   ngOnInit(): void {
+    this.mode = 'indeterminate';
     //this.id = this.route.snapshot.paramMap.get('driverId');
     this.driverId = this.data;
     console.log("id    " + this.data);
-
   }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
 
-  addTravel(source: string, destination: string, exitTime: any, arriveTime: any,numSeats:any) {
+  addTravel(source: string, destination: string, exitTime: any, arriveTime: any, numSeats: any) {
     if (confirm("האם אתה בטוח מעונין להוסיף נסיעה זו? ")) {
-
-      //ToDo: בדיקות ולידציה
+      this.toLoaded = true;
       console.log(this.days.value);
       if (this.statusTravel) {
         this.regularTravel = {} as RegularTravel;
@@ -71,11 +73,12 @@ export class AddTravelComponent implements OnInit {
         this.regularTravel.exitTime = exitTime;
         this.regularTravel.arriveTime = arriveTime;
         this.regularTravel.driverId = this.driverId;
-        this.regularTravel.availableSeats=numSeats;
+        this.regularTravel.availableSeats = numSeats;
         for (let index = 0; index < this.days.value.length; index++) {
           this.regularTravel.day = this.days.value[index];
           this.http.addRegularTravel(this.regularTravel).subscribe(t => {
             console.log(t);
+            this.toLoaded = false;
             this.onNoClick();
           });
         }
@@ -93,4 +96,12 @@ export class AddTravelComponent implements OnInit {
 
     }
   }
+
+  // openSppiner() {
+  //   const dialogRef = this.sppinerDialog.open(SppinerComponent, {
+  //     width: '550px',
+  //     disableClose: true,
+  //   });
+  //   return dialogRef;
+  // }
 }
