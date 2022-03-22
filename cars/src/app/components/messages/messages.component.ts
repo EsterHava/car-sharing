@@ -52,7 +52,7 @@ export class MessagesComponent implements OnInit {
         this.http.getTravelByRequestId(req.id.toString())
           .subscribe(t => {
             console.log('travel:', t);
-            const msgReq = `? האם הנך מאשר, ${t.destination}-ל ${t.source}-מ ${t.day} נוסע מעונין להצטרף לנסיעה ביום `;
+            const msgReq = `?  נוסע מעונין להצטרף לנסיעה ביום ${t.day} מ- ${t.source} ל- ${t.destination} , האם הנך מאשר `;
             this.msgReq.set(req.id, msgReq);
 
           });

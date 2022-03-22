@@ -22,3 +22,30 @@ ngl-icon{
     padding: 5px;
     margin: auto 0;
 }
+.messageList{
+margin-right: 5%;
+    margin-top: 5%;
+   float: right;
+
+}
+.joinRequesrList{
+   
+    width: 60%;
+    float: left;
+     margin-left: 1%;
+}
+.btnRequest{
+    margin-right: 10px;color: white;background-color: #f43d45;
+}
+.messageTitle,.joinRequestTitle{
+    color:#f43d45;
+    font-size: x-large;
+    margin-bottom: 10px;
+}
+.joinRequestTitle{margin-top: 5%;
+    margin-left: 100px;
+    height: 20px;
+}
+.messageTitle{
+    margin-top: 5%;float: right;
+}

@@ -3,22 +3,26 @@
         
       {{getUserNameById(request.UserId)}} 
     </p>
-</div> -->
+</div> -->  
+<div class="messageList">
+<p class="messageTitle">הודעות ועידכונים</p>
 
 <mat-selection-list #msgSelected>
-  <mat-list-option *ngFor="let mess of messagesList" (click)="isReadMsg(mess)">
+  <mat-list-option *ngFor="let mess of messagesList" (click)="isReadMsg(mess)" style="margin-top: 30px;">
     {{mess.message}}
   </mat-list-option>
 </mat-selection-list>
-
-
-<mat-list role="list" *ngFor="let m of msgReq| keyvalue">
+</div> <p class="joinRequestTitle">בקשות הצטרפות לנסיעה</p>
+<div class="joinRequesrList">
+ 
+<mat-list role="list" *ngFor="let m of msgReq| keyvalue" style="margin-top:30px;">
   <mat-list-item role="listitem"> 
-  <button (click)="approveRequest(m.key,'true')">מאשר</button>
-  <button (click)="approveRequest(m.key,'false')">לא מאשר</button>
+  <button (click)="approveRequest(m.key,'true')" class="btnRequest">מאשר</button>
+  <button (click)="approveRequest(m.key,'false')"  class="btnRequest">לא מאשר</button>
     {{m.value}}
   </mat-list-item>
 </mat-list>
+</div>
 <!-- 
 <div *ngFor="let mess of messagesList">
   <li>
