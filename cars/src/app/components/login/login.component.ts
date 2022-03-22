@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
       console.log(this.textErorr);
       this.router.navigateByUrl('main');
       localStorage.setItem('UserToken',this.user.id.toString());
-      // localStorage.setItem('Profil',this.user.isHasCar.toString());
     }
     else {
       this.textErorr = "שם המשתמש או הסיסמא אינם תקינים";

@@ -15,11 +15,7 @@
     <input matInput placeholder="0533123456" [(ngModel)]="user.tel" name="tel" pattern=".{6,12}" required>
     <mat-error *ngIf="tel.invalid">{{getErrorMessage()}}</mat-error>
   </mat-form-field>
-  <!-- <mat-form-field class="example-full-width example-container" appearance="fill">
-        <mat-label>enter your email</mat-label>
-        <input matInput placeholder="pat@example.com" [(ngModel)]="user.mail" name="mail" required>
-        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-    </mat-form-field> -->
+
   <div class="example-container">
     <mat-form-field appearance="fill" class="example-full-width" [ngClass]="{'fieldNewUser': isNew ===1}">
       <mat-label>הכנס כתובת מייל</mat-label>
@@ -44,20 +40,7 @@
       <input type="password" matInput placeholder="1234" [(ngModel)]="confirmPassword" name="psw2">
     </mat-form-field>
   </div>
-  <!-- <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>genderId</mat-label>
-    <input matInput placeholder="Levi" [(ngModel)]="user.genderId" name="1">
-  </mat-form-field> -->
-
-  <!-- <mat-form-field class="example-full-width" appearance="fill"> -->
   <div style="text-align: right;">
-    <!-- <mat-label>מין</mat-label><br />
-  <select [(ngModel)]="user.genderId" name="genderId">
-    <option value="1">זכר</option>
-    <option value="2">נקבה</option>
-  </select> -->
-    <!-- </mat-form-field> -->
-
 
     <mat-form-field class="demo-full-width" appearance="fill" [ngClass]="{'fieldNewUser': isNew ===1}">
       <mat-label>מין</mat-label>
@@ -68,11 +51,6 @@
     </mat-form-field>
 
     <br />
-    <!-- <mat-label>האם בבעלותך רכב?</mat-label><br />
-    <select [(ngModel)]="user.isHasCar" name="isHasCar">
-      <option value="True">כן</option>
-      <option value="False">לא</option>
-    </select> -->
     <mat-form-field class="demo-full-width" appearance="fill" [ngClass]="{'fieldNewUser': isNew ===1}">
       <mat-label>האם בבעלותך רכב</mat-label>
       <mat-select matNativeControl [(ngModel)]="user.isHasCar" name="hasCar">
@@ -81,28 +59,8 @@
       </mat-select>
     </mat-form-field> 
   </div>
-  <!-- <div *ngIf="user.isHasCar">
-     {{this.user.isHasCar}} -->
-    <!-- <mat-form-field class="example-full-width" appearance="fill" [ngClass]="{'fieldNewUser': isNew ===1}">
-      <mat-label>מספר הרכב</mat-label>
-      <input matInput placeholder="123456" [(ngModel)]="car.carNumber" name="carNumber">
-    </mat-form-field><br /> --> 
 
-    <!-- <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>מספר המקומות ברכב</mat-label>
-    <input matInput placeholder="5" [(ngModel)]="car.numOfSeats" name="numOfSeats">
-  </mat-form-field><br />  
-  </div>
--->
-
-
-  <!-- <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>isHasCar</mat-label>
-    <input matInput placeholder="Levi" [(ngModel)]="user.isHasCar" name="2">
-  </mat-form-field> -->
-  <!-- <p>{{textErorr}}</p> -->
   <p>{{textError}}</p>
-  <!-- <input type="submit" /> -->
   <div class="loginBox">
     <div *ngIf="isNew != 1">
       <input type="submit" name="btn" value="אישור" (click)="btnOk()">
@@ -110,8 +68,6 @@
   </div>
   <div *ngIf="isNew == 1">
     <input type="submit" name="btnNewUser" value="אישור" (click)="btnOkNewUser()">
-    <!-- (click)="btnOkNewUser(password2.value)" -->
-    <!-- <button (click)="registerDetails(password2.value)">אישור</button>  -->
   </div>
 
 </form>

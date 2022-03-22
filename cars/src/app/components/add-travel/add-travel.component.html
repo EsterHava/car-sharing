@@ -41,30 +41,6 @@
         <mat-label>מספר המקומות הפנויים בנסיעה</mat-label>
         <input matInput placeholder="2" #numSeats>
     </mat-form-field>
-    <!-- <div *ngIf="statusTravel; then thenBlock else elseBlock"></div>
-    
-    <ng-template #thenBlock>
-        <mat-form-field appearance="fill">
-            <mat-label>יום הנסיעה בשבוע</mat-label>
-            <mat-select [formControl]="days" multiple>
-                <mat-select-trigger>
-                    {{days.value ? days.value[0] : ''}}
-                    <span *ngIf="days.value?.length > 1" class="example-additional-selection">
-                        (+{{days.value.length - 1}} {{days.value?.length === 2 ? 'other' : 'others'}})
-                    </span>
-                </mat-select-trigger>
-                <mat-option *ngFor="let day of daysList" [value]="day.key">{{day.value}}</mat-option>
-            </mat-select>
-        </mat-form-field>
-    </ng-template>
-
-    <ng-template #elseBlock>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>תאריך הנסיעה</mat-label>
-            <input matInput placeholder="20:00" type="date" min="date.now()" name="dateForTemporaryTravel"
-                [(ngModel)]="dateForTemporaryTravel">
-        </mat-form-field>
-    </ng-template> -->
     <br />
     <button class="btn"
         (click)="addTravel(source.value,destination.value,exitTime.value,arriveTime.value,numSeats.value)">הוסף

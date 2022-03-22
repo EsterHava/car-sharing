@@ -21,7 +21,6 @@ namespace BL
             string userName = UserManagement.GetUserNameById(request.userId);
             MessagesDTO msg = new MessagesDTO();
             msg.isRead = false;
-            //msg.message = "{1}יש לך בקשת הצטרפות לנסיעה{0} עבור נוסע" + request.regularTravelId + userName;
             msg.message = string.Format("{1} יש לך בקשת הצטרפות לנסיעה{0} עבור ", request.regularTravelId, userName);
             msg.userId = driverId;
             return msgBl.AddMessage(msg);

@@ -16,9 +16,8 @@ namespace DAL
                 return cp.travellerInRegularTravel;
             }
             catch (Exception e)
-            {//todo log
+            {
                 throw new Exception(e.Message);
-
             }
         }
 

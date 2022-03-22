@@ -16,29 +16,25 @@ namespace DAL
                 return cp.messages;
             }
             catch (Exception e)
-            {//todo log
+            {
                 throw new Exception(e.Message);
-
             }
         }
 
         public bool AddMessage(messages msg)
         {
-
             try
             {
                 car_projectEntities cp = new car_projectEntities();
                 cp.messages.Add(msg);
                 cp.SaveChanges();
-
-
+            
                 return true;
             }
             catch (Exception e)
             {
                 return false;
             }
-
         }
     }
 }

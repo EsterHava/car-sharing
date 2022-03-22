@@ -55,16 +55,4 @@ export class ForgotPasswordComponent implements OnInit {
 
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
-  // //למה אי אפשר לעשות את זה אחרי פונקציה לוגין 
-  // updatePassword(password: string) {
-  //   this.user.password = password;
-  //   this.http.updateUser(this.user).subscribe(u => {
-  //     if (this.user != null)
-  //       //Kהוסיף ההראה שהכל הצליח
-  //       this.router.navigate(['/login'])
-  //     else {
-  //       this.textError = " !!!!! ארע שגיאה ,נסה שוב "
-  //     }
-  //   });
-  // }
 }

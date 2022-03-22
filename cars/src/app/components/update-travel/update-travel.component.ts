@@ -18,7 +18,6 @@ import { ThemePalette } from '@angular/material/core';
 export class UpdateTravelComponent implements OnInit {
 
   travel: any;
-
   statusTravel: boolean;
   //sppiner
   toLoaded:Boolean;
@@ -70,12 +69,4 @@ export class UpdateTravelComponent implements OnInit {
       });
     }
   }
-
-  // openSppiner() {
-  //   const dialogRef = this.sppinerDialog.open(SppinerComponent, {
-  //     width: '550px',
-  //     disableClose: true,
-  //   });
-  //   return dialogRef;
-  // }
 }

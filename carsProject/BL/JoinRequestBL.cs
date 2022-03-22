@@ -20,11 +20,6 @@ namespace BL
             var list = requestDal.GetRequests();
             foreach (var item in list)
             {
-                //if ((item.regularTravelId != null && RegularTravelingBL.GetTravelById((int)item.regularTravelId).driverId == driverId ||
-                //    item.temporaryTravelId != null && TemporaryTravelingBL.GetTravelById((int)item.temporaryTravelId).driverId == driverId)){
-                //    yield return Converts.JoinRequestConvert.ConvertToJoinRequestDTO(item);
-
-                //}
                 if ((item.regularTravelId != null && travelingBL.GetTravelById((int)item.regularTravelId).driverId == driverId))
                 {
                     yield return Converts.JoinRequestConvert.ConvertToJoinRequestDTO(item);

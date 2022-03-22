@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-   public class JoinRequestDal
+    public class JoinRequestDal
     {
 
         public IEnumerable<joinRequests> GetRequests()
@@ -17,13 +17,12 @@ namespace DAL
                 return cp.joinRequests;
             }
             catch (Exception e)
-            {//todo log
+            {
                 throw new Exception(e.Message);
-
             }
         }
 
-       
+
         public bool AddRequest(joinRequests Request)
         {
             try
@@ -55,8 +54,8 @@ namespace DAL
             }
         }
 
-
-        public bool DeleteRequest(int requsetId) {
+        public bool DeleteRequest(int requsetId)
+        {
             try
             {
                 car_projectEntities cp = new car_projectEntities();
@@ -67,7 +66,6 @@ namespace DAL
             }
             catch (Exception)
             {
-                //todo:log
                 return false;
             }
         }

@@ -16,7 +16,6 @@ namespace BL
         MessagesManagement manager = new MessagesManagement();
         JoinRequestBL requestBL = new JoinRequestBL();
         RegularTravelingBL travelingBL = new RegularTravelingBL();
-        // private string message = ' {יש לך בקשת הצטרפות לנסיעה מס {0';
 
         public bool joinRequest(JoinRequestDTO request)
         {
@@ -27,8 +26,6 @@ namespace BL
             {
                 try
                 {
-                    //int driverId = request.regularTravelId == null ? (int)TemporaryTravelingBL.GetTravelById((int)request.temporaryTravelId).driverId
-                    //: (int)RegularTravelingBL.GetTravelById((int)request.regularTravelId).driverId;
                     driverId = (int)travelingBL.GetTravelById((int)request.regularTravelId).driverId;
                     string subject = "יש לך בקשת הצטרפות נסיעה חדשה";
                     string body = string.Format("יש לך בקשת הצטרפות לנסיעה\n " +
@@ -37,9 +34,7 @@ namespace BL
                                 "מצורף בזה קישור\n" +
                                 "http://localhost:4200/main/messages");
                     SendEmail(driverId, subject, body);
-                    //SendEmail(driverId);           
                     return manager.CreateMessageNewReq(rDTO, driverId);
-
                 }
                 catch (Exception ex)
                 {
@@ -133,57 +128,5 @@ namespace BL
             return ActivityGeneral.SendEmail(recipient.mail, subject, body);
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //public static bool SendEmail()
-        //{
-
-        //    // copied from https://docs.microsoft.com/en-us/dotnet/api/system.net.mail.smtpclient.send?view=net-5.0
-        //    string to = "esterhava@gmail.com";
-        //    string from = "carsharing62@gmail.com";
-        //    MailMessage message = new MailMessage(from, to);
-        //    message.Subject = "welcom to car sharing";
-        //    message.Body = "hello!!!!!";
-
-        //    SmtpClient client = new SmtpClient("smtp.gmail.com");
-        //    // Credentials are necessary if the server requires the client
-        //    // to authenticate before it will send email on the client's behalf.
-        //    NetworkCredential nc = new NetworkCredential(from, "0548594162");
-        //    client.Credentials = nc;
-        //    client.UseDefaultCredentials = true;
-        //    client.EnableSsl = true;
-        //    client.Port = 587;
-        //    client.UseDefaultCredentials = false;
-
-        //    try
-        //    {
-        //        client.Send(message);
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("Exception caught in CreateTestMessage2(): {0}",
-        //            ex.ToString());
-        //        return false;
-        //    }
-        //}
     }
 }

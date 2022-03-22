@@ -46,8 +46,6 @@ export class JoinManagmentService {
         isApprove:isApprove
       }
     });
-
     return this.http.get<any>(this.url + '/approveRequest',{params:params});
-    // return this.http.get<boolean>(this.url + `/approveRequest/${reqId}/${isApprove}`);
   }
 }

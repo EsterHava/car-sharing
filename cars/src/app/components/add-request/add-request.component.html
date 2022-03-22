@@ -17,10 +17,6 @@
         <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="500" step="500" min="0" max="100000"
             aria-label="units" [formControl]="sourceRange"></mat-slider>
     </div>
-    <!-- <mat-form-field style="direction: rtl;" class="example-full-width" appearance="fill">
-    <mat-label style="direction: rtl;"> טווח ק"מ מהמקור</mat-label>
-    <input style="direction: rtl;" matInput placeholder="רחוב יהושע בני ברק" [formControl]="sourceRange">
-</mat-form-field> -->
 
     <div class="adress">
         <mat-form-field class="example-full-width" appearance="fill">
@@ -35,10 +31,7 @@
         </div>
         <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="500" step="500" min="0" max="100000"
             aria-label="units" [formControl]="destinationRange"></mat-slider>
-        <!-- <mat-form-field style="direction: rtl;" class="example-full-width" appearance="fill">
-    <mat-label style="direction: rtl;"> טווח ק"מ מהיעד</mat-label>
-    <input style="direction: rtl;" matInput placeholder="רחוב יהושע בני ברק" [formControl]="destinationRange">
-</mat-form-field> -->
+
     </div>
 
     <div>
@@ -55,11 +48,7 @@
                 <input style="direction: rtl;" matInput placeholder="רחוב יהושע בני ברק" [formControl]="exitTimeRange">
             </mat-form-field>
         </div>
-
-
         <div>
-
-            <!-- <ng-template > -->
             <mat-form-field appearance="fill">
                 <mat-label>בחר יום</mat-label>
                 <mat-select [formControl]="days" multiple>
@@ -72,7 +61,6 @@
                     <mat-option *ngFor="let day of daysList" [value]="day.key">{{day.value}}</mat-option>
                 </mat-select>
             </mat-form-field>
-            <!-- </ng-template>   -->
         </div>
     </div>
 
@@ -141,7 +129,7 @@
             </table>
         </div>
 
-        <div *ngIf="travelR.length==0">
+        <div *ngIf="travelR.length==0&&toLoaded==false">
             <p>לא נמצאו נסיעות שעונות על הדרישות</p>
         </div>
     </div>

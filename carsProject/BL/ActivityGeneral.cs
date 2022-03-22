@@ -13,7 +13,6 @@ namespace BL
     {
         public static bool SendEmail(string toAddress="",string subject="",string body="")
         {
-           
             const string from = "carsharing62@gmail.com";
             var fromAddr = new MailAddress(from, "car Sharing");
             var toAddr = new MailAddress(toAddress);
@@ -42,8 +41,6 @@ namespace BL
 
                 return false;
             }
-
         }
-
     }
 }

@@ -33,22 +33,16 @@ export class UserManagmentServiceService {
   }
 
   getUserNameById(id: string) {
-    
-    
     const params = new HttpParams({
       fromObject: {
         id: id,
       }
     });
      return this.http.get<User>(this.url + "/GetUserNameById", { params: params });
-    //return this.http.get(`${this.url}/GetUserNameById?id=${id}`);
-
   }
-
-
+ 
   login(user: User) {
     return this.http.post<User>(this.url + "/Login", user);
-    
   }
 
   register(user: User) {
@@ -71,5 +65,4 @@ export class UserManagmentServiceService {
     });
     return this.http.get<Message []>(this.url+"/GetMessages", { params: params });
   }
-
 }

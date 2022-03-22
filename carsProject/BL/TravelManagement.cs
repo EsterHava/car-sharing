@@ -23,7 +23,8 @@ namespace BL
                                         "אנא הכנס לאתר כדי לראות פרטים נוספים\n" +
                                         "http://localhost:4200/main/messages");
             var list = travelBL.GetTravellerInRegularTravelsByTravelId(travel.id);
-            foreach(TravellerInRegularTravelDTO item in list){
+            foreach (TravellerInRegularTravelDTO item in list)
+            {
                 msgManager.CreateMessageDeleteTravel((int)item.travelerId);
             }
             return regularTrBl.DeleteTravel(travel.id);
@@ -39,8 +40,9 @@ namespace BL
             RegularTravelingDTO travel = regularTrBl.GetTravelById((int)tr.regularTravelingId);
             try
             {
-                string body = "נוסע בטל הצטרפות לנסיעה ביום  מ- ל- ";
-                string subject = "סכגחלךףף,";
+                string body = "נוסע ביטל הצטרפות לנסיעה\n" +
+                    "אנא הכנס לאתר כדי לראות פרטים נוספים";
+                string subject = "נוסע ביטל הצטרפות לנסיעה";
                 return SendEmail((int)travel.driverId, subject, body) && travelBL.deleteTraveller(tr);
             }
             catch (Exception)

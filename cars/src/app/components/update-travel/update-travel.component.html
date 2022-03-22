@@ -24,10 +24,8 @@
         <input matInput placeholder="21:00" type="time" [(ngModel)]="travel.arriveTime" name="arriveTime">
     </mat-form-field>
 
-
     <div *ngIf="statusTravel; then thenBlock else elseBlock"></div>
-
-    <ng-template  #thenBlock>
+    <ng-template #thenBlock>
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>יום הנסיעה בשבוע</mat-label>
             <mat-select [(ngModel)]="travel.day" name="day" [value]="travel.day">
@@ -41,12 +39,11 @@
     <ng-template #elseBlock>
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>תאריך הנסיעה</mat-label>
-            <input matInput placeholder="20:00" type="date" min="date.now()" name="date"
-                [(ngModel)]="travel.date">
+            <input matInput placeholder="20:00" type="date" min="date.now()" name="date" [(ngModel)]="travel.date">
         </mat-form-field>
     </ng-template>
     <br />
-    
+
     <button class="btn" (click)="updateTravel()">עדכן נסיעה</button>
-    <button class="btn"  (click)="onNoClick()">ביטול</button>
+    <button class="btn" (click)="onNoClick()">ביטול</button>
 </form>

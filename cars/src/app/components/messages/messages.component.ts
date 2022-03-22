@@ -26,10 +26,7 @@ export class MessagesComponent implements OnInit {
     console.log('driverId: ', this.driverId);
     this.getMessages();
     this.getRequest();
-    //this.getRequestsByDriverId();
-
   }
-
 
   getMessages() {
     const userId = localStorage.getItem('UserToken');
@@ -66,16 +63,4 @@ export class MessagesComponent implements OnInit {
       console.log('response: ', res);
     })
   }
-
-
-
-  //   getRequestsByDriverId() {
-
-  //      this.http.getRequestsByDriverId(this.driverId).subscribe(r => {this.requestsList = r,console.log(this.requestsList)});
-
-  //   }
-  // getUserNameById(id: number) {
-  //     return this.httpUser.getUserNameById(id.toString()).subscribe();
-  //   }
-
 }

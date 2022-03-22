@@ -83,25 +83,7 @@ export class AddTravelComponent implements OnInit {
           });
         }
       }
-      // else {
-      //   this.temporaryTravel = {} as TemporaryTravel;
-      //   this.temporaryTravel.source = source;
-      //   this.temporaryTravel.destination = destination;
-      //   this.temporaryTravel.exitTime = exitTime;
-      //   this.temporaryTravel.arriveTime = arriveTime;
-      //   this.temporaryTravel.driverId = this.id;
-      //   this.temporaryTravel.date = this.dateForTemporaryTravel;
-      //   this.http.addTemporaryTravel(this.temporaryTravel).subscribe(t => console.log(t));
-      // }
-
     }
   }
 
-  // openSppiner() {
-  //   const dialogRef = this.sppinerDialog.open(SppinerComponent, {
-  //     width: '550px',
-  //     disableClose: true,
-  //   });
-  //   return dialogRef;
-  // }
 }

@@ -31,10 +31,5 @@ namespace BL.Converts
             JoinRequest.source = JoinRequestDTO.Source;
             return JoinRequest;
         }
-
-
-
-
-
     }
 }

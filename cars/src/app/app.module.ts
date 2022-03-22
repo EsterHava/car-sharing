@@ -10,7 +10,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
 import { MatInputModule } from '@angular/material/input';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { RegisterContinueComponent } from './components/register-continue/register-continue.component';
 import { AddTravelComponent } from './components/add-travel/add-travel.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
@@ -18,7 +17,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { UpdateTravelComponent } from './components/update-travel/update-travel.component';
 import { DatePipe } from '@angular/common';
-import { PrivateAreaComponent } from './components/private-area/private-area.component';
 import { TableForDriverComponent } from './components/table-for-driver/table-for-driver.component';
 import { MessagesComponent } from './components/messages/messages.component'
 import { MatDialogModule} from '@angular/material/dialog';
@@ -30,7 +28,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { AboutComponent } from './components/about/about.component';
 import { TableForTravelerComponent } from './components/table-for-traveler/table-for-traveler.component';
 import { AddRequestComponent } from './components/add-request/add-request.component';
-import { ProfilComponent } from './components/profil/profil.component';
 import { MapComponent } from './components/map/map.component';
 import { AgmCoreModule } from '@agm/core';
 import { MatTooltipModule} from '@angular/material/tooltip';
@@ -38,10 +35,6 @@ import { MatListModule} from '@angular/material/list';
 import { MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSliderModule} from '@angular/material/slider';
-import { JoinRequestComponent } from './components/join-request/join-request.component';
-
-
-
 
 @NgModule({
   declarations: [
@@ -50,10 +43,8 @@ import { JoinRequestComponent } from './components/join-request/join-request.com
     RegisterComponent,
     HomeComponent,
     ForgotPasswordComponent,
-    RegisterContinueComponent,
     AddTravelComponent,
     UpdateTravelComponent,
-    PrivateAreaComponent,
     TableForDriverComponent,
     MessagesComponent,
     NavBarComponent,
@@ -61,9 +52,7 @@ import { JoinRequestComponent } from './components/join-request/join-request.com
     AboutComponent,
     TableForTravelerComponent,
     AddRequestComponent,
-    ProfilComponent,
     MapComponent,
-    JoinRequestComponent
   ],
   imports: [
     BrowserModule,

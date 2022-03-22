@@ -45,7 +45,6 @@ namespace API.Controllers
 
         [HttpGet]
         [Route("approveRequest")]
-        //[Route("approveRequest/{reqId}/{isApprove}")]
         public bool ApproveRequest(string reqId,string isApprove)
         {
             return manager.ApproveRequest(int.Parse(reqId),bool.Parse(isApprove));

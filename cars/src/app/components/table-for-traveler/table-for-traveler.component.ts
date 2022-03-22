@@ -19,16 +19,9 @@ import { AddRequestComponent } from '../add-request/add-request.component';
 })
 export class TableForTravelerComponent implements OnInit {
 
-  @Input() status: string;
-
   //מערך עבור נסיעות קבועות של הנהג
   travelers: TravelerTraveling[] = [];
-
   displayedColumnsR: string[];
-
-
-
-
   //מערך של כל ימות השבוע
   daysList: Days[] = [
     { key: 1, value: 'יום ראשון' },
@@ -48,25 +41,12 @@ export class TableForTravelerComponent implements OnInit {
     private router: Router,
     private httpJoin: JoinManagmentService,
     public dialog: MatDialog) {
-
   }
-
 
   ngOnInit(): void {
-    // if (this.status == 'edit') {
-    //   this.getRegularTravelByDriver();
-    //   this.displayedColumnsR = ['num', 'source', 'destination', 'exitTime', 'arriveTime', 'day'];
-    // }
-    // else {
     this.getTravels();
     this.displayedColumnsR = ['num', 'source', 'destination', 'exitTime', 'arriveTime', 'day', 'delete'];
-    //  }
   }
-
-  // getRegularTravelByDriver() {
-  //   // const id = this.route.snapshot.paramMap.get('driverId');
-  //   return this.http.getRegularTravelByDriver(this.driverId).subscribe(t => { console.log(t), this.travelers = t });
-  // }
 
   getTravels() {
     this.http.getTravelingForTraveller().subscribe(t => {
@@ -87,9 +67,7 @@ export class TableForTravelerComponent implements OnInit {
     else {
       request.temporaryTravelId = travel.id;
     }
-
     if (confirm("האם אתה בטוח מעונין להצטרף לנסיעה מס'- " + (this.index + 1))) {
-
       this.httpJoin.joinRequest(request).subscribe(t => console.log(t));
     }
   }
@@ -104,11 +82,9 @@ export class TableForTravelerComponent implements OnInit {
   }
 
   openAddTravelDialog() {
-
     const dialogRef = this.dialog.open(AddRequestComponent, {
       width: '900px'
     });
-
   }
 }
 

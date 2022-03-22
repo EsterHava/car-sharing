@@ -24,7 +24,7 @@ export class AddRequestComponent implements OnInit {
   displayedColumnsR: string[];
   index: number;
   //sppiner
-  toLoaded:Boolean;
+  toLoaded: Boolean;
   mode: ProgressSpinnerMode;
   color: ThemePalette = 'accent';
 
@@ -61,9 +61,6 @@ export class AddRequestComponent implements OnInit {
     public dialog: MatDialog,
     public sppinerDialog: MatDialog) { }
 
-
-
-
   ngOnInit(): void {
     this.toLoaded = false;
     this.mode = 'indeterminate';
@@ -83,7 +80,7 @@ export class AddRequestComponent implements OnInit {
 
   searchTravels(): void {
     this.toLoaded = true;
-     this.searchRequest = {} as JoinRequest;
+    this.searchRequest = {} as JoinRequest;
     this.searchRequest.source = this.sourceAddress.value;
     this.searchRequest.sourceRange = this.sourceRange.value / 1000;
     this.searchRequest.destination = this.destinationAddress.value;
@@ -95,7 +92,6 @@ export class AddRequestComponent implements OnInit {
       this.travelR = res;
       this.toLoaded = false;
     });
-
   }
 
   joinTravel(travel: any) {
@@ -104,9 +100,9 @@ export class AddRequestComponent implements OnInit {
     request.date = new Date();
     this.index = this.travelR.indexOf(travel);
     request.regularTravelId = travel.id;
-
-
-    if (confirm("האם אתה בטוח מעונין להצטרף לנסיעה מס'- " + (this.index + 1))) {
+    request.destination = this.searchRequest.destination;
+    request.source = this.searchRequest.source;
+    if (confirm("האם אתה בטוח מעונין להצטרף לנסיעה מס'" )) {
       this.toLoaded = true;
       this.httpJoin.joinRequest(request).subscribe(res => {
         console.log('res: ', res);
@@ -122,16 +118,6 @@ export class AddRequestComponent implements OnInit {
       data: travel
     });
   }
-
-  // openSppiner() {
-  //   const dialogRef = this.sppinerDialog.open(SppinerComponent, {
-  //     width: '0px',
-  //     height:'0px',
-  //     disableClose: true,
-  //   });
-  //   return dialogRef;
-  // }
-
 }
 function mapComponent(mapComponent: any, arg1: { width: string; data: any; disableClose: true; }) {
   throw new Error('Function not implemented.');

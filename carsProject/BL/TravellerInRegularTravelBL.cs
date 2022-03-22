@@ -48,8 +48,7 @@ namespace BL
             traveller.collectingPoint = req.Source;
             return travellerInDal.AddTraveller(Converts.TravellerInRegularTravelConvert.ConvertToTravellerInRegularTravel(traveller));
         }
-
-
+    
         public bool deleteTraveller(TravellerInRegularTravelDTO tr)
         {
             return travellerInDal.deleteTraveller(Converts.TravellerInRegularTravelConvert.ConvertToTravellerInRegularTravel(tr));
